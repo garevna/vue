@@ -17,11 +17,20 @@ const UserProfile = {
     }
   },
   template: `<div>
-                <img class="picture"
-                  :src="this.currentUserData.picture"/>
-                <p>{{currentUser}}</p>
-                <h1>{{currentUserData.title}}</h1>
+                <img v-if="this.currentUserData.picture"
+                    class="picture"
+                    :src="this.currentUserData.picture"/>
+                <h3>{{currentUserData.title}}</h3>
                 <p>{{currentUserData.comment}}</p>
+                <pre v-if="currentUserData.code">
+                  {{currentUserData.code}}
+                </pre>
+                <a v-if="currentUserData.ref"
+                    target="_blank"
+                    class="menu-item"
+                    :href="currentUserData.ref">
+                  <span v-if="currentUserData.ref">Demo</span>
+                </a>
              </div>`,
   mounted: function () {
     this.sendUserEvent ( 'profile' )
