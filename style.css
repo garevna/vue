@@ -118,3 +118,21 @@ body {
     margin: 5px 4%;
   }
 }
+::-webkit-scrollbar-track {
+	border-radius: 2px;
+	background-color: #fff;
+}
+
+::-webkit-scrollbar {
+	width: 7px;
+	background-color: #eee;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 2px;
+	background-color: #000;
+	/*background-image:url(https://elanstreet.com/media/menu_bar.png);
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center center;*/
+}
