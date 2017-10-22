@@ -1,0 +1,18 @@
+<svg version="1.1" 
+        id="a-level" 
+        xmlns="http://www.w3.org/2000/svg" 
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+	      width="85px" height="98px">
+<polygon fill="#E75100" points="43,50 22.759,61.34 1.627,50 22.005,37.189 "/>
+<polygon fill="#E75100" points="83.759,49.755 64.325,62.094 43,50 63.571,37.943 "/>
+<polygon fill="#E75100" stroke="#000000" points="61,85 43,98 22,85 43,72 "/>
+<polyline fill="#E75100" stroke="#000000" points="22,12 43,1 61,14 43,25 22,12 "/>
+<polyline fill="#2EACFF" stroke="#000000" points="22,12 22,37 1,50 1,25 22,12 "/>
+<polygon fill="#2EACFF" stroke="#000000" points="43,72 22,85 22,61 43,50 "/>
+<polygon fill="#2EACFF" stroke="#000000" points="83.873,72.66 61,85 61,61.795 83.873,50 "/>
+<polyline fill="#2EACFF" stroke="#000000" points="61,13 63.342,37.698 43,50 43,25 63.646,13.736 "/>
+<polyline fill="#2EACFF" stroke="#000000" points="22,12 22,37 43,50 43,25 22,12.226 "/>
+<polygon fill="#2EACFF" stroke="#000000" points="1.931,73.226 22,85.547 22,61.04 1.931,50 "/>
+<polygon fill="#2EACFF" stroke="#000000" points="43,72 61,85 61,61 43,50 "/>
+<polygon fill="#2EACFF" stroke="#000000" points="61,37 85,50 85,25 61,13 "/>
+</svg>
