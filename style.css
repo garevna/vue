@@ -1,0 +1,120 @@
+body {
+  width:100%;
+  font-family: Tahoma;
+  font-size:14px;
+  background-image:url(a-level.svg);
+  background-position: right top;
+  background-repeat:no-repeat;
+  background-size:30px;
+}
+.router-link-active {
+  color:#800;
+}
+.user {
+  position:absolute;
+  top:10%;
+  left:10%;
+  bottom:10%;
+  right:10%;
+  border: inset 1px;
+  padding: 10px 20px;
+}
+.picture {
+  width:200px;
+}
+.article, .userInfo {
+  position:absolute;
+  top:70px;
+  left:10px;
+  right:10px;
+  bottom:10px;
+  overflow:auto;
+  margin: 100px 4% 20px 4%;
+}
+.article img {
+  float:left;
+  width:200px;
+  margin: 0 15px 20px 5px;
+}
+.article p {
+  text-align:justify;
+  padding-right:15px;
+}
+
+.userIco {
+  width:70px;
+  float:left;
+  margin-right:10px;
+}
+
+.menu_button {
+  position:fixed;
+  z-index:100;
+  top:5px;
+  left:5px;
+  width:30px;
+  height:30px;
+  cursor:pointer;
+  margin:0px;
+  padding: 2px 4px;
+  border: none;
+  font-size:20px;
+  font-weight:bold;
+  -webkit-user-select: none;
+  user-select: none;
+  outline:none;
+  background-color:transparent;
+}
+.menu_button:hover {
+  color:#fff;
+  text-shadow:0px 0px 1px rgba(50,50,0,0.7);
+}
+.dropdown, .dropdown-active {
+  position:fixed;
+  z-index:300;
+  top:40px;
+  left:10px;
+  margin:0;
+}
+.dropdown-active {
+  background-color:transparent;
+  max-height:80%;
+  overflow:auto;
+}
+.menu-item {
+  display:block;
+  text-decoration:none;
+  color:#555;
+  padding: 5px 20px;
+  background-color:#ddd;
+}
+.menu-item:hover {
+  border:dashed 1px #777;
+  background-color:#555;
+  color:white;
+}
+
+.menu-active-enter-active {
+  animation: show-menu 0.5s forwards;
+}
+.menu-active-leave-active {
+  animation: hide-menu 0.5s forwards;
+}
+@keyframes show-menu {
+    0% { margin-left: -100px; opacity: 0; }
+  100% { margin-left:0; opacity:1; }
+}
+@keyframes hide-menu {
+    0% { margin-left: 0px; opacity:1; }
+  100% { margin-left:-100px; opacity: 0; }
+}
+@media screen and (max-width:400px) {
+  .article { margin:100px 0; border:none; padding:10px; }
+  .article p { font-size:12px; }
+  .article img {
+    display:block;
+    float:none;
+    width:90%;
+    margin: 5px 4%;
+  }
+}
