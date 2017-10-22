@@ -12,25 +12,38 @@ body {
 }
 .user {
   position:absolute;
-  top:10%;
-  left:10%;
-  bottom:10%;
-  right:10%;
+  top:5%;
+  left:8%;
+  bottom:5%;
+  border-top-left-radius:20px;
+  right:5%;
   border: inset 1px;
   padding: 10px 20px;
 }
 .picture {
-  width:200px;
+  width:40%;
 }
 .article, .userInfo {
   position:absolute;
-  top:70px;
+  top:100px;
   left:10px;
   right:10px;
   bottom:10px;
   overflow:auto;
-  margin: 100px 4% 20px 4%;
 }
+.articles-enter-active, .articles-leave-active {
+  transition: transform 5s;
+  animation: show-menu 3s forwards;
+}
+.articles-enter, .articles-leave-to {
+  transform: translateX(-100%);
+  opacity:1;
+}
+.articles-enter-to, .articles-leave {
+  transform: translateX(0);
+  opacity:0;
+}
+
 .article img {
   float:left;
   width:200px;
@@ -42,9 +55,10 @@ body {
 }
 
 .userIco {
-  width:70px;
+  width:45px;
   float:left;
   margin-right:10px;
+  z-index:300;
 }
 
 .menu_button {
@@ -109,8 +123,8 @@ body {
   100% { margin-left:-100px; opacity: 0; }
 }
 @media screen and (max-width:400px) {
-  .article { margin:100px 0; border:none; padding:10px; }
-  .article p { font-size:12px; }
+  .article { border:none; padding:10px; }
+  .article p { font-size:13px; }
   .article img {
     display:block;
     float:none;
@@ -131,8 +145,4 @@ body {
 ::-webkit-scrollbar-thumb {
 	border-radius: 2px;
 	background-color: #000;
-	/*background-image:url(https://elanstreet.com/media/menu_bar.png);
-	background-size:contain;
-	background-repeat:no-repeat;
-	background-position:center center;*/
 }
