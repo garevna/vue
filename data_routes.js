@@ -3,7 +3,7 @@ var routes_data = [
     name:"Vue.js",
     title:"Подключение библиотеки Vue.js",
     comment:"<script src =“https://unpkg.com/vue”></script>",
-    ref:"https://vuejs.org/",
+    ref:"https://docs.google.com/presentation/d/1Ngckdav0zi7vPw9V8FC7aJGsXIsYDCy_Bi6aBXcZzjo/edit?usp=sharing",
     picture:false
   },
   {
