@@ -56,19 +56,19 @@ const User = {
   },
   template: `
     <div class="user">
-      <h2>Пользователь {{ id }}</h2>
-      <img :src="userInfo.picture" class="userIco"/>
+      <h3>{{ id }}</h3>
+      <img src="vue.svg" class="userIco"/>
       <router-link class="menu-item"
                 v-if = "!this.profile"
                 :currentUser = "this.id"
                 :to='{ name:"profile" }'>
-          Профиль
+          Общие сведения
       </router-link>
       <router-link class="menu-item"
                 v-if = "!this.posts"
                 :currentUser = "this.id"
                 :to='{ name:"posts" }'>
-          Посты
+          Разделы
       </router-link>
       <router-view class="userInfo"
                 :currentUser = "this.id"
