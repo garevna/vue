@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Vue.js</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="data.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <menu-button></menu-button>
+      <div :class="dropdown_class">
+        <transition-group name="menu-active" tag="div">
+          <router-link class="menu-item"
+              v-for="item in routes_data"
+              v-if="menuVisible"
+              v-model:currentUser="item.name"
+              :id="item.name" :key="item.name"
+              :to='{ name: "user", params: { id: item.name } }'>
+            {{item.name}}
+          </router-link>
+        </transition-group>
+      </div>
+      <router-view @user-event="hideMenu"></router-view>
+    </div>
+    <script src="userHome.js"></script>
+    <script src="userProfile.js"></script>
+    <script src="userPosts.js"></script>
+    <script src="user.js"></script>
+    <script src="routerInstance.js"></script>
+    <script src="vueInstance.js"></script>
+    
+  </body>
+
+</html>
