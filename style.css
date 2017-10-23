@@ -7,6 +7,17 @@ body {
   background-repeat:no-repeat;
   background-size:30px;
 }
+footer {
+  position: fixed;
+  bottom:0;
+  left:10px;
+  height:30px;
+  width:100%;
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:left center;
+  background-image:url(a-level.png);
+}
 .router-link-active {
   color:#800;
 }
