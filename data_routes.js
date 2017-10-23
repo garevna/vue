@@ -90,7 +90,7 @@ var routes_data = [
     title:"Маршрутизатор",
     comment:``,
     ref:"",
-    picture:false
+    picture:"cabine.gif"
   },
   {
     name:"Transitions",
