@@ -3,17 +3,6 @@ body {
   font-family: Tahoma;
   font-size:16px;
 }
-footer {
-  position: fixed;
-  bottom:0;
-  left:10px;
-  height:30px;
-  width:100%;
-  background-size:contain;
-  background-repeat:no-repeat;
-  background-position:left center;
-  background-image:url(a-level.png);
-}
 .router-link-active {
   color:#800;
 }
@@ -39,16 +28,13 @@ footer {
   overflow:auto;
 }
 .articles-enter-active, .articles-leave-active {
-  transition: transform 5s;
-  animation: show-menu 3s forwards;
+  animation: show-menu 1s easy-in-out forwards;
 }
 .articles-enter, .articles-leave-to {
-  transform: translateX(-100%);
-  opacity:1;
+  animation: hide-menu 0.5s forwards;
 }
 .articles-enter-to, .articles-leave {
-  transform: translateX(0);
-  opacity:0;
+  animation: hide-menu 0.5s forwards;
 }
 
 .article img {
@@ -88,12 +74,12 @@ footer {
 }
 .menu_button:hover {
   color:#fff;
-  text-shadow:0px 0px 2px rgba(50,50,0,0.8);
+  text-shadow:0px 0px 2px rgba(50,50,0,0.7);
 }
 .dropdown, .dropdown-active {
   position:fixed;
   z-index:300;
-  top:40px;
+  top:45px;
   left:10px;
   margin:0;
 }
@@ -108,13 +94,59 @@ footer {
   color:#555;
   padding: 10px 20px;
   background-color:#ddd;
+  cursor:pointer;
 }
 .menu-item:hover {
   border:dashed 1px #777;
   background-color:#555;
   color:white;
 }
+.article li {
+  margin-left:40px;
+  animation: show-menu 1s forwards;
+  background: -webkit-linear-gradient(right, #999, #fff, #fff);
+  background: -o-linear-gradient(right, #999, #fff, #fff);
+  background: -moz-linear-gradient(right, #999, #fff, #fff);
+  background: linear-gradient(to right, #999, #fff, #fff);
+}
+.article section {
+  counter-reset: section;
+}
 
+.article li:before {
+  counter-increment: section;
+  content:"\2615 \0020 \0020 Пример \0020" counter(section);
+  text-shadow: 0px 0px 1px rgba(255,255,255,1);
+}
+.article li:hover:before {
+  content:"\2693 \0020 \0020" counter(section);
+  text-shadow: 0px 0px 1px rgba(0,0,0,1);
+}
+.article li:visited:before, .article a:active:before {
+  content:"\26F3 \0020 \0020 Пример";
+}
+footer {
+  position: fixed;
+  bottom:0;
+  left:10px;
+  height:30px;
+  width:100%;
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:left center;
+  background-image:url(a-level.svg);
+}
+header {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:30px;
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:right center;
+  background-image:url(vue.svg);
+}
 .menu-active-enter-active {
   animation: show-menu 0.5s forwards;
 }
@@ -123,11 +155,58 @@ footer {
 }
 @keyframes show-menu {
     0% { margin-left: -100px; opacity: 0; }
-  100% { margin-left:0; opacity:1; }
+  100% { margin-left:40px; opacity:1; }
 }
 @keyframes hide-menu {
-    0% { margin-left: 0px; opacity:1; }
+    0% { margin-left: 40px; opacity:1; }
   100% { margin-left:-100px; opacity: 0; }
+}
+.slideDown-enter-active { animation: show-item-down 1s forwards }
+.slideDown-leave-active { animation: hide-item-down 1s forwards }
+
+.slideUp-enter, .slideUp-leave-to { transition: all 0.2s; opacity:0; }
+.slideUp-enter-to, .slideUp-leave { transition: all 0.2s; opacity:1; }
+
+.slideUp-enter-active { animation: show-item-up 1s forwards }
+.slideUp-leave-active { animation: hide-item-up 1s forwards }
+
+.slideLeft-enter-active { animation: show-item-left 3s forwards }
+.slideLeft-leave-active { animation: hide-item-left 3s forwards }
+.slideRotate-enter-active { animation: show-item-rotate 3s forwards }
+.slideRotate-leave-active { animation: hide-item-rotate 3s forwards }
+
+@keyframes show-item-down {
+    0% { margin-top: 40px; opacity: 0; }
+  100% { margin-top:0; opacity:1; }
+}
+@keyframes hide-item-down {
+    0% { margin-top: 0px; opacity:1; }
+  100% { margin-top: 40px; opacity: 0; }
+}
+@keyframes show-item-up {
+    0% { margin-top: -40px; opacity: 0; }
+  100% { margin-top:0; opacity:1; }
+}
+@keyframes hide-item-up {
+    0% { margin-top: 0px; opacity:1; }
+  100% { margin-top: -40px; opacity: 0; }
+}
+@keyframes show-item-left {
+    0% { margin-left: -30%; opacity: 0; }
+  100% { margin-left:0; opacity:1; }
+}
+@keyframes hide-item-left {
+    0% { margin-left: 0px; opacity:1; }
+  100% { margin-left: -30%; opacity: 0; }
+}
+
+@keyframes show-item-rotate {
+    0% { transform: rotate(270deg); opacity: 0; }
+  100% { transform: rotate(0deg); opacity:1; }
+}
+@keyframes hide-item-rotate {
+    0% { transform: rotate(0deg); opacity:1; }
+  100% { transform: rotate(270deg); opacity: 0; }
 }
 @media screen and (max-width:400px) {
   .article { border:none; padding:10px; }
@@ -153,3 +232,4 @@ footer {
 	border-radius: 2px;
 	background-color: #000;
 }
+
