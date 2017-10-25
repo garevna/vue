@@ -16,17 +16,31 @@ body {
   border: inset 1px;
   padding: 10px 20px;
 }
+.user h3 {
+	background-image:url(./images/vue.svg);
+	background-size:30px;
+	background-repeat:no-repeat;
+	background-position: top left;
+	padding-left:50px;
+	height:30px;
+}
+.userInfo h3 {
+	background-image:none;
+	height:25px;
+	margin-left:20px;
+}
 .picture {
-  width:40%;
+  width:20%;
 }
 .article, .userInfo {
   position:absolute;
-  top:120px;
-  left:10px;
+  left:20px;
   right:10px;
   bottom:10px;
   overflow:auto;
 }
+.article { top:120px; }
+.userInfo { top:150px; }
 .articles-enter-active, .articles-leave-active {
   animation: show-menu 1s easy-in-out forwards;
 }
@@ -53,7 +67,10 @@ body {
   margin-right:10px;
   z-index:300;
 }
-
+section pre {
+	width:98%;
+	overflow:auto;
+}
 .menu_button {
   position:fixed;
   z-index:100;
@@ -96,18 +113,31 @@ body {
   background-color:#ddd;
   cursor:pointer;
 }
+.menu-item:before {
+	content: "\2756 \0020";
+}
 .menu-item:hover {
   border:dashed 1px #777;
   background-color:#555;
   color:white;
 }
+.menu-item:hover:before {
+	content: "\27A0 \0020";
+}
+.article ol {
+	display:inline-block;
+	-webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
 .article li {
-  margin-left:40px;
+  margin-left:20px;
+  width:100px;
+  display:inline-block;
   animation: show-menu 1s forwards;
-  background: -webkit-linear-gradient(right, #999, #fff, #fff);
-  background: -o-linear-gradient(right, #999, #fff, #fff);
-  background: -moz-linear-gradient(right, #999, #fff, #fff);
-  background: linear-gradient(to right, #999, #fff, #fff);
+  background: -webkit-linear-gradient(right, #999, #eee);
+  background: -o-linear-gradient(right, #999, #eee);
+  background: -moz-linear-gradient(right, #999, #eee);
+  background: linear-gradient(to right, #999, #eee);
 }
 .article section {
   counter-reset: section;
@@ -134,18 +164,18 @@ footer {
   background-size:contain;
   background-repeat:no-repeat;
   background-position:left center;
-  background-image:url(a-level.png);
+  background-image:url(./images/a-level.png);
 }
 header {
   position:fixed;
-  top:0;
-  left:0;
+  top:5px;
+  right:10px;
   width:100%;
   height:30px;
   background-size:contain;
   background-repeat:no-repeat;
   background-position:right center;
-  background-image:url(vue.svg);
+  background-image:url(./images/vue.svg);
 }
 .menu-active-enter-active {
   animation: show-menu 0.5s forwards;
@@ -211,6 +241,7 @@ header {
 @media screen and (max-width:400px) {
   .article { border:none; padding:10px; }
   .article p { font-size:13px; }
+  section pre { font-size:12px; border: dashed 1px gray; background-color: #ddd; }
   .article img {
     display:block;
     float:none;
