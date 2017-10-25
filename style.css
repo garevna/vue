@@ -127,14 +127,14 @@ body {
 }
 footer {
   position: fixed;
-  bottom:0;
+  bottom:5px;
   left:10px;
   height:30px;
   width:100%;
   background-size:contain;
   background-repeat:no-repeat;
   background-position:left center;
-  background-image:url(a-level.svg);
+  background-image:url(a-level.png);
 }
 header {
   position:fixed;
