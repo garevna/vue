@@ -1,5 +1,5 @@
 var usersPosts = [];
-
+// ======================================================== Vue properties
 usersPosts ["Vue.js"] = [
   {
     head: "Экземпляр Vue",
@@ -9,7 +9,8 @@ usersPosts ["Vue.js"] = [
   	        el : ‘…',
   	        data : { … },
   	        methods : { … },
-  	        computed : { … }
+  	        computed : { … },
+  	        watch: {},
           } )`,
     text:`Экземпляр Vue является моделью. 
           Модель необходимо связать с представлением, т.е. с элементом DOM. 
@@ -18,7 +19,7 @@ usersPosts ["Vue.js"] = [
     ref:false
   },
   {
-    head: "Связь модели с преставлением",
+    head: "Связь модели с представлением",
     pict: false,
     code:`
       const app = new Vue( {
@@ -34,12 +35,12 @@ usersPosts ["Vue.js"] = [
     pict: false,
     code:`
       data : {
-        userId: "...",
-        message: "..."
+        priceUSD: 10,
+        course: 25.4
       },
       computed: {
-        say: function () {
-          return this.userId + " " + this.message
+        priceUA: function () {
+          return this.priceUSD * this.course
         }
       }
       `,
@@ -48,8 +49,47 @@ usersPosts ["Vue.js"] = [
             модели, т.е. свойства, при изменении которых происходит
             автоматическое изменение представления`,
     ref:[ "https://codepen.io/garevna/pen/QqEMoa" ]
-  }
+  },
+  {
+    head: "computed",
+    pict: false,
+    code:`
+      data : {
+        userId: "Иван",
+        message: "зайди в бухгалтерию"
+      },
+      computed: {
+        announcement: function () {
+          return this.userId + ", " + this.message
+        }
+      }
+      `,
+    text: `Вычисляемое свойство announcement будет пересчитано 
+            только тогда, когда изменится одна из его зависимостей 
+            - userId или message. `,
+    ref:[ "https://codepen.io/garevna/pen/veqNzL" ]
+  },
+  {
+    head: "$emit",
+    pict: false,
+    code:`
+      data : {
+        userId: "Иван",
+        message: "зайди в бухгалтерию"
+      },
+      computed: {
+        announcement: function () {
+          return this.userId + ", " + this.message
+        }
+      }
+      `,
+    text: `Вычисляемое свойство announcement будет пересчитано 
+            только тогда, когда изменится одна из его зависимостей 
+            - userId или message. `,
+    ref:[ "https://plnkr.co/edit/vdEIxZYvoN4x6VFMX3kb" ]
+  },
 ]
+// ======================================================== Directives
 usersPosts ["Directives"] = [
   {
     head: "v-bind",
@@ -69,10 +109,11 @@ usersPosts ["Directives"] = [
   {
     head: "v-model",
     pict: false,
-    text: `Служит для двустороннего связывания потомка и родителя
-            соответствующее свойство, указанное в директиве,
+    text: `Служит для двустороннего связывания потомка и родителя. 
+            Соответствующее свойство, указанное в директиве,
             может быть изменено в потомке, что будет реактивно 
-            отражено в родителе`,
+            отражено в родителе. Обычно используется для элементов
+            форм`,
     code: ``,
     ref:[
       "https://codepen.io/garevna/pen/aLypvq",
@@ -92,7 +133,14 @@ usersPosts ["Directives"] = [
   {
     head: "v-if",
     pict: false,
-    text: `Условный рендеринг`,
+    text: `Условный рендеринг. В отличие от директивы v-show, 
+            добавляет или удаляет элемент DOM в зависимости от
+            значения условного выражения expr. Директива v-else
+            обеспечивает рендеринг альтернативного варианта, если
+            условное выражение expr принимает значение false`,
+    code: `
+      <p v-if="expr">{{ message }}</p>
+      <p v-else> {{ error }}</p>`,
     ref:[
       "https://codepen.io/garevna/pen/EwvgKJ",
       "https://codepen.io/garevna/pen/NavRdX"
@@ -109,7 +157,10 @@ usersPosts ["Directives"] = [
       </button>
       `,
     ref:[
-      "https://codepen.io/garevna/pen/veJZOb"
+      'https://codepen.io/garevna/pen/PJjgPm',
+      "https://codepen.io/garevna/pen/veJZOb",
+      "https://codepen.io/garevna/pen/YrVpmm"
+      
     ]
   },
   {
@@ -127,6 +178,7 @@ usersPosts ["Directives"] = [
     ]
   }
 ]
+// ====================================================== Components
 usersPosts ['Components'] = [
   {
     head: "Component",
@@ -138,10 +190,10 @@ usersPosts ['Components'] = [
     head: "Component",
     pict: false,
     text: ``,
-    ref:[""]
+    ref:["https://codepen.io/garevna/pen/pWdLoz"]
   }
 ]
-// ===========================================
+// ====================================================== Templates
 usersPosts ['Templates'] = [
   {
     head: "String",
@@ -220,8 +272,25 @@ usersPosts ['Templates'] = [
   {
     head: "render function",
     pict: false,
-    text: `Шаблон задается функцией рендеринга (в примере использованы
-            слоты с областью видимости (scope)`,
+    text: `При создании динамических компонентов с переменными
+            входными параметрами функции рендеринга зачастую 
+            оказываются более удобны, чем другие способы задания
+            шаблона компонента. Часто это связано с использованием
+            слотов. Фактически во время сборки все шаблоны Vue.js 
+            компилируются в функции рендеринга. Шаблоны просто 
+            обеспечивают удобный и более привычный синтаксический 
+            сахар поверх функций рендеринга. Компоненты с функциями 
+            рендеринга не имеют тега или свойства template. Вместо 
+            этого внутри компонента объявляется функция render, 
+            которой передается в качестве аргумента метод 
+            createElement (принятый псевдоним h), и которая 
+            возвращает элемент, созданный с помощью этой функции. 
+            Шаблоны Vue имеют множество удобных функций для 
+            добавления базовой логики и привязки к шаблонам. 
+            Функции Render не имеют к ним доступа. 
+            Вместо этого они должны быть реализованы на простом 
+            Javascript, который для большинства директив довольно 
+            прост.`,
     code:`
       const Post = Vue.component('new-post', {
         render: function (createElement) {
@@ -265,7 +334,7 @@ usersPosts ['Templates'] = [
     ref:false
   }
 ]
-// =========================================== 
+// ============================================================= Slots
 usersPosts ['Slots'] = [
   {
     head: "slot",
@@ -300,14 +369,29 @@ usersPosts ['Slots'] = [
     ref:["https://plnkr.co/edit/7gKCXrakfSf5EDFBokN5?p=preview"]
   }
 ]
+// ====================================================== Transitions
 usersPosts ['Transitions'] = [
   {
     head: "Анимация переходов",
     pict: false,
-    text: ``,
+    text: `Использование встроенных компонентов transition и transition-group 
+            с классами -enter | -leave для анимации появления / исчезновения
+            элементов DOM`,
+    ref:[
+      "https://codepen.io/garevna/pen/XewZZz",
+      "https://codepen.io/garevna/pen/yzWrdN",
+      "https://codepen.io/garevna/pen/mBYNEM"
+    ]
+  }
+]
+// =========================================================== Router
+usersPosts ['Router'] = [
+  {
+    head: "Маршрутизатор",
+    pict: false,
+    text: `vue-router официально поддерживается командой разработчиков Vue.js`,
     ref:[""]
   }
 ]
-
 
 
