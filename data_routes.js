@@ -6,6 +6,7 @@ var routes_data = [
     ref:"https://docs.google.com/presentation/d/1Ngckdav0zi7vPw9V8FC7aJGsXIsYDCy_Bi6aBXcZzjo/edit?usp=sharing",
     picture:false
   },
+  // ======================================================== Directives
   {
     name:"Directives",
     title:"Директивы Vue.js",
@@ -39,6 +40,7 @@ var routes_data = [
     ref:"https://docs.google.com/presentation/d/1igrCFnps4TL7aebpWPPVeCveO7dYhO8NVQ9oVCRrcEw/edit?usp=sharing",
     picture:false
   },
+  // ====================================================== Components
   {
     name:"Components",
     title:"Компоненты",
@@ -53,6 +55,7 @@ var routes_data = [
     ref:"https://plnkr.co/edit/vdEIxZYvoN4x6VFMX3kb?p=preview",
     picture:false
   },
+  // ====================================================== Templates
   {
     name:"Templates",
     title:"Шаблоны",
@@ -60,7 +63,8 @@ var routes_data = [
               шаблона компонента: символьной строкой (String), 
               литералом (Template literal), X-Templates,
               Inline, рендер-функцией (Render functions), JSX и
-              Single page components`,
+              Single page components. Шаблоны Vue.js обеспечивают 
+              почти все, что нужно в приложении.`,
     code:`
       // Можно задать именованный шаблон как обычный тег в html
       <template id="child">
@@ -76,6 +80,7 @@ var routes_data = [
     ref:"",
     picture:false
   },
+  // ============================================================= Slots
   {
     name:"Slots",
     title:"Дистрибуция контента",
@@ -85,13 +90,15 @@ var routes_data = [
     ref:"https://docs.google.com/presentation/d/1-Cu9dLOg5CVRFOHUbKy7PqSL0upFlnEakT-HLofbTdY/edit?usp=sharing",
     picture:false
   },
+  // =========================================================== Router
   {
     name:"Router",
     title:"Маршрутизатор",
     comment:``,
     ref:"",
-    picture:"cabine.gif"
+    picture:false
   },
+  // ====================================================== Transitions
   {
     name:"Transitions",
     title:"Анимация состояний компонентов или элементов",
