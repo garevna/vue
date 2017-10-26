@@ -469,7 +469,7 @@ usersPosts ['Router'] = [
     head: "Роутер с анимацией",
     pict: false,
     text: `Винсент ван Гог`,
-    ref:["plnkr.co/edit/fqer871u9AOOORbbVu5E?p=preview"]
+    ref:["https://plnkr.co/edit/fqer871u9AOOORbbVu5E?p=preview"]
   },
   {
     head: "Nested named routes",
