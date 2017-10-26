@@ -23,11 +23,13 @@ body {
 	background-position: top left;
 	padding-left:50px;
 	height:30px;
+	text-overflow: ellipsis
 }
 .userInfo h3 {
 	background-image:none;
 	height:25px;
 	margin-left:20px;
+	text-overflow: clip | ellipsis
 }
 .settings-button {
 	position:fixed;
