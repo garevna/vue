@@ -132,6 +132,7 @@ section pre {
   padding: 10px 20px;
   background-color:#ddd;
   cursor:pointer;
+  text-overflow: ellipsis;
 }
 .menu-item:before {
 	content: "\2756 \0020";
