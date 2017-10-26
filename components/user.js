@@ -5,7 +5,8 @@ const User = {
       usersPosts: usersPosts,
       profile: false,
       posts: false,
-      userChanged:false
+      userChanged:false,
+	    userMenu:false
     }
   },
   computed: {
@@ -42,7 +43,15 @@ const User = {
     },
     sendUserEvent: function ( eventType ) {
       this.$emit('user-event', { type: eventType, user: this.id } )
-    }
+    },
+	  openUserMenu: function ( event ) {
+		  this.userMenu = !this.userMenu
+	  }
+  },
+  on: {
+	  'user-event': function () {
+		  this.userMenu = !this.userMenu
+	  }
   },
   mounted: function () {
     this.sendUserEvent ( "userChanged" )
@@ -57,18 +66,26 @@ const User = {
   template: `
     <div class="user">
       <h3>{{ id }}</h3>
-      <router-link class="menu-item"
-                v-if = "!this.profile"
-                :currentUser = "this.id"
-                :to='{ name:"profile" }'>
-          Общие сведения
-      </router-link>
-      <router-link class="menu-item"
-                v-if = "!this.posts"
-                :currentUser = "this.id"
-                :to='{ name:"posts" }'>
-          Разделы
-      </router-link>
+      <div class="settings-button" @click="openUserMenu">
+	  </div>
+	  <div class="right-menu-item" v-if = "this.userMenu">
+	  	<transition name="slideUp">
+      		<router-link class="menu-item"
+                	v-if = "this.userMenu && !this.profile"
+                	:currentUser = "this.id"
+                	:to='{ name:"profile" }'>
+          		Общие сведения
+      		</router-link>
+	  	</transition>
+	  	<transition name="slideUp">
+      		<router-link class="menu-item"
+                	v-if = "this.userMenu && !this.posts"
+                	:currentUser = "this.id"
+                	:to='{ name:"posts" }'>
+          		Разделы
+      		</router-link>
+	  	</transition>
+	  </div>
       <router-view class="userInfo"
                 :currentUser = "this.id"
                 v-if = "this.profile || this.posts">
