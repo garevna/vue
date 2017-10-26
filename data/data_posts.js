@@ -2,7 +2,7 @@ var usersPosts = [];
 // ======================================================== Vue properties
 usersPosts ["Vue.js"] = [
   {
-    head: "Экземпляр Vue",
+    head: "Vue",
     pict: false,
     code: `
           new Vue  ( {
@@ -19,7 +19,7 @@ usersPosts ["Vue.js"] = [
     ref:false
   },
   {
-    head: "Связь модели с представлением",
+    head: "Model-View",
     pict: false,
     code:`
       const app = new Vue( {
@@ -31,7 +31,7 @@ usersPosts ["Vue.js"] = [
     ref:false
   },
   {
-    head: "Свойства data | computed",
+    head: "data | computed",
     pict: false,
     code:`
       data : {
@@ -205,15 +205,8 @@ usersPosts ['Components'] = [
     pict: false,
     text: ``,
     ref:[
-		"https://codepen.io/garevna/pen/EwXGPB",
-	]
-  },
-  {
-    head: "Component",
-    pict: false,
-    text: ``,
-    ref:[
-		"https://codepen.io/garevna/pen/pWdLoz"
+	"https://codepen.io/garevna/pen/EwXGPB",
+	"https://codepen.io/garevna/pen/pWdLoz"
 	]
   },
   {
@@ -243,7 +236,7 @@ usersPosts ['Templates'] = [
     ref:false
   },
   {
-    head: "literal template",
+    head: "literal",
     pict: false,
     text: `Литералы шаблонов ES6 («backticks») позволяют определять 
           шаблон на нескольких строках, чего нельзя сделать в 
@@ -284,7 +277,7 @@ usersPosts ['Templates'] = [
     ref:[""]
   },
   {
-    head: "inline-template",
+    head: "inline",
     pict: false,
     text: `Атрибут inline-template в теге компонента 
           указывает Vue, что внутренний контент является 
@@ -354,7 +347,7 @@ usersPosts ['Templates'] = [
     ref:false
   },
   {
-    head: "Single File Components",
+    head: "SFC",
     pict: false,
     text: `При условии использованя инструментов сборки 
           Single File Components является наилучшим вариантом 
@@ -406,7 +399,7 @@ usersPosts ['Slots'] = [
 // ====================================================== Transitions
 usersPosts ['Transitions'] = [
   {
-    head: "Анимация переходов",
+    head: "Анимация",
     pict: false,
     text: `Использование встроенных компонентов transition и transition-group 
             с классами -enter | -leave для анимации появления / исчезновения
@@ -423,7 +416,7 @@ usersPosts ['Transitions'] = [
 // =========================================================== Router
 usersPosts ['Router'] = [
   {
-    head: "Основные понятия",
+    head: "Роутер",
     pict: false,
     text: `Роутеру нужно указать массив путей (routes).
 			Каждый путь должен указывать на компонент.
@@ -466,13 +459,13 @@ usersPosts ['Router'] = [
     ref:["https://plnkr.co/edit/M2DdjqrXnIbOqQIbWGEh?p=preview"]
   },
   {
-    head: "Роутер с анимацией",
+    head: "Роутер",
     pict: false,
-    text: `Винсент ван Гог`,
+    text: `Роутер с анимацией: Винсент ван Гог`,
     ref:["https://plnkr.co/edit/fqer871u9AOOORbbVu5E?p=preview"]
   },
   {
-    head: "Nested named routes",
+    head: "Nested routes",
     pict: false,
     text: `Роутер с вложенными именованными маршрутами`,
     ref:["https://plnkr.co/edit/9tX5uw1cEMTHEaSODs3Z?p=preview"]
