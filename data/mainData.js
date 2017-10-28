@@ -1,4 +1,6 @@
-var routes_data = [
+var sadSmile = "https://raw.githubusercontent.com/garevna/vue.github.io/master/images/smile-03.gif"
+
+var mainData = [
   {
     name:"Vue.js",
     title:"Подключение библиотеки Vue.js",
@@ -111,8 +113,3 @@ var routes_data = [
     picture:false
   }
 ]
-
-
-
-
-

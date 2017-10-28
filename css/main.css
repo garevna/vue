@@ -1,0 +1,105 @@
+@charset "utf-8";
+@font-face {
+  font-family: 'Comic Sans MS';
+    src: url("./fonts/Comic Sans MS.ttf");
+    src: local('Comic Sans MS'), local('Comic Sans MS'),
+    url("./fonts/Comic Sans MS.eot") format("embedded-opentype"),
+    url("./fonts/Comic Sans MS.otf") format("opentype"),
+    url("./fonts/Comic Sans MS.woff") format("woff"),
+    url("./fonts/Comic Sans MS.svg");
+}
+body {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  margin:0px;
+  overflow:hidden;
+  font-family: Tahoma;
+  font-size:16px;
+}
+footer {
+  position:fixed;
+  box-sizing:border-box;
+  left:10px;
+  right:10px;
+  bottom:5px;
+  height:30px;
+  padding:8px 0;
+  text-align:right;
+  font-size:10px;
+  background-image:url(../images/a-level.png);
+  background-size:contain;
+  background-repeat:no-repeat;
+}
+footer:before {
+  content:"\00A9 \0020 Irina Fylyppova 2017";
+  color:#999;
+}
+.main-content {
+  position:fixed;
+  top:50px;
+  left:10px;
+  right:10px;
+  bottom:30px;
+  border: inset 1px #5a8;
+  background-image:url(../images/vue.svg);
+  background-size:50%;
+  background-repeat:no-repeat;
+  background-position: center center;
+}
+.main-content-header {
+  position:fixed;
+  top:0;
+  left:50px;
+  font-size:18px;
+  font-weight:600;
+  text-align:center;
+  padding:10px;
+  color:#487;
+}
+.inner-content {
+  position:absolute;
+  box-sizing:border-box;
+  margin:0;
+  width:100%;
+  height:100%;
+  background-color:white;
+  padding:10px;
+  overflow:auto;
+}
+.logo {
+  height:40px;
+  float:left;
+  margin-top:-5px;
+}
+
+.main-content-header {
+  -webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+  user-select: none;
+}
+
+
+@media screen and (max-width:400px) {
+  .main-content-header { font-size:14px; padding:20px 0px 0px 10px; }
+  .logo { height:30px; }
+  .inner-content { font-size:14px; }
+}
+
+::-webkit-scrollbar-track {
+	border-radius: 2px;
+	background-color: #fff;
+}
+
+::-webkit-scrollbar {
+	width: 7px;
+	background-color: #eee;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 2px;
+	background-color: #000;
+}

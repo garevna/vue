@@ -6,38 +6,33 @@
     <link rel="shortcut icon" href="./images/a-level-ico.png" type="image/x-icon"/>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="style.css"/>
+    
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/BaseDropdownMenu.css">
+    <link rel="stylesheet" href="./css/sectionInfo.css">
+    <link rel="stylesheet" href="./css/sectionDetails.css">
+    <link rel="stylesheet" href="./css/transitions.css">
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
-    <script src="./data/data_routes.js"></script>
-    <script src="./data/data_posts.js"></script>
+    <script src="./data/mainData.js"></script>
+    <script src="./data/sectionPosts.js"></script>
   </head>
 
   <body>
-    <div id="app">
-      <menu-button></menu-button>
-      <div :class="dropdown_class">
-        <transition-group name="menu-active" tag="div">
-          <router-link class="menu-item"
-              v-for="item in routes_data"
-              v-if="menuVisible"
-              v-model:currentUser="item.name"
-              :id="item.name" :key="item.name"
-              :to='{ name: "user", params: { id: item.name } }'>
-            {{item.name}}
-          </router-link>
-        </transition-group>
-      </div>
-      <router-view @user-event="hideMenu"></router-view>
-      <footer></footer>
-    </div>
-    <script src="./components/userHome.js"></script>
-    <script src="./components/userProfile.js"></script>
-    <script src="./components/userPosts.js"></script>
-    <script src="./components/user.js"></script>
-    <script src="routerInstance.js"></script>
-    <script src="vueInstance.js"></script>
+    <main id="app" class="main-content">
+      <dropdown-menu 
+          :options="mainMenuOptions">
+      </dropdown-menu>
+      <router-view class="inner-content"></router-view>
+    </main>
+    <footer></footer>
+    <script src="./components/BaseDropdownMenu.js"></script>
+    <script src="./components/SectionInfo.js"></script>
+    <script src="./components/SectionDetails.js"></script>
+    <script src="./components/mainSection.js"></script>
+    <script src="./components/routerInstance.js"></script>
     
+    <script src="VueInstance.js"></script>
   </body>
 
 </html>
