@@ -472,5 +472,36 @@ usersPosts ['Router'] = [
   },
   
 ]
-
+// =========================================================== Router
+usersPosts ['$http'] = [
+  {
+    head: "vue-resource",
+    pict: false,
+    text: `Метод this.$http.get( sourceUrl ) возвращает объект
+		promise, т.е. объект, имеющий состояние. 
+		Пока операция не завершена, состояние объекта
+		будет pending, т.е. объект находится в ожидании 
+		завершения операции. Если операция завершена 
+		успешно, состояние объекта становится fulfilled,
+		в противном случае - rejected. 
+		Для обработки изменения состояния объекта на него 
+		нужно навесить обработчики`,
+    code:`
+		var sourceUrl = 
+			"https://garevna.github.io/vue.github.io/data/posts.json"
+		
+		var promise = this.$http.get( sourceUrl )
+		promise.then ( successCallback, failureCallback )
+		
+		// или еще проще:
+		
+		this.$http.get( sourceUrl ).then(
+			successCallback, failureCallback)
+		// функции-обработчики:
+		// successCallback -  успешного завершения операции
+		// failureCallback -  завершения операции с ошибкой
+		`,
+    ref:["https://plnkr.co/edit/lZLVjgPDmkpgmIwzebMd?p=preview"]
+  }
+]
 
