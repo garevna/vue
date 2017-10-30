@@ -2,8 +2,10 @@ const SectionDetails = {
   data: function () {
     return {
       currentSectionPosts: 
-        ( this.$parent.articles && this.$parent.articles.length > 0 ) ? this.$parent.articles : 
-        [{
+        this.$parent.articles && 
+        this.$parent.articles.length > 0 ? 
+          this.$parent.articles : 
+          [{
             head: "В работе...",
             pict: sadSmile,
             text: `К сожалению, материал еще не готов`,
@@ -62,6 +64,9 @@ const SectionDetails = {
         </section>
       `
     })
+  },
+  mounted: function () {
+    console.log (this.$parent.articles)
   },
   template: `
     <transition name="slideDown">
