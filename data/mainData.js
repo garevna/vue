@@ -124,8 +124,12 @@ var mainData = [
 		успешно, состояние объекта становится fulfilled,
 		в противном случае - rejected. 
 		Для обработки изменения состояния объекта на него 
-		нужно навесить обработчики. Детальнее: https://github.com/pagekit/vue-resource  
-		Ссылка на библиотеку: https://cdn.jsdelivr.net/npm/vue-resource@1.3.4`,
+		нужно навесить обработчики. * Детальнее: https://github.com/pagekit/vue-resource  
+		* Ссылка на библиотеку: https://cdn.jsdelivr.net/npm/vue-resource@1.3.4    
+		* Для создания и редактирования JSON-файлов можно использовать сервис 
+		http://www.jsoneditoronline.org/  Создайте репозиторий на гитхабе, куда поместите 
+		свой JSON-файл.  * Сервис https://jsonplaceholder.typicode.com/ можно использовать 
+		как эмулятор удаленного сервера`,
     code:`
 		var sourceUrl = 
 			"https://garevna.github.io/vue.github.io/data/posts.json"
