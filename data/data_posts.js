@@ -502,6 +502,17 @@ usersPosts ['$http'] = [
 		// failureCallback -  завершения операции с ошибкой
 		`,
     ref:["https://plnkr.co/edit/lZLVjgPDmkpgmIwzebMd?p=preview"]
+  },
+  {
+    head: "JSON",
+    pict: false,
+    text: `Для создания и редактирования файлов JSON можно использовать jsoneditoronline (ссылка ниже). 
+		Создайте репозиторий на гитхабе, куда поместите свой JSON-файл. Сервис jsonplaceholder 
+		можно использовать как эмулятор удаленного сервера`,
+    ref:[
+	    "http://www.jsoneditoronline.org/",
+	    "https://jsonplaceholder.typicode.com/"
+    ]
   }
 ]
 
