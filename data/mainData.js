@@ -111,5 +111,13 @@ var mainData = [
             Всего предусмотрено шесть классов переходов`,
     ref:"",
     picture:false
+  },
+  // ====================================================== $http
+  {
+    name:"$http",
+    title:"vue-resource",
+    comment:`<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script>`,
+    ref:"https://github.com/pagekit/vue-resource",
+    picture:false
   }
 ]
