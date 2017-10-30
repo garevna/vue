@@ -213,11 +213,20 @@ usersPosts ['Components'] = [
     head: "Component",
     pict: false,
     text: `Многократно используемый компонент, 
-			определенный в глобальной области видимости,
-			с динамически обновляемым контентом`,
+	   определенный в глобальной области видимости,
+	   с динамически обновляемым контентом`,
     ref:[
 		"https://plnkr.co/edit/77n86nKgvcllq2nRKLGb?p=preview"
 	]
+  }
+]
+// ====================================================== Events
+usersPosts ['Events'] = [
+  {
+    head: "$emit",
+    pict: false,
+    text: `Отправка события от потомка родителю`,
+    ref:[ "https://plnkr.co/edit/h5dcxsniStLikyXAloSc?p=preview" ]
   }
 ]
 // ====================================================== Templates
