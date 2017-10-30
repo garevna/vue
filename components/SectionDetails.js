@@ -2,9 +2,7 @@ const SectionDetails = {
   data: function () {
     return {
       currentSectionPosts: 
-        this.$parent.articles && 
-        this.$parent.articles.length > 0 ? 
-        this.$parent.articles : 
+        ( this.$parent.articles && this.$parent.articles.length > 0 ) ? this.$parent.articles : 
         [{
             head: "В работе...",
             pict: sadSmile,
