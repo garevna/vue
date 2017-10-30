@@ -25,10 +25,10 @@ const SectionInfo = {
           <div class="section-title">
               {{currentSectionData.title}}
           </div>
-          <p>{{currentSectionData.comment}}</p>
+          <p v-html="currentSectionData.comment"></p>
           <pre v-if="currentSectionData.code">
               {{currentSectionData.code}}
-          </pre>
+          </pr=Эe>
           <a v-if="currentSectionData.ref"
                 target="_blank"
                 class="menu-item"
