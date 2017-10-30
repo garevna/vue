@@ -117,19 +117,20 @@ var mainData = [
     name:"$http",
     title:"vue-resource",
     comment:`Метод this.$http.get( sourceUrl ) возвращает объект
-		promise, т.е. объект, имеющий состояние.   
+		promise, т.е. объект, имеющий состояние.   \u000A
 		Пока операция не завершена, состояние объекта
 		будет pending, т.е. объект находится в ожидании 
-		завершения операции.   Если операция завершена 
+		завершения операции.   \u000A Если операция завершена 
 		успешно, состояние объекта становится fulfilled,
-		в противном случае - rejected.  
+		в противном случае - rejected.  \u000A
 		Для обработки изменения состояния объекта на него 
-		нужно навесить обработчики.    
-		* Детальнее: https://github.com/pagekit/vue-resource   
-		* Ссылка на библиотеку: https://cdn.jsdelivr.net/npm/vue-resource@1.3.4   
+		нужно навесить обработчики.    \u000A
+		* Детальнее: https://github.com/pagekit/vue-resource   \u000A
+		* Ссылка на библиотеку: https://cdn.jsdelivr.net/npm/vue-resource@1.3.4   \u000A
 		* Для создания и редактирования JSON-файлов можно использовать сервис 
-		http://www.jsoneditoronline.org/   Создайте репозиторий на гитхабе, куда поместите 
-		свой JSON-файл   * Сервис https://jsonplaceholder.typicode.com/ можно использовать 
+		http://www.jsoneditoronline.org/   \u000A
+		Создайте репозиторий на гитхабе, куда поместите свой JSON-файл   \u000A
+		* Сервис https://jsonplaceholder.typicode.com/ можно использовать 
 		как эмулятор удаленного сервера`,
     code:`
 		var sourceUrl = 
