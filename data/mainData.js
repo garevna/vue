@@ -14,9 +14,9 @@ var mainData = [
     title:"Директивы Vue.js",
     comment:`Директивы расширяют множество стандартных атрибутов тегов,
               позволяя использовать встроенные возможности Vue.js
-              по управлению отображением данных модели в представлении. 
+              по управлению отображением данных модели в представлении. <br/>
               По сути, директива - это особый токен в разметке, который 
-              сообщает библиотеке Vue.js, что делать с элементом DOM.
+              сообщает библиотеке Vue.js, что делать с элементом DOM.<br/>
               Все директивы Vue.js имеют префикс (v-)`,
     code:`
       <tag v-[directiveId] = "..."></tag>
@@ -65,7 +65,7 @@ var mainData = [
               шаблона компонента: символьной строкой (String), 
               литералом (Template literal), X-Templates,
               Inline, рендер-функцией (Render functions), JSX и
-              Single page components. Шаблоны Vue.js обеспечивают 
+              Single page components.<br/>Шаблоны Vue.js обеспечивают 
               почти все, что нужно в приложении.`,
     code:`
       // Можно задать именованный шаблон как обычный тег в html
@@ -87,7 +87,7 @@ var mainData = [
     name:"Slots",
     title:"Дистрибуция контента",
     comment:`Слоты позволяют вставить контент родителя 
-            в определенное место потомка. Для доступа к слотам
+            в определенное место потомка.<br/>Для доступа к слотам
             существует свойство $slots`,
     ref:"https://docs.google.com/presentation/d/1-Cu9dLOg5CVRFOHUbKy7PqSL0upFlnEakT-HLofbTdY/edit?usp=sharing",
     picture:false
@@ -97,7 +97,7 @@ var mainData = [
     name:"Router",
     title:"Маршрутизатор",
     comment:`vue-router официально поддерживается командой разработчиков Vue.js`,
-	code:`<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>`,
+    code:`<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>`,
     ref:"",
     picture:"./images/cabine.gif"
   },
@@ -107,8 +107,7 @@ var mainData = [
     title:"Анимация состояний компонентов или элементов",
     comment:`Vue отрабатывает анимационные переходы, добавляя и удаляя классы 
             компонентам / элементам в процессе перехода из одного состояния в 
-            другое. 
-            Всего предусмотрено шесть классов переходов`,
+            другое.<br/>Всего предусмотрено шесть классов переходов`,
     ref:"",
     picture:false
   },
@@ -117,19 +116,19 @@ var mainData = [
     name:"$http",
     title:"vue-resource",
     comment:`Метод this.$http.get( sourceUrl ) возвращает объект
-		promise, т.е. объект, имеющий состояние.   <br/>
+		promise, т.е. объект, имеющий состояние.<br/>
 		Пока операция не завершена, состояние объекта
 		будет pending, т.е. объект находится в ожидании 
-		завершения операции.   \u2029 Если операция завершена 
+		завершения операции.<br/>Если операция завершена 
 		успешно, состояние объекта становится fulfilled,
-		в противном случае - rejected.  \u2029
+		в противном случае - rejected.<br/>
 		Для обработки изменения состояния объекта на него 
-		нужно навесить обработчики.    \u2029
-		* Детальнее: https://github.com/pagekit/vue-resource   \u2029
-		* Ссылка на библиотеку: https://cdn.jsdelivr.net/npm/vue-resource@1.3.4   \u2029
+		нужно навесить обработчики.<br/>
+		* Детальнее: https://github.com/pagekit/vue-resource<br/>
+		* Ссылка на библиотеку: https://cdn.jsdelivr.net/npm/vue-resource@1.3.4<br/>
 		* Для создания и редактирования JSON-файлов можно использовать сервис 
-		http://www.jsoneditoronline.org/   \u2029
-		Создайте репозиторий на гитхабе, куда поместите свой JSON-файл   \u2029
+		http://www.jsoneditoronline.org/<br/>
+		Создайте репозиторий на гитхабе, куда поместите свой JSON-файл<br/>
 		* Сервис https://jsonplaceholder.typicode.com/ можно использовать 
 		как эмулятор удаленного сервера`,
     code:`
