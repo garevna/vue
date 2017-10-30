@@ -115,21 +115,21 @@ var mainData = [
   {
     name:"$http",
     title:"vue-resource",
-    comment:`Метод this.$http.get( sourceUrl ) возвращает объект
-		promise, т.е. объект, имеющий состояние.<br/>
+    comment:`Метод <code>this.$http.get( sourceUrl )</code> возвращает объект
+		<b>promise</b>, т.е. объект, имеющий состояние.<br/>
 		Пока операция не завершена, состояние объекта
-		будет pending, т.е. объект находится в ожидании 
+		будет <em>pending</em>, т.е. объект находится в ожидании 
 		завершения операции.<br/>Если операция завершена 
-		успешно, состояние объекта становится fulfilled,
-		в противном случае - rejected.<br/>
+		успешно, состояние объекта становится <em>fulfilled</em>,
+		в противном случае - <em>rejected</em>.<br/>
 		Для обработки изменения состояния объекта на него 
 		нужно навесить обработчики.<br/>
-		* Детальнее: https://github.com/pagekit/vue-resource<br/>
-		* Ссылка на библиотеку: https://cdn.jsdelivr.net/npm/vue-resource@1.3.4<br/>
+		* Детальнее: <i>https://github.com/pagekit/vue-resource</i><br/>
+		* Ссылка на библиотеку: <i>https://cdn.jsdelivr.net/npm/vue-resource@1.3.4</i><br/>
 		* Для создания и редактирования JSON-файлов можно использовать сервис 
-		http://www.jsoneditoronline.org/<br/>
-		Создайте репозиторий на гитхабе, куда поместите свой JSON-файл<br/>
-		* Сервис https://jsonplaceholder.typicode.com/ можно использовать 
+		<i>http://www.jsoneditoronline.org/</i><br/>
+		<small>Создайте репозиторий на гитхабе, куда поместите свой JSON-файл</small><br/>
+		* Сервис <i>https://jsonplaceholder.typicode.com/</i> можно использовать 
 		как эмулятор удаленного сервера`,
     code:`
 		var sourceUrl = 
