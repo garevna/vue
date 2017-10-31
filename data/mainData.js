@@ -50,8 +50,9 @@ var mainData = [
     ref:"https://docs.google.com/presentation/d/1wc3MBlxkmpnB5AdsvQq1b7rtvWfnKUDJez9FO3z60oM/edit?usp=sharing",
     picture:false
   },
+  // ====================================================== $emit
   {
-    name:"Events",
+    name:"$emit",
     title:"События",
     comment:`Событийная модель Vue.js`,
     ref:"https://plnkr.co/edit/vdEIxZYvoN4x6VFMX3kb?p=preview",
