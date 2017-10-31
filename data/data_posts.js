@@ -530,3 +530,4 @@ usersPosts ['$http'] = [
   }
 ]
 
+console.log ('userPosts: ', userPosts)
