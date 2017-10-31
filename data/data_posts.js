@@ -221,13 +221,19 @@ usersPosts ['Components'] = [
   }
 ]
 // ====================================================== Events
-usersPosts ['Events'] = [
+usersPosts ['$emit'] = [
   {
     head: "$emit",
     pict: false,
     text: `Отправка события от потомка родителю`,
     ref:[ "https://plnkr.co/edit/h5dcxsniStLikyXAloSc?p=preview" ]
-  }
+  },
+  {
+    head: "event bus",
+    pict: false,
+    text: `Шина событий<br/>`,
+    ref:[ "https://plnkr.co/edit/XRznjj6FTBbyuwiVHSeC?p=preview" ]
+  }	
 ]
 // ====================================================== Templates
 usersPosts ['Templates'] = [
@@ -478,8 +484,7 @@ usersPosts ['Router'] = [
     pict: false,
     text: `Роутер с вложенными именованными маршрутами`,
     ref:["https://plnkr.co/edit/9tX5uw1cEMTHEaSODs3Z?p=preview"]
-  },
-  
+  }
 ]
 // =========================================================== $http
 usersPosts ['$http'] = [
