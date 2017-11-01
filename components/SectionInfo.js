@@ -1,14 +1,11 @@
 const SectionInfo = {
   props:['id'],
   data: function () {
-    return { currentSectionData: this.$parent.sectionInfo }
+    return {
+      store: this.$root.store
+    }
   },
   methods: {
-    changeSectionInfo: function ( currentSectionId ) {
-        return routes_data.filter ( function ( item ) {
-            return item.id === currentSectionId;
-        });
-    },
     sendSectionEvent ( eventType ) {
       this.$parent.$emit('section-event', {
                             type: eventType,
@@ -19,21 +16,22 @@ const SectionInfo = {
   template: `
     <transition name="slideRight">
       <div class="section">
-          <img v-if="this.currentSectionData.picture"
+          <img v-if="store.sectionInfo.picture"
                class="section-picture"
-               :src="this.currentSectionData.picture"/>
+               :src="store.sectionInfo.picture"/>
           <div class="section-title">
-              {{currentSectionData.title}}
+              {{ store.sectionInfo.title }}
           </div>
-          <p v-html="currentSectionData.comment"></p>
-          <pre v-if="currentSectionData.code">
-              {{currentSectionData.code}}
+          <p v-html="store.sectionInfo.comment"></p>
+          <pre v-if="store.sectionInfo.code"
+                 v-for="item in store.sectionInfo.code">
+              <code>{{item}}</code>
           </pre>
-          <a v-if="currentSectionData.ref"
+          <a v-if="store.sectionInfo.ref"
                 target="_blank"
                 class="menu-item"
-                :href="currentSectionData.ref">
-            <span v-if="currentSectionData.ref">Demo</span>
+                :href="store.sectionInfo.ref">
+            <span v-if="store.sectionInfo.ref">Demo</span>
           </a>
       </div>
     </transition>`
