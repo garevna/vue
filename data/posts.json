@@ -28,6 +28,7 @@
     },
     {
       "head":"data | computed",
+      "code":[
           "data : {",
           "  priceUSD: 10,",
           "  course: 25.4",
