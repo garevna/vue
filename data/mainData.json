@@ -78,7 +78,7 @@
     "name":"Router",
     "title":"Маршрутизатор",
     "comment":"vue-router официально поддерживается командой разработчиков Vue.js",
-	  "code":"<script src='https://unpkg.com/vue-router/dist/vue-router.js'></script>",
+    "code":["<script src='https://unpkg.com/vue-router/dist/vue-router.js'></script>"],
     "ref":false,
     "picture":"./images/cabine.gif"
   },
