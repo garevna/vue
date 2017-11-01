@@ -19,9 +19,9 @@
   </head>
 
   <body>
-    <main id="app" class="main-content">
-      <dropdown-menu 
-          :options="mainMenuOptions">
+    <main id="vue-courseware" class="main-content">
+      <dropdown-menu v-if = "this.store.mainDataIsReady"
+          :options="this.store.mainMenuOptions">
       </dropdown-menu>
       <router-view class="inner-content"></router-view>
     </main>
