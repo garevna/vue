@@ -1,38 +1,50 @@
 @charset "utf-8";
 .section {
   padding:0px 10px;
-  
 }
 .section-picture,
-.section-title {
+.section-title,
+ .section-ref {
   -webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
   user-select: none;
 }
-
+.section-ref::before {
+  content:"\21AA \0020"
+}
+.section-ref::before:hover {
+  content:"\21AC \0020"
+}
 .section p {
   text-align: justify;
   line-height:22px;
 }
 .section-picture {
   width:30%;
-  float:left;
 }
-.section-title {
+.section-title, .section-ref {
   width:100%;
   padding-right:10px;
   text-align:right;
   font-size:20px;
   font-weight:bold;
 }
-.section pre {
-  border: inset 1px;
-  padding:0 10px 0 -10px;
-  overflow:auto;
-  color:#334;
+.section a {
+  padding:5px 10px;
+  background:linear-gradient(to bottom, #fff, #ddd);
+  text-decoration: none;
+  cursor:pointer;
+  -webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+  user-select: none;
+  border: solid 1px #999;
+  color:#475;
 }
-
+.section a:visited {
+  color:#444;
+}
 @media screen and (max-width:400px) {
   .section-title { font-size:14px; }
   .section-picture { height:20%; }
