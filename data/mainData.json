@@ -88,5 +88,23 @@
     "comment":"Vue отрабатывает анимационные переходы, добавляя и удаляя классы компонентам / элементам в процессе перехода из одного состояния в другое. Всего предусмотрено шесть классов переходов",
     "ref":"",
     "picture":false
+  },
+  {
+    "name":"$http",
+    "title":"vue-resource",
+    "comment":"Метод <code>this.$http.get( sourceUrl )</code> возвращает объект <b>promise</b>, т.е. объект, имеющий состояние.<br/> Пока операция не завершена, состояние объекта будет <em>pending</em>, т.е. объект находится в ожидании завершения операции.<br/>Если операция завершена успешно, состояние объекта становится <em>fulfilled</em>, в противном случае - <em>rejected</em>.<br/> Для обработки изменения состояния объекта на него  нужно навесить обработчики.<br/> * Детальнее: <i>https://github.com/pagekit/vue-resource</i><br/> * Ссылка на библиотеку: <i>https://cdn.jsdelivr.net/npm/vue-resource@1.3.4</i><br/> * Для создания и редактирования JSON-файлов можно использовать сервис <i>http://www.jsoneditoronline.org/</i><br/><small>Создайте репозиторий на гитхабе, куда поместите свой JSON-файл<br/>* Сервис <i>https://jsonplaceholder.typicode.com/</i> можно использовать как эмулятор удаленного сервера</small>",
+    "code":[
+		  "var sourceUrl = 'https://garevna.github.io/vue.github.io/data/posts.json'",
+		  "var promise = this.$http.get( sourceUrl )",
+		  "promise.then ( successCallback, failureCallback )",
+		  "// или еще проще:",
+		  "this.$http.get( sourceUrl ).then(",
+			"      successCallback, failureCallback)",
+			"// функции-обработчики:",
+			"// successCallback -  успешного завершения операции",
+			"// failureCallback -  завершения операции с ошибкой"
+		],
+    "ref":"https://plnkr.co/edit/lZLVjgPDmkpgmIwzebMd?p=preview",
+    "picture":false
   }
 ]
