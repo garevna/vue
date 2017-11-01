@@ -191,6 +191,29 @@
       "ref":[ "https://plnkr.co/edit/qKB8ACBVu7jZvqnBscn6?p=preview" ]
     }
   ],
+  "Events":[
+    {
+      "head":"Отцы и дети",
+      "picture":false,
+      "code":[],
+      "text":"Передача событий из вложенных компонентов",
+      "ref":["https://plnkr.co/edit/h5dcxsniStLikyXAloSc?p=preview"]
+    },
+    {
+      "head":"Шина событий",
+      "picture":false,
+      "code":[],
+      "text":"Обмен данными между компонентами с помощью событий через общую шину",
+      "ref":["https://plnkr.co/edit/XRznjj6FTBbyuwiVHSeC?p=preview"]
+    },
+    {
+      "head":"Шина данных",
+      "picture":false,
+      "code":[],
+      "text":"Использование общего хранилища данных, загружаемых асинхронно с помощью $http",
+      "ref":["https://plnkr.co/edit/XRznjj6FTBbyuwiVHSeC?p=preview"]
+    },
+  ],
   "Templates":[
     {
       "head":"String",
