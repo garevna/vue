@@ -57,4 +57,4 @@ app.$on ( 'menuSelect', function ( val ) {
                          params: { id:val }
 	} )
   }
-});
+})
