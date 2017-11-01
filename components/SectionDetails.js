@@ -1,17 +1,18 @@
 const SectionDetails = {
   data: function () {
     return {
-      currentSectionPosts: 
-        this.$parent.articles && 
-        this.$parent.articles.length > 0 ? 
-          this.$parent.articles : 
-          [{
+      currentSectionPosts: function () {
+        this.$root.store.sectionPosts &&
+        this.$root.store.sectionPosts.length > 0 ?
+        this.$root.store.sectionPosts :
+        [{
             head: "В работе...",
-            pict: sadSmile,
+            pict: "./images/smile-03.gif",
             text: `К сожалению, материал еще не готов`,
             code: false,
             ref:false
           }]
+      }
     }
   },
   methods: {
@@ -36,23 +37,26 @@ const SectionDetails = {
       template: `
         <section>
           <transition name="slideLeft">
-            <p class="section-article-title" 
+            <p class="section-article-title"
                 @click="changeVisibility">
               {{ title }}
             </p>
           </transition>
           <transition name="slideUp">
-            <img v-if="image && this.postIsVisible" 
+            <img v-if="image && this.postIsVisible"
                   :src="image"/>
           </transition>
           <transition name="slideUp">
-            <pre v-if="code && this.postIsVisible">
-              {{ code }}
-            </pre>
+            <div v-if="this.postIsVisible"
+                  class="code-snippet">
+              <pre v-for = "cod in code">
+                  <code>{{cod}}</code>
+              </pre>
+            </div>
           </transition>
           <transition name="slideUp">
-            <p v-if="text && this.postIsVisible">
-              {{ text }}
+            <p v-if="text && this.postIsVisible"
+                v-html="text">
             </p>
           </transition>
           <ol v-for="sample in refs">
@@ -71,7 +75,7 @@ const SectionDetails = {
   template: `
     <transition name="slideDown">
       <section class="section-article">
-                <div v-for="item in currentSectionPosts">
+                <div v-for="item in this.$root.store.sectionPosts">
                   <current-post :title="item.head"
                                 :image="item.pict"
                                 :code="item.code"
