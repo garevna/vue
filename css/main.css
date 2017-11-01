@@ -75,13 +75,25 @@ footer:before {
   margin-top:-5px;
 }
 
-.main-content-header {
+.main-content-header, a, button,
+input[type="button"],
+input[type="radio"],
+input[type="checkbox"] {
   -webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
   user-select: none;
 }
-
+.code-snippet {
+	margin-left: -120px;
+  padding-top: 10px;
+	overflow:auto;
+	background-color: #eee;
+}
+pre {
+	margin:0;
+	color:#557;
+}
 
 @media screen and (max-width:400px) {
   .main-content-header { font-size:14px; padding:20px 0px 0px 10px; }
