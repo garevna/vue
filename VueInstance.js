@@ -1,4 +1,4 @@
-onst app = new Vue ( {
+const app = new Vue ( {
 	data: {
 		store: dataStore,
 		mainDataSource: "https://garevna.github.io/vue.github.io/data/mainData.json",
