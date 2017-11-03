@@ -12,10 +12,9 @@ var dataStore = new Vue ({
   methods: {
     getCurrentSectionInfo: function () {
       if ( !this.currentSectionId || !this.mainDataIsReady ) return
-      var section = this.currentSectionId
-      this.sectionInfo = this.mainData.filter ( function ( item ) {
-            return item.name === section
-      })[0]
+      this.sectionInfo = this.mainData.filter (
+        item => item.name === this.currentSectionId
+      )[0]
     },
     getCurrentSectionPosts: function () {
       if ( !this.currentSectionId || !this.postDataIsReady ) return
@@ -27,9 +26,7 @@ var dataStore = new Vue ({
 dataStore.$on ( 'main-data-is-ready', function ( theData ) {
   this.mainDataIsReady = true
   this.mainData = theData
-  this.mainMenuOptions = this.mainData.map ( function ( item ) {
-    return item.name
-  })
+  this.mainMenuOptions = this.mainData.map ( item => item.name )
   this.getCurrentSectionInfo ()
   this.$emit ( 'main-data' )
 })
