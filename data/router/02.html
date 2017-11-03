@@ -1,0 +1,74 @@
+<hr/>
+<pre>
+                Объект Route
+</pre>
+<hr/>
+Текущий маршрут ( активный путь )
+Обновляется при каждом навигационном переходе
+<hr/>
+           Доступ к объекту $route
+<hr/>
+Внутри компонента он доступен как this.$route
+
+Изменения маршрута можно отслеживать:
+<pre>
+    watch: {
+        '$route': function () {
+          ...
+        }
+    }
+</pre>
+<hr/><pre>
+           Свойства объекта Route
+</pre><hr/>
+
+$route.path       тип: string
+<hr/>
+$route.params     тип: Object
+<hr/>
+    Содержит параметры динамических сегментов
+         { id: 'Boom' }
+    При отсутствии параметров пути будет пустым
+<hr/>
+$route.query      тип: Object
+<hr/>
+  Содержит данные строки запроса (query string)
+  Например:
+<pre>
+     { user: "Tornado" }
+     для пути /?user="Tornado"
+     $route.query.user == "Tornado"
+</pre>
+  При отсутствии строки запроса будет пустым
+<hr/>
+$route.hash       тип: string
+<hr/>
+  Хэш-часть текущего пути ( после символа # )
+  Пустая строка, если отсутствует
+<hr/>
+$route.fullPath   тип: string
+<hr/>
+  Полный URL, включая строку запроса и хэш
+<hr/>
+$route.matched    тип: Array
+<hr/> 
+  Массив, содержащий объекты маршрутов всех 
+  вложенных сегментов текущего пути
+<pre>
+    const router = new VueRouter({
+      routes: [
+        { path: '/user', component: User,
+            children: [
+              { path: 'profile', component: Profile }
+            ]
+        }
+      ]
+    })
+</pre>    
+    Для URL, равного /user/profile, $route.matched 
+    будет массивом, содержащим копии обоих объектов, 
+    в порядке сортировки от родителя к потомку.
+<hr/>
+$route.name
+<hr/>
+  Имя текущего пути (не обязательно, но удобно)
