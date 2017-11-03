@@ -24,20 +24,24 @@ const SectionDetails = {
     currentPost: ( 'current-post', {
       props: [ "title", "image", "code", "text", "refs" ],
       data: function () {
-        return { postIsVisible: false }
+        return {
+          postIsVisible: false,
+          titleClass: "section-article-title"
+        }
       },
       methods: {
         changeVisibility: function () {
           this.postIsVisible = !this.postIsVisible
+          this.titleClass = this.postIsVisible ?
+                              "section-article-title-active" :
+                              "section-article-title"
         },
-        openRef: function ( ref ) {
-          window.open (ref, "_blank")
-        }
+        openRef: ref => window.open ( ref, "_blank" )
       },
       template: `
         <section>
           <transition name="slideLeft">
-            <p class="section-article-title"
+            <p :class="titleClass"
                 @click="changeVisibility">
               {{ title }}
             </p>
@@ -46,15 +50,15 @@ const SectionDetails = {
             <img v-if="image && this.postIsVisible"
                   :src="image"/>
           </transition>
-          <transition name="slideUp">
-            <div v-if="this.postIsVisible"
+          <transition name="slideLeft">
+            <div v-if="this.postIsVisible && code && code.length > 0"
                   class="code-snippet">
-              <pre v-for = "cod in code">
-                  <code>{{cod}}</code>
-              </pre>
+              <p v-for = "cod in code">
+                  {{ cod.replace(/ /g,"&nbsp;") }}
+              </p>
             </div>
           </transition>
-          <transition name="slideUp">
+          <transition name="slideLeft">
             <p v-if="text && this.postIsVisible"
                 v-html="text">
             </p>
@@ -68,9 +72,6 @@ const SectionDetails = {
         </section>
       `
     })
-  },
-  mounted: function () {
-    console.log (this.$parent.articles)
   },
   template: `
     <transition name="slideDown">
