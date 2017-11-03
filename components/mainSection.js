@@ -19,7 +19,7 @@ const MainSection = {
   },
   mounted: function () {
     this.$root.store.$on ( 'main-data',
-        function () { this.dataIsReady = true }.bind ( this )
+        () => this.dataIsReady = true
     )
     this.sendSectionEvent ( "sectionChanged" )
     this.$on ( 'menuSelect', function ( val ) {
