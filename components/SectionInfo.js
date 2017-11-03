@@ -23,10 +23,12 @@ const SectionInfo = {
               {{ store.sectionInfo.title }}
           </div>
           <p v-html="store.sectionInfo.comment"></p>
-          <pre v-if="store.sectionInfo.code"
-                 v-for="item in store.sectionInfo.code">
-              <code>{{item}}</code>
-          </pre>
+          <div v-if="store.sectionInfo.code"
+                class="code-snippet">
+            <p v-for="item in store.sectionInfo.code">
+                {{ item.replace(/ /g,"&nbsp;") }}
+            </p>
+          </div>
           <a v-if="store.sectionInfo.ref"
                 target="_blank"
                 class="menu-item"
