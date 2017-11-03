@@ -16,7 +16,7 @@ body {
   height:100%;
   margin:0px;
   overflow:hidden;
-  font-family: Tahoma;
+  font-family: Copperplate, Papyrus, Arial, Courier, 'Courier New', 'Lucida Sans Typewriter';
   font-size:16px;
 }
 footer {
@@ -43,7 +43,7 @@ footer:before {
   left:10px;
   right:10px;
   bottom:30px;
-  border: inset 1px #5a8;
+  /*border: inset 1px #5a8;*/
   background-image:url(../images/vue.svg);
   background-size:50%;
   background-repeat:no-repeat;
@@ -74,7 +74,6 @@ footer:before {
   float:left;
   margin-top:-5px;
 }
-
 .main-content-header, a, button,
 input[type="button"],
 input[type="radio"],
@@ -85,33 +84,33 @@ input[type="checkbox"] {
   user-select: none;
 }
 .code-snippet {
-	margin-left: -120px;
-  padding-top: 10px;
+  padding: 10px 20px;
+  font-family: monospace;
+  font-size:14px;
 	overflow:auto;
-	background-color: #eee;
-}
-pre {
-	margin:0;
-	color:#557;
+	background-color: #000;
+  color:#bbb;
 }
 
 @media screen and (max-width:400px) {
   .main-content-header { font-size:14px; padding:20px 0px 0px 10px; }
   .logo { height:30px; }
-  .inner-content { font-size:14px; }
+  .inner-content { font-size:13px; }
+  .code-snippet { font-size:12px; }
 }
 
 ::-webkit-scrollbar-track {
 	border-radius: 2px;
-	background-color: #fff;
+	background-color: #000;
 }
 
 ::-webkit-scrollbar {
 	width: 7px;
-	background-color: #eee;
+  height: 7px;
+	background-color: #bbb;
 }
 
 ::-webkit-scrollbar-thumb {
 	border-radius: 2px;
-	background-color: #000;
+	background-color: #ff0;
 }
