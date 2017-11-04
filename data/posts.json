@@ -356,11 +356,12 @@
       "head":"scoped slots",
       "picture":false,
       "code":[],
-      
+      "readme":"https://garevna.github.io/vue.github.io/data/slots/03.html",
       "text":"Слоты с контекстом (областью видимости)",
       "ref":[
         "https://plnkr.co/edit/H0GhWgLKuiw1zaFGQLZ1?p=preview",
-        "https://plnkr.co/edit/7gKCXrakfSf5EDFBokN5?p=preview"
+        "https://plnkr.co/edit/7gKCXrakfSf5EDFBokN5?p=preview",
+	"https://plnkr.co/edit/JTcf6yBVOlgsT9agmpN2?p=preview"
       ]
     },
     {
