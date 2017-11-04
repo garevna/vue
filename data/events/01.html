@@ -1,0 +1,52 @@
+Создаем шину событий:<br/>
+<code>
+var eventBus = new Vue ()
+</code><br/>
+Привязываем ее к нашему экземпляру Vue:<br/>
+<pre>
+var theApp = new Vue ({
+  data: function () {
+    return {
+        eventBus: eventBus
+    }
+  }
+</pre><br/>
+Теперь мы сможем ссылаться на шину событий<br/>
+
+из экземпляра Vue так:        this.eventBus<br/>
+из вложенных компонентов так: this.$root.eventBus<br/>
+<br/>
+Отправляем событие конкретно на шину:<br/>
+
+из экземпляра Vue: this.eventBus.$emit<br/>
+из компонентов:    this.$root.eventBus.$emit<br/>
+<br/>
+
+В Н И М А Н И Е:<br/>
+
+В экзепляре Vue мы "вешаем" обработчика на событие шины:<br/>
+<pre>
+mounted: function () {
+    this.eventBus.$on ( 
+        'test-through-bus', 
+        function ( val ) {
+          this.eventMessage = val.text
+        }.bind (this)
+    )
+}
+</pre>
+(!) внутри обработчика this указывает на контекст шины, поэтому 
+мы используем bind, чтобы контекст был экземпляра, а не шины<br/>
+<br/>
+
+То же самое - в компонентах:<br/>
+<pre>
+mounted: function () {
+        this.$root.eventBus.$on (
+            'test-through-bus',
+            function ( val ) {
+                this.mess = val.text
+            }.bind ( this ) 
+        )
+}
+</pre>
