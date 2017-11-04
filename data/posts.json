@@ -195,6 +195,7 @@
       "head":"Шина событий",
       "picture":false,
       "code":[],
+      "readme":"https://garevna.github.io/vue.github.io/data/events/01.html",
       "text":"Передача событий через общую шину",
       "ref":["https://plnkr.co/edit/XRznjj6FTBbyuwiVHSeC?p=preview"]
     },
