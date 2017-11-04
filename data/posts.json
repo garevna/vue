@@ -346,12 +346,17 @@
       "picture":false,
       "code":[],
       "text":"Именованные слоты",
-      "ref":["https://plnkr.co/edit/9nFUtNDqeZ1JX003oDHO?p=preview"]
+      "readme":"https://garevna.github.io/vue.github.io/data/slots/02.html",
+      "ref":[
+	      "https://plnkr.co/edit/hSVkDkhgfB6kgCMQjKNd?p=preview",
+	      "https://plnkr.co/edit/9nFUtNDqeZ1JX003oDHO?p=preview"
+      ]
     },
     {
       "head":"scoped slots",
       "picture":false,
       "code":[],
+      
       "text":"Слоты с контекстом (областью видимости)",
       "ref":[
         "https://plnkr.co/edit/H0GhWgLKuiw1zaFGQLZ1?p=preview",
