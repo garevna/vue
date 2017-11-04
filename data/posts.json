@@ -202,7 +202,8 @@
       "head":"Шина данных",
       "picture":false,
       "code":[],
-      "text":"Использование общего хранилища данных, загружаемых асинхронно с помощью метода $http.get плагина vue-resource (<a href='https://github.com/pagekit/vue-resource'>https://github.com/pagekit/vue-resource</a>)",
+      "readme":"https://garevna.github.io/vue.github.io/data/http/01.html",
+      "text":"Использование общего хранилища данных, загружаемых асинхронно с помощью метода $http.get плагина vue-resource<br/><a href='https://github.com/pagekit/vue-resource'>https://github.com/pagekit/vue-resource</a>)",
       "ref":["https://plnkr.co/edit/asuwUwM2UGKpWshgS4lG?p=preview"]
     }
   ],
