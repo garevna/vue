@@ -50,21 +50,21 @@ slot="footer"<br/>
 <br/>
 <pre>
 template: `
-    <main-content>
-        <button @click="thisClickHandler" 
+    &lt;main-content>
+        &lt;button @click="thisClickHandler" 
                 v-if = "dataIsReady"
                 slot = "button">
           first
-        </button>
-        <div class="demo"
+        &lt;/button>
+        &lt;div class="demo"
               slot="content"
               v-html="mess"
               v-if="contentIsVisible">
-        </div>
-        <div slot="footer"
+        &lt;/div>
+        &lt;div slot="footer"
               v-html="messageToShow">
-        </div>
-    </main-content>
+        &lt;/div>
+    &lt;/main-content>
 `
 </pre>
 <br/>
