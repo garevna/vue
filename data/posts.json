@@ -462,8 +462,6 @@
       "head":"$route",
       "picture":false,
       "code":[
-        "// Часто удобно отслеживать изменение маршрута",
-        "// устанавливая наблюдателя на свойство $route",
         "watch: {",
         "  '$route': function () {",
         "      this.sendUserEvent ( this.$route.name )",
@@ -473,7 +471,7 @@
         "}"
       ],
       "readme":"https://garevna.github.io/vue.github.io/data/router/03.html",
-      "text":"<hr/><br/><pre>                Объект Route<br/><hr/><br/>Текущий маршрут ( активный путь )<br/>Обновляется при каждом навигационном переходе<br/><hr/><br/><pre>           Доступ к объекту $route</pre/><br/><hr/><br/>Внутри компонента он доступен как this.$route<br/><br/>Изменения маршрута можно отслеживать:<br/><pre>    watch: {<br/>        '$route': function () {<br/>          ...<br/>        }<br/>    }<br/></pre><br/><hr/><br/><pre>           Свойства объекта Route</pre><br/><hr/><br/><pre>$route.path       тип: string</pre/><br/><hr/><br/><pre>$route.params     тип: Object</pre><br/><hr/><br/><pre>    Содержит параметры динамических сегментов</pre><br/><pre>         { id: 'Boom' }</pre><br/><pre>    При отсутствии параметров пути будет пустым</pre><br/><br/><pre>$route.query      тип: Object</pre><br/><hr/><br/>  Содержит данные строки запроса (query string)<br/>  Например:<br/><pre>     { user: 'Tornado' }</pre><br/><pre>     для пути /?user='Tornado'</pre><br/><pre>     $route.query.user == 'Tornado'</pre><br/>  При отсутствии строки запроса будет пустым<br/><br/><pre>$route.hash       тип: string</pre><br/><hr/><br/>  Хэш-часть текущего пути ( после символа # )<br/>  Пустая строка, если отсутствует<br/><br/><pre>$route.fullPath   тип: string</pre><br/><hr/><br/>  Полный URL, включая строку запроса и хэш<br/>$route.matched    тип: Array<br/><hr/><br/>  Массив, содержащий объекты маршрутов всех вложенных сегментов текущего пути<br/>    Для URL, равного /user/profile, $route.matched <br/>    будет массивом, содержащим копии обоих объектов,<br/>    в порядке сортировки от родителя к потомку.<br/><br/>$route.name<br/><hr/><br/>  Имя текущего пути (не обязательно, но удобно)",
+      "text":"Часто удобно отслеживать изменение маршрута, устанавливая наблюдателя на свойство $route",
       "ref":["https://plnkr.co/edit/9tX5uw1cEMTHEaSODs3Z?p=preview"]
     }
   ]
