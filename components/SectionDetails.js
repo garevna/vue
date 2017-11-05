@@ -67,13 +67,19 @@ const currentPost = ( 'current-post', {
           {{ postObject.head }}
         </p>
       </transition>
+      <transition name="slideUp">
+        <img v-if="postObject.picture"
+              :src="postObject.picture"/>
+      </transition>
+      <transition name="slideLeft">
+        <p v-if="postObject.text"
+            v-html="postObject.text">
+        </p>
+      </transition>
+      
       <button :class="codeButtonClass"
                 @click="changeVisibility">
       </button>
-      <transition name="slideUp">
-        <img v-if="postObject.picture && this.postIsVisible"
-              :src="postObject.picture"/>
-      </transition>
       <transition name="slideLeft">
         <div v-if="this.postIsVisible &&
                     postObject.code &&
@@ -84,11 +90,7 @@ const currentPost = ( 'current-post', {
           </p>
         </div>
       </transition>
-      <transition name="slideLeft">
-        <p v-if="postObject.text && this.postIsVisible"
-            v-html="postObject.text">
-        </p>
-      </transition>
+      
       <readme-content :content_url = "postObject.readme">
       </readme-content>
       <ol>
