@@ -7,7 +7,8 @@ var dataStore = new Vue ({
     postData: null,
     mainMenuOptions: null,
     sectionInfo: null,
-    sectionPosts: null
+    sectionPosts: null,
+    currentPostReadme: null
   },
   methods: {
     getCurrentSectionInfo: function () {
@@ -38,7 +39,7 @@ dataStore.$on ( 'post-data-is-ready', function ( theData ) {
   this.postDataIsReady = true
   this.postData = theData
   this.getCurrentSectionPosts ()
-  this.$emit ( 'post-data')
+  this.$emit ( 'post-data' )
 })
 dataStore.$on ( 'post-data-error', function ( theData ) {
   this.postDataIsReady = false
@@ -49,4 +50,8 @@ dataStore.$on ( 'get-section-onfo', function ( currentSectionId ) {
     this.currentSectionId = currentSectionId
     this.getCurrentSectionInfo ()
     this.getCurrentSectionPosts ()
+})
+dataStore.$on ( 'readme-file', function ( theData ) {
+    this.currentPostReadme = theData
+    this.$emit ( 'readme-ready', theData )
 })
