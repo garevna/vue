@@ -8,6 +8,11 @@
     url("./fonts/Comic Sans MS.woff") format("woff"),
     url("./fonts/Comic Sans MS.svg");
 }
+@font-face {
+  font-family: 'Papyrus';
+    src: url("./fonts/papyrus.ttf");
+    src: local('Papyrus'), local('papyrus')
+}
 body {
   position:absolute;
   top:0;
