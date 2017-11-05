@@ -363,13 +363,6 @@
         "https://plnkr.co/edit/7gKCXrakfSf5EDFBokN5?p=preview",
 	"https://plnkr.co/edit/JTcf6yBVOlgsT9agmpN2?p=preview"
       ]
-    },
-    {
-      "head":"scoped named slots",
-      "picture":false,
-      "code":[],
-      "text":"Пример использования именованных слотов",
-      "ref":["https://plnkr.co/edit/7gKCXrakfSf5EDFBokN5?p=preview"]
     }
   ],
   "Transitions":[
