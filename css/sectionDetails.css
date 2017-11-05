@@ -43,7 +43,7 @@
   content:"\2615 \0020 \0020 sample \0020" counter(section);
 }
 .section-article li:hover:before {
-  content:"\2691 \0020 \0020" counter(section);
+  content:"\2691 \0020 \0020 sample \0020" counter(section);
 }
 .section-article li:visited:before, .article a:active:before {
   content:"\26F3 \0020 \0020 sample";
