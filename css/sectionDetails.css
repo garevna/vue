@@ -3,59 +3,83 @@
 	width:100%;
 	box-sizing:border-box;
 }
-.section-article-title,
-.section-article-title-active {
+.section-article-title {
 	font-weight:bold;
 	font-family:'Comic Sans MS';
-}
-.section-article-title:before {
-	content: "\25BA \0020";
-}
-.section-article-title-active:before {
-	content: "\25BC \0020";
 }
 .section-article ol {
 	display:inline-block;
 	-webkit-margin-before: 0;
 	-webkit-margin-after: 0;
 }
-.section-article-title,
-.section-article-title-active,
-.section-article li {
-	padding:5px 8px;
-	width:auto;
-	border-radius:4px;
-	/*border:dotted 1px #5a8;*/
-	color:#057;
-	cursor:pointer;
+.section-article li,
+.article-button,
+.article-button-active,
+.code-button,
+.code-button-active {
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	background: -webkit-linear-gradient(left, #fff, #ddd);
-	background: -o-linear-gradient(left, #fff, #ddd);
-	background: -moz-linear-gradient(left, #fff, #ddd);
-	background: linear-gradient(to left, #fff, #ddd);
+	cursor:pointer;
+	-webkit-appearance: button;
+	background-color: buttonface;
 }
 .section-article li {
+	padding:5px 8px;
+	width:auto;
+	border-radius:4px;
+	color:#333;
   margin-left:10px;
-  width:110px;
   display:inline-block;
   animation: show-menu 1s forwards;
-  font-family:'Lucida Console';
+  font-family:'Papyrus';
 }
 .section-article section {
   counter-reset: section;
 }
-
 .section-article li:before {
   counter-increment: section;
-  content:"\2615 \0020 \0020 Пример \0020" counter(section);
+  content:"\2615 \0020 \0020 sample \0020" counter(section);
 }
 .section-article li:hover:before {
   content:"\2691 \0020 \0020" counter(section);
 }
 .section-article li:visited:before, .article a:active:before {
-  content:"\26F3 \0020 \0020 Пример";
+  content:"\26F3 \0020 \0020 sample";
 }
-
+.article-button, .article-button-active,
+.code-button, .code-button-active {
+	position: relative;
+	top:-30px;
+	left:90%;
+	font-size:30px;
+	outline:none;
+	padding: 0 5px;
+}
+.code-button:before {
+	content: "\25E9";
+}
+.code-button:hover:before {
+	content: "\25EA";
+}
+.code-button-active:before {
+	content: "\25EA";
+}
+.article-button:before {
+	content: '\25D0';
+}
+.article-button:hover:before {
+	content: '\25D1';
+}
+.article-button-active:before {
+	content: '\25D1';
+}
+.readme {
+	position:relative;
+	top: -80px;
+	left:2%;
+	width:80%;
+	padding:10px 20px;
+	border: inset 1px;
+}
