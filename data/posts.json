@@ -355,13 +355,27 @@
     {
       "head":"scoped slots",
       "picture":false,
-      "code":[],
+      "code":[
+	      "// === в template потомка: ===",
+	      "<slot :text="Предку от потомка"></slot>",
+	      "<slot name="sample" :text="Мой дневник"></slot>",
+	      "// === в родителе: ===",
+	      "<child-component>",
+	      "    <p slot-scope="defaultSlotScope">",
+	      "        {{ defaultSlotScope.text }}",
+	      "    </p>",
+	      "    <p slot="sample" slot-scope="sampleSlotScope">",
+	      "        {{ sampleSlotScope.text }}",
+	      "    </p>",
+	      "</child-component>"
+      ],
       "readme":"https://garevna.github.io/vue.github.io/data/slots/03.html",
-      "text":"Слоты с контекстом (областью видимости)",
+      "text":"Слоты с контекстом (областью видимости).<br/>Читайте README в примерах",
       "ref":[
-        "https://plnkr.co/edit/H0GhWgLKuiw1zaFGQLZ1?p=preview",
-        "https://plnkr.co/edit/7gKCXrakfSf5EDFBokN5?p=preview",
-	"https://plnkr.co/edit/JTcf6yBVOlgsT9agmpN2?p=preview"
+	      "https://plnkr.co/edit/JTcf6yBVOlgsT9agmpN2?p=preview",
+	      "https://plnkr.co/edit/ie2WRPSUnwD9oavte4of?p=preview",
+	      "https://plnkr.co/edit/H0GhWgLKuiw1zaFGQLZ1?p=preview",
+	      "https://plnkr.co/edit/7gKCXrakfSf5EDFBokN5?p=preview"
       ]
     }
   ],
