@@ -78,12 +78,12 @@ const currentPost = ( 'current-post', {
       </transition>
       
       <button :class="codeButtonClass"
+              v-if="postObject.code &&
+                    postObject.code.length > 0"
                 @click="changeVisibility">
       </button>
       <transition name="slideLeft">
-        <div v-if="this.postIsVisible &&
-                    postObject.code &&
-                    postObject.code.length > 0"
+        <div v-if="this.postIsVisible"
               class="code-snippet">
           <p v-for = "cod in postObject.code">
               {{ cod.replace(/ /g,"&nbsp;") }}
