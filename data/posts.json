@@ -357,14 +357,14 @@
       "picture":false,
       "code":[
 	      "// === в template потомка: ===",
-	      "<slot :text="Предку от потомка"></slot>",
-	      "<slot name="sample" :text="Мой дневник"></slot>",
+	      "<slot :text='Предку от потомка'></slot>",
+	      "<slot name='sample' :text='Мой дневник'></slot>",
 	      "// === в родителе: ===",
 	      "<child-component>",
-	      "    <p slot-scope="defaultSlotScope">",
+	      "    <p slot-scope='defaultSlotScope'>",
 	      "        {{ defaultSlotScope.text }}",
 	      "    </p>",
-	      "    <p slot="sample" slot-scope="sampleSlotScope">",
+	      "    <p slot='sample' slot-scope='sampleSlotScope'>",
 	      "        {{ sampleSlotScope.text }}",
 	      "    </p>",
 	      "</child-component>"
