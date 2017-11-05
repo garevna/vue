@@ -1,3 +1,106 @@
+const readmeContent = ( 'readme-content', {
+  props: [ "content_url" ],
+  data: function () {
+    return {
+      content_body: null,
+      isHidden: true,
+      articleButtonClass: "article-button"
+    }
+  },
+  mounted: function () {
+    if ( this.content_url ) {
+      this.$root.$emit ( 'request-for-readme', this.content_url )
+      this.$root.store.$on ( 'readme-ready', function ( response ) {
+        if ( response.url === this.content_url ) {
+          this.content_body = response.content
+        }
+      }.bind ( this ) )
+    }
+  },
+  methods: {
+    changeVisibility: function () {
+      this.isHidden = !this.isHidden
+      this.articleButtonClass = this.isHidden ?
+              "article-button-active" : "article-button"
+    }
+  },
+  template: `
+    <div v-if = "content_body">
+      <button class="article-button"
+              @click = "changeVisibility">
+      </button>
+      <transition name = "roll-down">
+        <article class="readme"
+                v-if = "!isHidden"
+                v-html = "content_body">
+        </article>
+      </transition>
+    </div>
+  `
+})
+
+const currentPost = ( 'current-post', {
+  props: [ "postObject" ],
+  data: function () {
+    return {
+      postIsVisible: false,
+      readmeContent: null,
+      codeButtonClass: "code-button"
+    }
+  },
+  methods: {
+    changeVisibility: function () {
+      this.postIsVisible = !this.postIsVisible
+      this.titleClass = this.postIsVisible ?
+                          "code-button-active" :
+                          "code-button"
+    },
+    openRef: ref => window.open ( ref, "_blank" )
+  },
+  components: {
+    'readme-content': readmeContent
+  },
+  template: `
+    <section>
+      <transition name="slideLeft">
+        <p class="section-article-title">
+          {{ postObject.head }}
+        </p>
+      </transition>
+      <button :class="codeButtonClass"
+                @click="changeVisibility">
+      </button>
+      <transition name="slideUp">
+        <img v-if="postObject.picture && this.postIsVisible"
+              :src="postObject.picture"/>
+      </transition>os
+      <transition name="slideLeft">
+        <div v-if="this.postIsVisible &&
+                    postObject.code &&
+                    postObject.code.length > 0"
+              class="code-snippet">
+          <p v-for = "cod in postObject.code">
+              {{ cod.replace(/ /g,"&nbsp;") }}
+          </p>
+        </div>
+      </transition>
+      <transition name="slideLeft">
+        <p v-if="postObject.text && this.postIsVisible"
+            v-html="postObject.text">
+        </p>
+      </transition>
+      <readme-content :content_url = "postObject.readme">
+      </readme-content>
+      <ol>
+          <li class="menu-item"
+            @click = "openRef ( sample )"
+            v-for="sample in postObject.ref">
+          </li>
+      </ol>
+    </section>
+  `
+})
+
 const SectionDetails = {
   data: function () {
     return {
@@ -15,76 +118,22 @@ const SectionDetails = {
       }
     }
   },
+  components: {
+    'current-post': currentPost
+  },
   methods: {
     changeVisibility: function () {
       this.visible = !this.visible
     }
   },
-  components: {
-    currentPost: ( 'current-post', {
-      props: [ "title", "image", "code", "text", "refs" ],
-      data: function () {
-        return {
-          postIsVisible: false,
-          titleClass: "section-article-title"
-        }
-      },
-      methods: {
-        changeVisibility: function () {
-          this.postIsVisible = !this.postIsVisible
-          this.titleClass = this.postIsVisible ?
-                              "section-article-title-active" :
-                              "section-article-title"
-        },
-        openRef: ref => window.open ( ref, "_blank" )
-      },
-      template: `
-        <section>
-          <transition name="slideLeft">
-            <p :class="titleClass"
-                @click="changeVisibility">
-              {{ title }}
-            </p>
-          </transition>
-          <transition name="slideUp">
-            <img v-if="image && this.postIsVisible"
-                  :src="image"/>
-          </transition>
-          <transition name="slideLeft">
-            <div v-if="this.postIsVisible && code && code.length > 0"
-                  class="code-snippet">
-              <p v-for = "cod in code">
-                  {{ cod.replace(/ /g,"&nbsp;") }}
-              </p>
-            </div>
-          </transition>
-          <transition name="slideLeft">
-            <p v-if="text && this.postIsVisible"
-                v-html="text">
-            </p>
-          </transition>
-          <ol v-for="sample in refs">
-              <li class="menu-item"
-                @click="openRef(sample)"
-                >
-              </li>
-          </ol>
-        </section>
-      `
-    })
-  },
   template: `
     <transition name="slideDown">
       <section class="section-article">
-                <div v-for="item in this.$root.store.sectionPosts">
-                  <current-post :title="item.head"
-                                :image="item.pict"
-                                :code="item.code"
-                                :text="item.text"
-                                :refs="item.ref">
+          <div v-for="item in this.$root.store.sectionPosts">
+                  <current-post :postObject = "item">
                   </current-post>
                   <hr/>
-                </div>
-             </section>
+          </div>
+      </section>
     </transition>`
 }
