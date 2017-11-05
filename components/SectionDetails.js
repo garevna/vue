@@ -73,7 +73,7 @@ const currentPost = ( 'current-post', {
       <transition name="slideUp">
         <img v-if="postObject.picture && this.postIsVisible"
               :src="postObject.picture"/>
-      </transition>os
+      </transition>
       <transition name="slideLeft">
         <div v-if="this.postIsVisible &&
                     postObject.code &&
