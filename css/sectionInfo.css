@@ -1,7 +1,6 @@
 @charset "utf-8";
 .section {
   padding:0px 10px;
-  overflow-x: hidden;
 }
 .section-picture,
 .section-title,
