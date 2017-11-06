@@ -37,7 +37,7 @@
     "comment":"Основа модульной системы Vue.js<br/>Структура компонента может быть достаточно сложной, но, как правило (за исключением случая функционального компонента), в описание компонента входит свойство template",
     "code": [
       "const TheChild = ( 'child-component', {",
-      "    props:["rec"],",
+      "    props:['rec'],",
       "    data: function () {",
       "        return {",
       "            articleText: this.rec.text,",
