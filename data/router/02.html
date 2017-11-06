@@ -10,48 +10,43 @@
 Внутри компонента он доступен как this.$route<br/>
 
 Изменения маршрута можно отслеживать:<br/>
-<pre>
+<pre class="code-snippet">
     watch: {
         '$route': function () {
           ...
         }
     }
 </pre><br/>
-<pre>
+
            Свойства объекта Route<br/>
+<pre class="code-snippet">
 $route.path       тип: string</pre>
 <hr/>
-<pre>$route.params     тип: Object</pre><br/>
+<pre class="code-snippet">$route.params     тип: Object</pre><br/>
 
-    Содержит параметры динамических сегментов<br/>
-         { id: 'Boom' }<br/>
-    При отсутствии параметров пути будет пустым<br/>
+Содержит параметры динамических сегментов<br/>
+<pre class="code-snippet">         { id: 'Boom' }</pre><br/>
+При отсутствии параметров пути будет пустым<br/>
 <hr/>
-<pre>$route.query      тип: Object</pre><br/>
-
-  Содержит данные строки запроса (query string)<br/>
-  Например:<br/>
-<pre>
+<pre class="code-snippet">$route.query      тип: Object</pre><br/>
+Содержит данные строки запроса (query string)<br/>
+Например:<br/>
+<pre class="code-snippet">
      { user: "Tornado" }
      для пути /?user="Tornado"
      $route.query.user == "Tornado"
 </pre><br/>
-  При отсутствии строки запроса будет пустым
+При отсутствии строки запроса будет пустым
 <hr/>
-$route.hash       тип: string
+<pre class="code-snippet">$route.hash       тип: string</pre><br/>
 <hr/>
-  Хэш-часть текущего пути ( после символа # )
-  Пустая строка, если отсутствует
-<hr/>
-$route.fullPath   тип: string
-<hr/>
-  Полный URL, включая строку запроса и хэш
-<hr/>
-$route.matched    тип: Array
-<br/> 
-  Массив, содержащий объекты маршрутов всех 
-  вложенных сегментов текущего пути
-<pre>
+Хэш-часть текущего пути ( после символа # )<br/>
+Пустая строка, если отсутствует<br/>
+<pre class="code-snippet">$route.fullPath   тип: string</pre><br/>
+Полный URL, включая строку запроса и хэш<br/>
+<pre class="code-snippet">$route.matched    тип: Array</pre><br/>
+Массив, содержащий объекты маршрутов всех вложенных сегментов текущего пути<br/>
+<pre class="code-snippet">
     const router = new VueRouter({
       routes: [
         { path: '/user', component: User,
@@ -62,10 +57,8 @@ $route.matched    тип: Array
       ]
     })
 </pre><br/> 
-    Для URL, равного /user/profile, $route.matched 
-    будет массивом, содержащим копии обоих объектов, 
-    в порядке сортировки от родителя к потомку.
-<hr/>
-$route.name
-<br/>
-  Имя текущего пути (не обязательно, но удобно)
+Для URL, равного /user/profile, $route.matched 
+будет массивом, содержащим копии обоих объектов, 
+в порядке сортировки от родителя к потомку.<br/>
+<pre class="code-snippet">$route.name</pre><br/> 
+Имя текущего пути (не обязательно, но удобно)
