@@ -19,6 +19,12 @@ const SectionInfo = {
           <img v-if="store.sectionInfo.picture"
                class="section-picture"
                :src="store.sectionInfo.picture"/>
+          <a v-if="store.sectionInfo.ref"
+                target="_blank"
+                class="menu-item"
+                :href="store.sectionInfo.ref">
+            <span v-if="store.sectionInfo.ref">Demo</span>
+          </a>
           <div class="section-title">
               {{ store.sectionInfo.title }}
           </div>
@@ -29,12 +35,6 @@ const SectionInfo = {
                 {{ item.replace(/ /g,"&nbsp;") }}
             </p>
           </div>
-          <a v-if="store.sectionInfo.ref"
-                target="_blank"
-                class="menu-item"
-                :href="store.sectionInfo.ref">
-            <span v-if="store.sectionInfo.ref">Demo</span>
-          </a>
       </div>
     </transition>`
 }
