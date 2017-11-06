@@ -410,7 +410,7 @@
   ],
   "Router":[
     {
-      "head":"Создание",
+      "head":"vue-router",
       "picture":false,
       "code":[
           "// создаем массив маршрутов",
@@ -424,7 +424,7 @@
           "    component: Cafe",
           "  }",
           "]",
-          "// создаем маршрутизатор и ",
+          "// создаем роутер и ",
           "// передаем ему маршруты",
           "const router = new VueRouter ( {",
           "   routes: routes",
@@ -449,7 +449,7 @@
       "ref":["https://plnkr.co/edit/fqer871u9AOOORbbVu5E?p=preview"]
     },
     {
-      "head":"children",
+      "head":"$route",
       "picture":false,
       "code":[
         "const router = new VueRouter({",
@@ -468,14 +468,14 @@
         "})"
       ],
       "readme":"https://garevna.github.io/vue.github.io/data/router/02.html",
-      "text":"Иерархия маршрутов. Дочерние маршруты",
+      "text":"Свойства объекта Route. Дочерние маршруты (children). Навигация по вложенным маршрутам с помощью именованных путей (пример)",
       "ref":[
         "https://codepen.io/garevna/pen/YEwxOj",
         "https://plnkr.co/edit/M2DdjqrXnIbOqQIbWGEh?p=preview"
       ]
     },
     {
-      "head":"$route",
+      "head":"router-link",
       "picture":false,
       "code":[
         "watch: {",
