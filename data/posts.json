@@ -468,7 +468,7 @@
         "})"
       ],
       "readme":"https://garevna.github.io/vue.github.io/data/router/02.html",
-      "text":"Свойства объекта Route. Дочерние маршруты (children). Навигация по вложенным маршрутам с помощью именованных путей (пример)",
+      "text":"Свойства объекта Route.<br/>Дочерние маршруты (children)<br/>Навигация по вложенным маршрутам с помощью именованных путей (пример).<br/>Именованные маршуты также удобно использовать при императивном задании пути<br/><p class='code-snippet'>this.$router.push( { name: val } )</p><br/>",
       "ref":[
         "https://codepen.io/garevna/pen/YEwxOj",
         "https://plnkr.co/edit/M2DdjqrXnIbOqQIbWGEh?p=preview"
