@@ -34,9 +34,27 @@
   {
     "name":"Components",
     "title":"Компоненты",
-    "comment":"Основа модульной системы Vue.js",
+    "comment":"Основа модульной системы Vue.js<br/>Структура компонента может быть достаточно сложной, но, как правило (за исключением случая функционального компонента), в описание компонента входит свойство template",
+    "code": [
+      "const TheChild = ( 'child-component', {",
+      "    props:["rec"],",
+      "    data: function () {",
+      "        return {",
+      "            articleText: this.rec.text,",
+      "            pictURL: this.rec.picture",
+      "        }",
+      "    template: `",
+      "        <article>",
+      "            <img :src='pictURL'",
+      "                 class='picture'/>",
+      "            <div class='articleClass'",
+      "                 v-html='articleText'>",
+      "            </div>",
+      "        </article>",
+      "</div>"
+    ],
     "ref":"https://docs.google.com/presentation/d/1wc3MBlxkmpnB5AdsvQq1b7rtvWfnKUDJez9FO3z60oM/edit?usp=sharing",
-    "picture":false
+    "picture":"./images/broke.gif"
   },
   {
     "name":"Events",
