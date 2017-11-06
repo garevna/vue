@@ -50,7 +50,7 @@
       "            <div class='articleClass'",
       "                 v-html='articleText'>",
       "            </div>",
-      "        </article>",
+      "        </article>`",
       "</div>"
     ],
     "ref":"https://docs.google.com/presentation/d/1wc3MBlxkmpnB5AdsvQq1b7rtvWfnKUDJez9FO3z60oM/edit?usp=sharing",
