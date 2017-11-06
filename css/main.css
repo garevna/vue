@@ -98,8 +98,8 @@ input[type="checkbox"] {
   color:#bbb;
   position:relative;
   top:0px;
-  left:2%;
-  width:80%;
+  left:0px;
+  width:75%;
 }
 
 @media screen and (max-width:400px) {
