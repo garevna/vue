@@ -65,7 +65,16 @@
       "code":false,
       "text":"",
       "ref":[ "https://plnkr.co/edit/vdEIxZYvoN4x6VFMX3kb?p=preview" ]
-    }
+    },
+    {
+        "head":"vue-devtools",
+        "picture":"./images/vue-devtools.gif",
+        "code":false,
+        "text":"Расширение Chrome для vue-разработчика",
+        "ref":[
+          "https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd",
+        ]
+    },
   ],
   "Directives": [
     {
