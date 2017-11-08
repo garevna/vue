@@ -511,9 +511,9 @@
           "    },",
           "    mutations:  {",
           "       ...",
-          "    }"
+          "    }",
           "})"
-	],
+      ],
       "readme":"https://garevna.github.io/vue.github.io/data/vuex/start.html",
       "text":"Vuex.Store имеет состояние state<br/>По сути, это объект с реактивными данными всего приложения<br/>Эти данные подвергаются изменениям с помощью методов, описанных в объекте 'mutations'<br/>",
       "ref":["https://plnkr.co/edit/aqZ1cfiHEc1jJYovg0VE?p=preview"]
