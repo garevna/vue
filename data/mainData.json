@@ -124,5 +124,13 @@
 		],
     "ref":"https://plnkr.co/edit/lZLVjgPDmkpgmIwzebMd?p=preview",
     "picture":false
+  },
+  {
+    "name":"vue-devtools",
+    "title":"vue-devtools",
+    "comment":"Расширение Chrome для vue-разработчика",
+    "code":false,
+    "ref":"https://plnkr.co/edit/lZLVjgPDmkpgmIwzebMd?p=preview",
+    "picture":"./images/vue-devtools.gif"
   }
 ]
