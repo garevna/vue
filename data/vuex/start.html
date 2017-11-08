@@ -1,0 +1,56 @@
+Подключить библиотеку Vuex можно в теге скрипт:<br/>
+<pre>
+https://unpkg.com/vuex@3.0.1/dist/vuex.js
+</pre><br/>
+Ядром любого Vuex-приложения явлется реактивный объект, 
+создать который можно с помощью конструктора Vuex.Store:<br/>
+<pre>
+const store = new Vuex.Store({
+  state: {
+    currentCounterValue:  0,
+    previousCounterValue: 0,
+  },
+  mutations: {
+    nextPicture: state => { ... },
+    previousPicture: state => { ... }
+  }
+})
+</pre><br/>
+Он хранит состояние приложения.<br/>
+
+Реактивные данные объекта store находятся в свойстве state.<br/>
+Изменение реактивных данных состояния (state) приведет к 
+изменениям во всех компонентах модели.<br/>
+
+Именно поэтому изменения состояния этого объекта называют 
+мутациями (mutations), а не методами.<br/>
+
+Вызвать мутацию (измененить состояние объекта store) можно 
+с помощью метода commit<br/>
+
+Параметром метода commit будет любая мутация из 
+описанных в свойстве mutations:<br/>
+<pre>
+store.commit('increment')
+</pre>
+<br/>
+В принципе, доступ к глобальному объекту store, а, следовательно,
+к его состоянию store.state возможен из любого компонента.
+<pre>
+computed: {
+    img: () => 
+      store.state.pictures [ store.state.currentCounterValue ],
+  }
+</pre><br/>
+При этом в компонентах нужно создавать вычисляемые свойства 
+(computed), чтобы все мутации объекта store (изменения его 
+состояния) реактивно отражались в компонентах.<br/>
+
+Любой компонент может вызвать мутацию store с помощью метода 
+commit:<br/>
+<pre>
+methods: {
+    gotoNext: () => store.commit ( 'nextPicture' ),
+    gotoPrevious: () => store.commit ( 'previousPicture' ),
+}
+</pre>
