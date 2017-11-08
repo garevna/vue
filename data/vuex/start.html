@@ -1,10 +1,10 @@
 Подключить библиотеку Vuex можно в теге скрипт:<br/>
-<pre>
+<pre class="code-snippet">
 https://unpkg.com/vuex@3.0.1/dist/vuex.js
 </pre><br/>
 Ядром любого Vuex-приложения явлется реактивный объект, 
 создать который можно с помощью конструктора Vuex.Store:<br/>
-<pre>
+<pre class="code-snippet">
 const store = new Vuex.Store({
   state: {
     currentCounterValue:  0,
@@ -30,13 +30,16 @@ const store = new Vuex.Store({
 
 Параметром метода commit будет любая мутация из 
 описанных в свойстве mutations:<br/>
-<pre>
-store.commit('increment')
+<pre class="code-snippet">
+methods: {
+    gotoNext: () => store.commit('nextPicture'),
+    gotoPrevious: () => store.commit('previousPicture'),
+  }
 </pre>
 <br/>
 В принципе, доступ к глобальному объекту store, а, следовательно,
 к его состоянию store.state возможен из любого компонента.
-<pre>
+<pre class="code-snippet">
 computed: {
     img: () => 
       store.state.pictures [ store.state.currentCounterValue ],
@@ -48,7 +51,7 @@ computed: {
 
 Любой компонент может вызвать мутацию store с помощью метода 
 commit:<br/>
-<pre>
+<pre class="code-snippet">
 methods: {
     gotoNext: () => store.commit ( 'nextPicture' ),
     gotoPrevious: () => store.commit ( 'previousPicture' ),
