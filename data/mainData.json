@@ -126,11 +126,11 @@
     "picture":false
   },
   {
-    "name":"vue-devtools",
-    "title":"vue-devtools",
-    "comment":"Расширение Chrome для vue-разработчика",
+    "name":"Vuex",
+    "title":"State management",
+    "comment":"В крупном проекте упрощает процесс отслеживания реактивных зависимостей при обмене данными между компонентами",
     "code":false,
-    "ref":"https://plnkr.co/edit/lZLVjgPDmkpgmIwzebMd?p=preview",
-    "picture":"./images/vue-devtools.gif"
+    "ref":"https://vuex.vuejs.org/en/",
+    "picture":"https://d2eip9sf3oo6c2.cloudfront.net/series/square_covers/000/000/111/full/EGH_VueJSNuxt_Final_1000.png"
   }
 ]
