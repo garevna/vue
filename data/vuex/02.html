@@ -1,0 +1,115 @@
+Свойства объекта Vuex.Store
+<hr/>
+<b>getters</b> - аналог вычисляемых свойств компонентов
+<br/>
+В геттеры можно вынести вычисление индекса следующего 
+слайда (nextCounterValue), вытягивание текущей (currentPicture) и 
+следующей (nextPicture) картинки из массива pictures:
+<br/>
+<pre class="code-snippet">
+getters: {
+    nextCounterValue ( state ) {
+      return state.currentCounterValue === 
+  	               state.pictures.length - 1 ? 0 : 
+  	               state.currentCounterValue + 1
+    },
+    currentPicture ( state ) {
+      return state.pictures [ state.currentCounterValue ]
+    },
+    nextPicture ( state ) {
+      return state.pictures [ store.getters.nextCounterValue ]
+    }
+}
+</pre><br/>
+доступ к свойству в геттере:<br/>
+<pre class="code-snippet">
+  store.getters.nextCounterValue
+</pre><hr/>
+Действия (<b>actions</a>) предназначены для выполнения асинхронных операций, 
+возвращающих промисы<br/>
+<pre class="code-snippet">
+actions: {
+  getNextPicture: function ( context ) {
+      var theNext = context.getters.nextCounterValue
+      var imgUrl = context.state.pictures [ theNext ].url
+      function testImage ( imgUrl ) {
+        return new Promise ( ( resolve, reject ) => {
+            var img = new Image ()
+            img.onerror = () => reject ()
+            img.onload = () => resolve ()
+            img.src = imgUrl
+        })
+      }
+      testImage ( imgUrl )
+          .then ( function ( res ) {
+              store.commit ('nextPicture')
+            })
+          .catch ( function ( res ) {
+              store.commit ('setAlternative')
+              store.commit ('nextPicture')
+          })
+  }
+}
+</pre><br/>
+Вызывать действие из компонента или корневого экземпляра нужно с 
+помощью метода <b>dispatch</b><br/>
+<pre class="code-snippet">
+methods: {
+    gotoNext: () => store.dispatch ( 'getNextPicture' ),
+}
+
+В функции-обработчики передаётся объект context:<br/>
+<pre class="code-snippet">
+actions: {
+    getNextPicture: function ( context ) {
+      var theNext = context.getters.nextCounterValue
+      var imgUrl = context.state.pictures [ theNext ].url
+      function testImage ( imgUrl ) {
+        return new Promise ( ( resolve, reject ) => {
+            var img = new Image ()
+            img.onerror = () => reject ()
+            img.onload = () => resolve ()
+            img.src = imgUrl
+        })
+      }
+      testImage ( imgUrl )
+          .then ( res => {
+              store.commit ('nextPicture')
+            })
+          .catch ( res => {
+              store.commit ('setAlternative')
+              store.commit ('nextPicture')
+          })
+    }
+  }
+</pre><hr/>
+Операторы отображения scope объекта store в локальный scope 
+компонента<br/>
+
+<b>Vuex.mapState</b>,<br/>
+<b>Vuex.mapMutations</b>,<br/>
+<b>Vuex.mapActions</b>,<br/>
+<b>Vuex.mapGetters</b><br/>
+
+В компонентах можно упростить доступ к состоянию, геттерам, мутациям и 
+действиям с помощью Vuex.mapState, Vuex.mapGetters, Vuex.mapMutations и 
+Vuex.mapActions соответственно<br/>
+<pre class="code-snippet">
+computed: Vuex.mapState ( {
+    img ( state ) {
+      var ind = state.currentCounterValue
+      return state.pictures [ ind ]
+    },
+})
+</pre><br/>
+
+<pre class="code-snippet">
+computed: {
+    Vuex.mapGetters ([
+       nextInd: 'nextCounterValue',
+       pict: 'currentPicture'
+    ])
+}
+</pre><br/>
+Теперь геттеры nextCounterValue и currentPicture доступны в 
+компоненте как вычисляемые свойства nextInd и pict
