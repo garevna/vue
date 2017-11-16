@@ -3,7 +3,7 @@ const MainSection = {
   data: function () {
     return {
       sectionMenu: ["about", "details"],
-      sectionInfoVisible: true,
+      sectionInfoVisible: false,
       sectionPostsVisible: false,
       sectionChanged:false
     }
@@ -12,7 +12,6 @@ const MainSection = {
 	  sendSectionEvent: function ( eventType ) {
 		  this.$emit ( 'section-event',
 			      { type: eventType, section: this.id } )
-		  this.$parent.$router.push ( { name: 'about' })
 	  },
 	  openSectionMenu: function ( event ) {
 		  this.sectionMenu = !this.sectionMenu
