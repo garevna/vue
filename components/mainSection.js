@@ -3,7 +3,7 @@ const MainSection = {
   data: function () {
     return {
       sectionMenu: ["about", "details"],
-      sectionInfoVisible: true,
+      sectionInfoVisible: false,
       sectionPostsVisible: false,
       sectionChanged:false
     }
@@ -19,7 +19,10 @@ const MainSection = {
   },
   mounted: function () {
     this.$root.store.$on ( 'main-data',
-        () => this.dataIsReady = true
+        () => {
+	    this.dataIsReady = true
+	    this.$parent.$router.push ( { name: 'about' })
+    	}
     )
     this.sendSectionEvent ( "sectionChanged" )
     this.$on ( 'menuSelect', function ( val ) {
