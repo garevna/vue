@@ -9,20 +9,18 @@ const MainSection = {
     }
   },
   methods: {
-    sendSectionEvent: function ( eventType ) {
-      this.$emit ( 'section-event',
-          { type: eventType, section: this.id } )
-    },
+	  sendSectionEvent: function ( eventType ) {
+		  this.$emit ( 'section-event',
+			      { type: eventType, section: this.id } )
+		  this.$parent.$router.push ( { name: 'about' })
+	  },
 	  openSectionMenu: function ( event ) {
 		  this.sectionMenu = !this.sectionMenu
 	  }
   },
   mounted: function () {
     this.$root.store.$on ( 'main-data',
-        () => {
-	    this.dataIsReady = true
-	    this.$parent.$router.push ( { name: 'about' })
-    	}
+        () => this.dataIsReady = true
     )
     this.sendSectionEvent ( "sectionChanged" )
     this.$on ( 'menuSelect', function ( val ) {
@@ -46,8 +44,7 @@ const MainSection = {
 	          transitionName="slideUp">
       </dropdown-menu>
 
-      <router-view class="section-info">
-      </router-view>
+      <router-view class="section-info"></router-view>
     </div>
   `
 }
