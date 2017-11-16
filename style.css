@@ -171,7 +171,7 @@ section pre {
   background: -moz-linear-gradient(right, #999, #eee);
   background: linear-gradient(to right, #999, #eee);
 }
-.article section {
+.section-article {
   counter-reset: section;
 }
 
