@@ -27,19 +27,15 @@ const BaseDropdownMenu = ( 'dropdown-menu', {
     }
   },
   methods: {
-    changeMenuVisibility: function ( event ) {
-      this.visibleStatus = !this.visibleStatus
-    }
+	  changeMenuVisibility: function ( event ) {
+		  this.visibleStatus = !this.visibleStatus
+	  }
   },
   mounted: function () {
 	this.$on ('menuSelect', function ( val ) {
 		this.visibleStatus = false
 		this.$parent.$emit ( 'menuSelect', val )
-	} ),
-	this.$on ('mouseleave', function ( val ) {
-		this.visibleStatus = false
 	} )
-	
   },
   components: {
     'menu-option': {
@@ -78,7 +74,7 @@ const BaseDropdownMenu = ( 'dropdown-menu', {
       <button :class="buttonClass" 
           @click="changeMenuVisibility">
       </button>
-      <div :class="menuClass">
+      <div :class="menuClass" @mouseleave = "changeMenuVisibility">
           <menu-option 
               v-for = "item in options"
               :val="item"
