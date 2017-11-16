@@ -29,6 +29,9 @@ const BaseDropdownMenu = ( 'dropdown-menu', {
   methods: {
 	  changeMenuVisibility: function ( event ) {
 		  this.visibleStatus = !this.visibleStatus
+	  },
+	  setUnvisible: function ( event ) {
+		  this.visibleStatus = false
 	  }
   },
   mounted: function () {
@@ -74,7 +77,7 @@ const BaseDropdownMenu = ( 'dropdown-menu', {
       <button :class="buttonClass" 
           @click="changeMenuVisibility">
       </button>
-      <div :class="menuClass" @mouseleave = "changeMenuVisibility">
+      <div :class="menuClass" @mouseleave = "setUnvisible">
           <menu-option 
               v-for = "item in options"
               :val="item"
