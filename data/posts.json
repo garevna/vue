@@ -71,10 +71,10 @@
     },
     {
         "head":"vue-devtools",
-        "picture":"./images/vue-devtools.gif",
+        "picture":false,
         "code":false,
         "text":"Расширение Chrome для vue-разработчика",
-	"readme":"./vue/devtools.html",
+	"readme":"https://garevna.github.io/vue.github.io/data/vue/devtools.html",
         "ref":[
           "https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd"
         ]
