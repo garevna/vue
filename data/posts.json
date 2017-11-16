@@ -40,7 +40,10 @@
           "}"
         ],
       "text":"Объекты data и computed являются встроенными свойствами экземпляра Vue.<br/>Эти объекты содержат реактивные свойства модели, т.е. свойства, при изменении которых происходит автоматическое изменение представления",
-      "ref":[ "https://codepen.io/garevna/pen/QqEMoa" ]
+      "ref":[
+	      "https://codepen.io/garevna/pen/QqEMoa",
+	      "https://codepen.io/garevna/pen/dZVqqZ"
+	    ]
     },
     {
       "head":"computed",
