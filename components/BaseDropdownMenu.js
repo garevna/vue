@@ -60,7 +60,7 @@ const BaseDropdownMenu = ( 'dropdown-menu', {
         clickHandler: function ( event ) {
           this.$parent.$emit ( 'menuSelect', 
                   event.target.innerHTML.trim() )
-	  this.setUnvisible()
+	  this.visibleStatus = false
         }
       },
       template:`
