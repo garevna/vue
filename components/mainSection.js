@@ -3,7 +3,7 @@ const MainSection = {
   data: function () {
     return {
       sectionMenu: ["about", "details"],
-      sectionInfoVisible: false,
+      sectionInfoVisible: true,
       sectionPostsVisible: false,
       sectionChanged:false
     }
