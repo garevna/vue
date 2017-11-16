@@ -32,10 +32,14 @@ const BaseDropdownMenu = ( 'dropdown-menu', {
     }
   },
   mounted: function () {
-    this.$on ('menuSelect', function ( val ) {
-      this.visibleStatus = false
-      this.$parent.$emit ( 'menuSelect', val )
-    } )
+	this.$on ('menuSelect', function ( val ) {
+		this.visibleStatus = false
+		this.$parent.$emit ( 'menuSelect', val )
+	} ),
+	this.$on ('mouseleave', function ( val ) {
+		this.visibleStatus = false
+	} )
+	
   },
   components: {
     'menu-option': {
