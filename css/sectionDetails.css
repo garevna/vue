@@ -31,6 +31,7 @@
 }
 .section-article {
 	width:100%;
+	counter-reset: section;
 }
 .content {
 	width:85%;
