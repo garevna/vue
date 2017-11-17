@@ -1,19 +1,68 @@
 <b>Священное правило № 1</b><br/>
 Изменять состояние Vuex-хранилища можно только с помощью мутаций<br/>
 <br/>
+Но как же быть, если нам нужно связать данные, находящиеся в хранилище, с
+элементами input?<br/>
+<br/>
 В Vuex-хранилище у нас находится объект <i>theRecord</i><br/>
 <br/>
 Нам нужно обеспечить возможность ввода / редактирования свойств 
 объекта theRecord, не нарушая священное правило № 1<br/>
 <br/>
-Для этого мы создаем локальную копию <i>localdata</i> объекта <i>theRecord</i>, 
-находящегося в хранилище, и связываем localdata с элементами 
-input с помощью директивы <b>v-model</b><br/>
+Для этого в экземпляре Vue мы создаем локальную копию <i>localdata</i> объекта 
+<i>theRecord</i>, находящегося в хранилище<br/>
+<pre class="code-snippet">
+data: {
+      localdata: null
+},
+...
+methods: {
+    setLocalData: function () {
+      this.localdata =
+          JSON.parse( JSON.stringify( this.$store.state.theRecord ) )
+    }
+},
+mounted: function () {
+    this.setLocalData ()
+}
+</pre><br/>
 
-После того, как юзер изменит значения свойств объекта localdata, 
-вызываем мутацию <i>updateData</i>, которая изменит состояние хранилища 
+Вы спросите - почему так сложно? Почему нужно создавать метод, который будет 
+вызван на этапе, когда экземпляр Vue уже смонтирован, и почему нельзя сразу 
+сделать так:<br/>
+
+<pre class="code-snippet">
+data: {
+      localdata: JSON.parse( JSON.stringify( this.$store.state.theRecord ) )
+}
+</pre><br/>
+Дело в том, что пока экземпляр не смонтирован, попытка обратиться к хранилищу 
+<pre class="code-snippet">
+this.$store.state.theRecord
+</pre><br/>
+вызовет ошибку<br/>
+Теперь мы имеем локальную копию объекта <i>theRecord</i>, находящегося в хранилище 
+Vuex. Свойства этой копии можно совершенно спокойно связать с элементами input 
+с помощью директивы <b>v-model</b><br/> 
+<pre class="code-snippet">
+<input v-model="localdata.id"/>
+<input v-model="localdata.data.year"/>
+<input v-model="localdata.data.details"/>
+</pre><br/>
+Таким образом, мы изменяем локальный объект localdata, а затем вызываем 
+мутацию <i>updateData</i>, которая изменит состояние хранилища 
 (значения соответствующих свойств объекта theRecord)<br/>
-
+<pre class="code-snippet">
+watch: {
+    localdata: {
+      handler: function () {
+        this.$store.commit('updateData', this.localdata )
+      }, deep: true
+    }
+}
+</pre><br/>
+<small>
+Примечание:<br/>
 Для получения локальной копии localdata место Object.assign мы 
 используем <b>JSON.stringify -> JSON.parse</b><br/>
 
@@ -23,3 +72,4 @@ input с помощью директивы <b>v-model</b><br/>
 Object.assign () копирует значения свойств. <br/>
 Если значение свойства является ссылкой на объект, то будет 
 скопирована ссылка, а не сам объект<br/>
+</small>
