@@ -39,15 +39,15 @@ data: {
 Дело в том, что пока экземпляр не смонтирован, попытка обратиться к хранилищу 
 <pre class="code-snippet">
 this.$store.state.theRecord
-</pre><br/>
-вызовет ошибку<br/>
+</pre>
+вызовет ошибку<br/><br/>
 Теперь мы имеем локальную копию объекта <i>theRecord</i>, находящегося в хранилище 
 Vuex. Свойства этой копии можно совершенно спокойно связать с элементами input 
 с помощью директивы <b>v-model</b><br/> 
 <pre class="code-snippet">
-<input v-model="localdata.id"/>
-<input v-model="localdata.data.year"/>
-<input v-model="localdata.data.details"/>
+&lt;input v-model="localdata.id"/>
+&lt;input v-model="localdata.data.year"/>
+&lt;input v-model="localdata.data.details"/>
 </pre><br/>
 Таким образом, мы изменяем локальный объект localdata, а затем вызываем 
 мутацию <i>updateData</i>, которая изменит состояние хранилища 
