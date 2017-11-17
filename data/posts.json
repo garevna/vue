@@ -531,6 +531,14 @@
       "ref":["https://plnkr.co/edit/aqZ1cfiHEc1jJYovg0VE?p=preview"]
     },
     {
+      "head":"v-model",
+      "picture":false,
+      "code":false,
+      "readme":"https://garevna.github.io/vue.github.io/data/vuex/01.html",
+      "text":"Двустороннаяя привязка<br/>v-model и мутации<br/>",
+      "ref":["https://plnkr.co/edit/YZqbMDYh4vuv80WbjqOc?p=preview"]
+    },
+    {
       "head":"getters & actions",
       "picture":false,
       "code":false,
