@@ -535,8 +535,16 @@
       "picture":false,
       "code":false,
       "readme":"https://garevna.github.io/vue.github.io/data/vuex/01.html",
-      "text":"Двустороннаяя привязка<br/>v-model и мутации<br/>",
+      "text":"Двустороннаяя привязка к элементам форм<br/>v-model и мутации<br/>Глубокая привязка объекта",
       "ref":["https://plnkr.co/edit/YZqbMDYh4vuv80WbjqOc?p=preview"]
+    },
+    {
+      "head":"Без v-model",
+      "picture":false,
+      "code":false,
+      "readme":"https://garevna.github.io/vue.github.io/data/vuex/01-1.html",
+      "text":"Привязка к элементам форм объектов с глубокой структурой<br/>Работа с массивами<br/>Использование компонентов",
+      "ref":["https://plnkr.co/edit/q5zdUERK2biVxfeTvUbe?p=preview"]
     },
     {
       "head":"getters & actions",
