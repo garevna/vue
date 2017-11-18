@@ -11,36 +11,17 @@
 <br/>
 Для этого в экземпляре Vue мы создаем локальную копию <i>localdata</i> объекта 
 <i>theRecord</i>, находящегося в хранилище<br/>
+
 <pre class="code-snippet">
-data: {
-      localdata: null
-},
-...
-methods: {
-    setLocalData: function () {
-      this.localdata =
-          JSON.parse( JSON.stringify( this.$store.state.theRecord ) )
+data: function () {
+    return {
+       localdata: JSON.parse( 
+                  JSON.stringify( 
+                        this.$store.state.theRecord ) )
     }
-},
-mounted: function () {
-    this.setLocalData ()
 }
 </pre><br/>
 
-Вы спросите - почему так сложно? Почему нужно создавать метод, который будет 
-вызван на этапе, когда экземпляр Vue уже смонтирован, и почему нельзя сразу 
-сделать так:<br/>
-
-<pre class="code-snippet">
-data: {
-      localdata: JSON.parse( JSON.stringify( this.$store.state.theRecord ) )
-}
-</pre><br/>
-Дело в том, что пока экземпляр не смонтирован, попытка обратиться к хранилищу 
-<pre class="code-snippet">
-this.$store.state.theRecord
-</pre>
-вызовет ошибку<br/><br/>
 Теперь мы имеем локальную копию объекта <i>theRecord</i>, находящегося в хранилище 
 Vuex. Свойства этой копии можно совершенно спокойно связать с элементами input 
 с помощью директивы <b>v-model</b><br/> 
@@ -62,14 +43,14 @@ watch: {
 }
 </pre><br/>
 <small>
-Примечание:<br/>
-Для получения локальной копии localdata место Object.assign мы 
-используем <b>JSON.stringify -> JSON.parse</b><br/>
+      <b>Примечание:</b><br/>
+      Для получения локальной копии localdata место Object.assign мы 
+      используем <b>JSON.stringify -> JSON.parse</b><br/>
 
-Так мы осуществляем глубокое копирование (т.е. копирование 
-объектов, являющихся свойствами объекта localdata)<br/>
+      Так мы осуществляем глубокое копирование (т.е. копирование 
+      объектов, являющихся свойствами объекта localdata)<br/>
 
-Object.assign () копирует значения свойств. <br/>
-Если значение свойства является ссылкой на объект, то будет 
-скопирована ссылка, а не сам объект<br/>
+      Object.assign () копирует значения свойств. <br/>
+      Если значение свойства является ссылкой на объект, то будет 
+      скопирована ссылка, а не сам объект<br/>
 </small>
