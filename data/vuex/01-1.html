@@ -1,0 +1,140 @@
+В этом примере мы выносим в компоненты работу с данными, 
+включая коммиты мутаций состояния Vuex-store<br/>
+
+Свойство data экземпляра Vue содержит объект <i>localdata</i>, 
+инициализированный при создании экземпляра со значением 
+из Vuex-store:<br/>
+
+<pre class="code-snippet">
+localdata: this.$store.state.theRecord
+</pre><br/>
+
+По факту, <i>localdata</i> - это ссылка на объект theRecord, 
+который находится в хранилище Vuex<br/>
+
+Мы не будем менять свойства этого объекта, поскольку 
+тогда мы нарушим священное правило №1 - изменим состояние 
+хранилища, минуя мутации<br/>
+
+В компоненты мы передаем значения свойств localdata 
+(через <b>props</b> в компоненте и <b>v-bind</b> при его вызове)<br/>
+
+<pre class="code-snippet">
+&lt;change-city :the_city="localdata.address.city">
+&lt;/change-city>
+</pre><br/>
+
+Когда мы передаем не объект и не массив, то передается 
+значение, а не ссылка, и внутри компонента это будет новая 
+локальная переменная, изменение значения которой не 
+отразится на родительском экземпляре (тем более, что 
+мы не используем директиву v-model)<br/>
+
+Поэтому с чистой совестью отправляем это значение в input 
+(в template компонента, конечно)<br/>
+
+<pre class="code-snippet">
+const changeCity = ( 'change-city', {
+  props:['the_city'],
+  template: `
+    &lt;fieldset>
+      &lt;legend>Город: &lt;/legend>
+      &lt;input type="text" :value="the_city"
+            @input="changeStoreValue"/>&lt;br/>
+    &lt;/fieldset>
+  `,
+  methods: {
+    changeStoreValue: function () { 
+        this.$root.$store.commit('updateCity', 
+                          event.target.value )
+    }
+  }
+})
+</pre><br/>
+Из кода видно, что обработчиком события input назначен 
+метод changeStoreValue, который активирует мутацию 
+состояния Vuex-store<br/>
+
+Несколько сложнее работа со свойством places, поскольку это 
+массив, а значит, передается по ссылке<br/>
+
+<b>Массивы, как и объекты, передаются по ссылке</b><br/>
+
+<pre class="code-snippet">
+&lt;change-places :the_places="localdata.address.places">
+&lt;/change-places>
+</pre><br/>
+
+Иными словами, в компоненте мы получим не сам массив, а 
+ссылку <i>the_places</i> на массив <i>localdata.address.places</i>, который, 
+в свою очередь, является ссылкой на <i>theRecord.address.places</i> в
+хранилище Vuex (поскольку <i>localdata</i> является ссылкой на <i>theRecord</i>)<br/>
+
+<pre class="code-snippet">
+const changePlaces = ( 'change-places', {
+  props:['the_places'],
+  ...
+})
+</pre><br/>
+
+В темплейте компонента с помощью диретивы v-for мы создаем элементы 
+input для каждого элемента массива <i>the_places</i><br/>
+
+<pre class="code-snippet">
+template: `
+    &lt;fieldset>
+      &lt;legend>Места: &lt;/legend>
+      &lt;input type="text" 
+            v-for = "(place, index) in the_places"
+            :value = "place"
+            @input = "changeStoreValue (index)"/>
+      &lt;button class = "plus-button"
+            @click="addNewStoreValue">
+      &lt;/button>
+    &lt;/fieldset>
+  `
+</pre><br/>
+
+input-элементы не связаны с элементами массива (нет директивы v-model)
+Таким образом, изменение значения свойства value элемента input не 
+представляет угрозы для реактивной системы Vue (родительский экземпляр 
+это не затронет)<br/>
+Однако обработчик changeStoreValue события input, которому мы передаем 
+индекс измененного элемента массива<br/>
+
+<pre class="code-snippet">
+@input="changeStoreValue (index)"
+</pre><br/>
+
+будет активировать мутацию updatePlaces состояния Vuex-store<br/>
+<pre class="code-snippet">
+methods: {
+    changeStoreValue: function ( index ) {
+        this.$root.$store.commit ( 'updatePlaces', {
+          index: index,
+          value: event.target.value
+        } )
+    },
+    ...
+}
+</pre><br/>
+Мутации updatePlaces будет передан в качестве параметра объект с индексом 
+изменяемого элемента массива и значением свойства value элемента input:<br/>
+<pre class="code-snippet">
+{
+    index: index,
+    value: event.target.value
+}
+</pre><br/>
+и которая, в свою очередь, изменит массив theRecord.address.places<br/>
+<pre class="code-snippet">
+mutations: {
+    ...,
+    updatePlaces: function ( state, params ) {
+      var ind = params.index
+      var new_value = params.value
+      state.theRecord.address.places.splice( params.index, 1, params.value )
+    },
+}
+</pre><br/>
+Все корректно, чисто, никакой контрабанды ;)
