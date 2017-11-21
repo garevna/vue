@@ -70,6 +70,14 @@
       "ref":[ "https://plnkr.co/edit/vdEIxZYvoN4x6VFMX3kb?p=preview" ]
     },
     {
+      "head":"promise",
+      "picture":false,
+      "code":false,
+      "text":"Выполняю свое обещание рассказать про обещания",
+      "readme":"https://garevna.github.io/vue.github.io/data/vue/promise.html",
+      "ref":[ "https://repl.it/@garevna/Vueandpromise" ]
+    },
+    {
         "head":"vue-devtools",
         "picture":false,
         "code":false,
