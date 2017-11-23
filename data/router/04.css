@@ -1,0 +1,90 @@
+:root {
+     --y: 100px;
+}
+body {
+  font-family: Arial;
+  margin:0;
+  padding:20px;
+}
+small {
+  display: block;
+  color:#579;
+}
+.code-snippet {
+  background-color:#000;
+  color:#fff;
+  padding-top:10px;
+}
+h5 {
+  color:#807;
+}
+input {
+  padding: 4px 10px;
+  background-color:#dde;
+  font-family: monospace;
+  width:50%;
+}
+.expanded-section {
+  position: relative;
+}
+.expanded-section .plus-button,
+.expanded-section .minus-button {
+  /* position: -webkit-sticky;
+  position: sticky;
+  top: -1px;*/
+}
+.plus-button, .minus-button {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  z-index:500;
+  padding:5px 10px;
+  outline:none;
+  border:none;
+  background:linear-gradient(to bottom, #fff, #ddd );
+  width:100%;
+  text-align: left;
+  cursor:pointer;
+}
+.plus-button:hover, .minus-button:hover {
+  color: #30d;
+}
+.plus-button:before,
+.minus-button:before {
+  font-family: Helvetica;
+  font-size:18px;
+  /*font-weight:bold;*/
+}
+.plus-button:before {
+  content:"\002B";
+}
+.minus-button:before {
+  content:"\2013";
+}
+.expand-elem {
+  position:relative;
+  border: inset 1px;
+  padding:0px 10px 20px 15px;
+  transition: height 1s, opacity 1s;
+  transform-origin:0 0;
+}
+.expand-elem-enter, .expand-elem-leave-to {
+  opacity:0;
+  height:0;
+  transform: translate(0,var(--y));
+}
+.expand-elem-enter-active {
+  animation: mc-dropdown 1s forwards;
+}
+.expand-elem-leave, .expand-elem-enter-to {
+  opacity: 1;
+  height: var(--y);
+  transform: translate(0,0);
+}
+.expand-elem-leave-active {
+  animation: mc-dropdown reverse 1s forwards;
+}
+@keyframes mc-dropdown {
+  0% { transform: scaleY(0); }
+  100% { transform: scaleY(1); }
+}
