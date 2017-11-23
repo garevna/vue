@@ -187,16 +187,13 @@ params, в котором и будет находиться переменна�
         [ index ]: value
       })
     }
-  },
-              mounted: function () {
-                    console.log (this)
-              }
+  }
 })
 </script>
 <div id="router-sample">
       <section>
         <button class="plus-button"
-              @click="hideItem1 = changeView( 'item1' )">
+              @click="console.log (this); hideItem1 = changeView( 'item1' )">
           Плейсхолдер router-view
         </button>
         <transition name = "expand-elem">
