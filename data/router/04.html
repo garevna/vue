@@ -1,7 +1,7 @@
 <style>
+  body { font-family: monospace; }
   .expanded-section {
     position: relative;
-    font-family: monospace;
   }
   .plus-button, .minus-button {
     position: -webkit-sticky;
@@ -38,28 +38,6 @@
     padding:0px 10px 20px 15px;
     transition: height 1s, opacity 1s;
     transform-origin:0 0;
-  }
-
-  .expand-elem-enter, .expand-elem-leave-to {
-    opacity:0;
-    height:0;
-    transform: translate(0,var(--y));
-  }
-  .expand-elem-enter-active {
-    animation: mc-dropdown 1s forwards;
-  }
-  .expand-elem-leave, .expand-elem-enter-to {
-    opacity: 1;
-    height: var(--y);
-    transform: translate(0,0);
-  }
-  .expand-elem-leave-active {
-    animation: mc-dropdown reverse 1s forwards;
-  }
-
-  @keyframes mc-dropdown {
-    0% { transform: scaleY(0); }
-    100% { transform: scaleY(1); }
   }
 </style>
 <script>
