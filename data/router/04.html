@@ -94,7 +94,9 @@
   </pre><br/>
 </div>
 <button class="plus-button"
-              onclick="hideItem2 = changeView( 'item2' )">
+              onclick= "hideItem2 = event.target.className === 'minus-button';
+                  event.target.className = hideItem2 ? 'plus-button' : 'minus-button';
+                  document.getElementById ( 'item2' ).style.display = event.target.className === 'plus-button' ? 'none' : 'block'">
           Параметры на входе компонента
 </button>
 <div class="expand-elem" id="item2" style="display:none">
@@ -112,7 +114,9 @@
   'параметры роутера'<br/>
 </div>
 <button class="plus-button"
-              onclick="hideItem3 = changeView( 'item3' )">
+              onclick= "hideItem3 = event.target.className === 'minus-button';
+                  event.target.className = hideItem3 ? 'plus-button' : 'minus-button';
+                  document.getElementById ( 'item3' ).style.display = event.target.className === 'plus-button' ? 'none' : 'block'">
           Определение маршрутов роутера
 </button>
 <div class="expand-elem" id="item3" style="display:none">
