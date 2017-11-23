@@ -1,5 +1,5 @@
-const store = new Vuex.Store({
-  strict: true,
+const routerSampleStore = new Vuex.Store({
+  // strict: true,
   state: {
     items: [
     `
