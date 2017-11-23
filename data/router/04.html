@@ -193,7 +193,7 @@ params, в котором и будет находиться переменна�
 <div id="router-sample">
       <section>
         <button class="plus-button"
-              @click="console.log (this); hideItem1 = changeView( 'item1' )">
+              onclick="console.log (this); hideItem1 = changeView( 'item1' )">
           Плейсхолдер router-view
         </button>
         <transition name = "expand-elem">
@@ -203,7 +203,7 @@ params, в котором и будет находиться переменна�
         </transition>
       </section>
       <button class="plus-button"
-              @click="hideItem2 = changeView( 'item2' )">
+              onclick="hideItem2 = changeView( 'item2' )">
         Параметры на входе компонента
       </button>
       <transition name = "expand-elem">
@@ -212,7 +212,7 @@ params, в котором и будет находиться переменна�
         </div>
       </transition>
       <button class="plus-button"
-              @click="hideItem3 = changeView( 'item3' )">
+              onclick="hideItem3 = changeView( 'item3' )">
         Определение маршрутов роутера
       </button>
       <transition name = "expand-elem">
