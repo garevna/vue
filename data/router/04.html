@@ -1,7 +1,4 @@
 <style>
-  :root {
-     --y: 100px;
-  }
   .expanded-section {
     position: relative;
   }
@@ -80,15 +77,10 @@
       hideItem = event.target.className === "minus-button"
       event.target.className = hideItem ? 
                 "plus-button" : "minus-button"
-      var property = `--y`
-      if ( document.getElementById ( elemId ) ) {
-        var size = document.getElementById ( elemId ).offsetHeight
-        console.log ('size: ', size)
-      }
-      else size = Math.round ( window.innerHeight * 0.7 )
-      document.documentElement.style.removeProperty ( property )
-      document.documentElement.style.setProperty ( property, size + 'px' )
-      console.log ( property, ': ', property.value )
+      if ( event.target.className === "plus-button" )
+        document.getElementById ( elemId ).style.display = 'none'
+      else 
+        document.getElementById ( elemId ).style.display = 'block'
       return hideItem
   }
 </script>
