@@ -1,72 +1,141 @@
 <style>
-  body { font-family: monospace; }
-  .expanded-section {
-    position: relative;
-  }
-  .plus-button, .minus-button {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0px;
-    z-index:500;
-    padding:5px 10px;
-    outline:none;
-    border:none;
-    background:linear-gradient(to bottom, #fff, #ddd );
-    width:100%;
-    text-align: left;
-    cursor:pointer;
-  }
+  :root {
+     --y: 100px;
+}
+body {
+  font-family: Arial;
+  margin:0;
+  padding:20px;
+}
 
-  .plus-button:hover, .minus-button:hover {
-    color: #30d;
-  }
-  .plus-button:before,
-  .minus-button:before {
-    font-family: Helvetica;
-    font-size:18px;
-  }
-  .plus-button:before {
-    content:"\002B";
-  }
-  .minus-button:before {
-    content:"\2013";
-  }
+small {
+  display: block;
+  color:#579;
+}
 
-  .expand-elem {
-    position:relative;
-    border: inset 1px;
-    padding:0px 10px 20px 15px;
-    transition: height 1s, opacity 1s;
-    transform-origin:0 0;
-  }
+.code-snippet {
+  background-color:#000;
+  color:#fff;
+  padding-top:10px;
+}
+
+h5 {
+  color:#807;
+}
+input {
+  padding: 4px 10px;
+  background-color:#dde;
+  font-family: monospace;
+  width:50%;
+}
+.expanded-section {
+  position: relative;
+}
+.expanded-section .plus-button,
+.expanded-section .minus-button {
+  /* position: -webkit-sticky;
+  position: sticky;
+  top: -1px;*/
+}
+.plus-button, .minus-button {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  z-index:500;
+  padding:5px 10px;
+  outline:none;
+  border:none;
+  background:linear-gradient(to bottom, #fff, #ddd );
+  width:100%;
+  text-align: left;
+  cursor:pointer;
+}
+
+.plus-button:hover, .minus-button:hover {
+  color: #30d;
+}
+.plus-button:before,
+.minus-button:before {
+  font-family: Helvetica;
+  font-size:18px;
+  /*font-weight:bold;*/
+}
+.plus-button:before {
+  content:"\002B";
+}
+.minus-button:before {
+  content:"\2013";
+}
+
+.expand-elem {
+  position:relative;
+  border: inset 1px;
+  padding:0px 10px 20px 15px;
+  transition: height 1s, opacity 1s;
+  transform-origin:0 0;
+}
+
+.expand-elem-enter, .expand-elem-leave-to {
+  opacity:0;
+  height:0;
+  transform: translate(0,var(--y));
+}
+.expand-elem-enter-active {
+  animation: mc-dropdown 1s forwards;
+}
+.expand-elem-leave, .expand-elem-enter-to {
+  opacity: 1;
+  height: var(--y);
+  transform: translate(0,0);
+}
+.expand-elem-leave-active {
+  animation: mc-dropdown reverse 1s forwards;
+}
+
+@keyframes mc-dropdown {
+  0% { transform: scaleY(0); }
+  100% { transform: scaleY(1); }
+}
 </style>
-<script>
-  hideItem1 = true
-  hideItem2 = true
-  hideItem3 = true
-  var subSectionVisible = [ false, false, false, false, false ]
-  
-  var changeView = function ( elemId ) {
-      hideItem = event.target.className === "minus-button"
-      event.target.className = hideItem ? 
-                "plus-button" : "minus-button"
-      if ( event.target.className === "plus-button" )
-        document.getElementById ( elemId ).style.display = 'none'
-      else 
-        document.getElementById ( elemId ).style.display = 'block'
-      return hideItem
-  }
-</script>
-<b>Передача параметров компоненту маршрута</b><br/>
 
-<button class="plus-button"
-              onclick= "hideItem1 = event.target.className === 'minus-button';
-                  event.target.className = hideItem1 ? 'plus-button' : 'minus-button';
-                  document.getElementById ( 'item1' ).style.display = event.target.className === 'plus-button' ? 'none' : 'block'">
+<div id="router-sample">
+      <section>
+        <button class="plus-button"
+              @click="hideItem1 = changeView( 'item1' )">
           Плейсхолдер router-view
-</button>
-<div class="expand-elem" id="item1" style="display:none">
-  Обратите внимание на плейсхолдер для компонента, 
+        </button>
+        <transition name = "expand-elem">
+          <div class="expand-elem" id="item1" v-if="!hideItem1">
+            <code v-html="localData[0]"></code>
+          </div>
+        </transition>
+      </section>
+      <button class="plus-button"
+              @click="hideItem2 = changeView( 'item2' )">
+        Параметры на входе компонента
+      </button>
+      <transition name = "expand-elem">
+        <div class="expand-elem" id="item2" v-if="!hideItem2">
+          <code v-html="localData[1]"></code>
+        </div>
+      </transition>
+      <button class="plus-button"
+              @click="hideItem3 = changeView( 'item3' )">
+        Определение маршрутов роутера
+      </button>
+      <transition name = "expand-elem">
+        <div class="expand-elem" id="item3" v-if="!hideItem3">
+          <code v-html="localData[2]"></code>
+        </div>
+      </transition>
+    </div>
+<script>
+  const store = new Vuex.Store({
+  strict: true,
+  state: {
+    items: [
+    `
+      Обратите внимание на плейсхолдер для компонента, 
   который будет смонтирован для отображения контента при 
   переходе на маршрут роутера:<br/>
   <pre class="code-snippet">
@@ -92,15 +161,9 @@
   &lt;div class="red">{{ $attrs.company }}&lt;/div>
   &lt;div class="red">{{ $attrs.group }}&lt;/div>
   </pre><br/>
-</div>
-<button class="plus-button"
-              onclick= "hideItem2 = event.target.className === 'minus-button';
-                  event.target.className = hideItem2 ? 'plus-button' : 'minus-button';
-                  document.getElementById ( 'item2' ).style.display = event.target.className === 'plus-button' ? 'none' : 'block'">
-          Параметры на входе компонента
-</button>
-<div class="expand-elem" id="item2" style="display:none">
-  В компоненте входные параметры определены так:<br/>
+    `,
+    `
+      В компоненте входные параметры определены так:<br/>
   <pre class="code-snippet">
   props: {
     name: {
@@ -112,15 +175,9 @@
   т.е. компонент ожидает на входе символьную строку name, и если не 
   получает, то устанавливает значение свойства name по умолчанию 
   'параметры роутера'<br/>
-</div>
-<button class="plus-button"
-              onclick= "hideItem3 = event.target.className === 'minus-button';
-                  event.target.className = hideItem3 ? 'plus-button' : 'minus-button';
-                  document.getElementById ( 'item3' ).style.display = event.target.className === 'plus-button' ? 'none' : 'block'">
-          Определение маршрутов роутера
-</button>
-<div class="expand-elem" id="item3" style="display:none">
-  Первый маршрут не имеет переменной части и передается без параметров<br/>
+    `,
+    `
+      Первый маршрут не имеет переменной части и передается без параметров<br/>
   <pre class="code-snippet">
   {
     path: '/',
@@ -254,4 +311,55 @@ params, в котором и будет находиться переменна�
 своих атрибутов $attrs (в данном случае - атрибута company), во всех 
 остальных случаях (т.е. на всех выше описанных маршрутах) он оставляет 
 значение name таким, как есть<br/>
-</div>
+    `
+    ]
+  },
+  mutations: {
+    updateData: function ( state, { index, value } ) {
+      Object.assign ( state.items, {
+        [ index ]: value
+      })
+    }
+  }
+})
+new Vue({
+  el: '#router-sample',
+  store: store,
+  data: function () {
+    return {
+      localData: JSON.parse( JSON.stringify(
+              this.$store.state.items ) ),
+      hideItem1:true,
+      hideItem2:true,
+      hideItem3:true,
+    }
+  },
+  computed: {
+    theData: function () {
+      return this.$store.state.human
+    }
+  },
+  methods: {
+    changeView: function ( elemId ) {
+      hideItem = event.target.className === "minus-button"
+      event.target.className = hideItem ? 
+                "plus-button" : "minus-button"
+      var property = `--y`
+      if ( document.getElementById ( elemId ) ) {
+        var size = document.getElementById ( elemId ).offsetHeight
+      }
+      else size = Math.round ( window.innerHeight * 0.7 )
+      document.documentElement.style.removeProperty ( property )
+      document.documentElement.style.setProperty ( property, size + 'px' )
+      return hideItem
+    },
+    changeData: function ( field ) {
+      this.localData [ field ] = event.target.value
+      this.$store.commit( 'updateData', {
+                  field: field,
+                  value: event.target.value
+              })
+    }
+  }
+})
+</script>
