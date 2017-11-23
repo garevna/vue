@@ -1,6 +1,6 @@
-new Vue ({
+var routerSample = new Vue ({
   el: '#router-sample',
-  store: store,
+  store: routerSampleStore,
   data: function () {
     return {
       console.log ( 'Store data: ', this.$store.state.items )
@@ -9,11 +9,6 @@ new Vue ({
       hideItem1:true,
       hideItem2:true,
       hideItem3:true,
-    }
-  },
-  computed: {
-    theData: function () {
-      return this.$store.state.human
     }
   },
   methods: {
