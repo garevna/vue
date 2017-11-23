@@ -194,12 +194,12 @@ document.changeView = function ( elemId ) {
 <div id="router-sample">
       <section>
         <button class="plus-button" item = items[0]
-              onclick = "hideItem1 = event.target.className === 'minus-button';
+              onclick = "console.log (this); hideItem1 = event.target.className === 'minus-button';
                         event.target.className = hideItem1 ? 
                                     'plus-button' : 'minus-button';
                         document.getElementById ( 'item1' ).style.display = 
                                     hideItem1 ? 'none' : 'block'
-                        document.getElementById ( 'item1' ).innerHTML = item">
+                        document.getElementById ( 'item1' ).innerHTML = this.item">
           Плейсхолдер router-view
         </button>
         <transition name = "expand-elem">
