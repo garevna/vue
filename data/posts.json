@@ -523,9 +523,12 @@
       "head":"params",
       "picture":false,
       "code":false,
-      "readme":"https://run.plnkr.co/wi4a002UQU9mimI6/",
+      "readme":"https://garevna.github.io/vue.github.io/data/router/04.html",
       "text":"Передача параметров маршрута компоненту",
-      "ref":["https://plnkr.co/edit/MEtMANbrgVXuoR8A8esb?p=preview"]
+      "ref":[
+	      "https://plnkr.co/edit/MEtMANbrgVXuoR8A8esb?p=preview",
+	      "https://run.plnkr.co/wi4a002UQU9mimI6/"
+      ]
     }
   ],
   "Vuex":[
