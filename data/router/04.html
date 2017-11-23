@@ -2,7 +2,7 @@
             onload="console.info('styles seccessfully loaded')" 
             onerror="console.error('Error loading styles')"/>
 <script>
-  const items = [
+  var items = [
   `Обратите внимание на плейсхолдер для компонента, 
   который будет смонтирован для отображения контента при 
   переходе на маршрут роутера:<br/>
@@ -194,63 +194,43 @@ document.changeView = function ( elemId ) {
 <div id="router-sample">
       <section>
         <button class="plus-button"
-              onclick="hideItem1 = document.changeView( 'item1' )">
+              onclick = "hideItem1 = event.target.className === 'minus-button';
+                        event.target.className = hideItem1 ? 
+                                    'plus-button' : 'minus-button';
+                        document.getElementById ( 'item1' ).style.display = 
+                                    hideItem1 ? 'none' : 'block'
+                        document.getElementById ( 'item1' ).innerHTML = items[0]">
           Плейсхолдер router-view
         </button>
         <transition name = "expand-elem">
-          <div class="expand-elem" id="item1" v-if="!hideItem1">
-            <code v-html="items[0]"></code>
+          <div class="expand-elem" id="item1" style="display:none">
           </div>
         </transition>
       </section>
       <button class="plus-button"
-              onclick="hideItem2 = document.changeView( 'item2' )">
+              onclick = "hideItem2 = event.target.className === 'minus-button';
+                        event.target.className = hideItem2 ? 
+                                    'plus-button' : 'minus-button';
+                        document.getElementById ( 'item2' ).style.display = 
+                                    hideItem2 ? 'none' : 'block'
+                        document.getElementById ( 'item2' ).innerHTML = items[1]">
         Параметры на входе компонента
       </button>
       <transition name = "expand-elem">
-        <div class="expand-elem" id="item2" v-if="!hideItem2">
-          <code v-html="item[1]"></code>
+        <div class="expand-elem" id="item2" style="display:none">
         </div>
       </transition>
       <button class="plus-button"
-              onclick="hideItem3 = document.changeView( 'item3' )">
+              onclick="hideItem3 = event.target.className === 'minus-button';
+                        event.target.className = hideItem3 ? 
+                                    'plus-button' : 'minus-button';
+                        document.getElementById ( 'item3' ).style.display = 
+                                    hideItem3 ? 'none' : 'block'
+                        document.getElementById ( 'item3' ).innerHTML = items[2]">
         Определение маршрутов роутера
       </button>
       <transition name = "expand-elem">
         <div class="expand-elem" id="item3" v-if="!hideItem3">
-          <code v-html="item[2]"></code>
         </div>
       </transition>
     </div>
-
-<script>
-  var routerSample = new Vue ({
-  el: '#router-sample',
-  store: routerSampleStore,
-  data: function () {
-    return {
-      console.log ( 'Store data: ', items )
-      localData: JSON.parse( JSON.stringify( items ) ),
-      hideItem1:true,
-      hideItem2:true,
-      hideItem3:true,
-    }
-  },
-  methods: {
-    changeData: function ( field ) {
-      console.log ( this.localData )
-      this.localData [ field ] = event.target.value
-      this.$store.commit( 'updateData', {
-                  field: field,
-                  value: event.target.value
-              })
-    }
-  },
-  mounted: function () {
-    console.log ( 'Vue instance: ', this )
-  }
-})
-</script>
-<!--<script src="./data/router/dataStore.js" onload="console.info ('dataStore was loaded')" onerror="console.error ('error loading dataStore')"></script>
-<script src="./data/router/vueInstance.js" onload="console.info ('vue instance was loaded')" onerror="console.error ('error loading vue instance')">
-</script>-->
