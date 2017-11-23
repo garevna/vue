@@ -60,13 +60,9 @@
 <b>Передача параметров компоненту маршрута</b><br/>
 
 <button class="plus-button"
-              onclick= function ( elemId ) {
-                  hideItem1 = event.target.className === "minus-button"
-                  event.target.className = hideItem1 ? 
-                        "plus-button" : "minus-button"
-                  document.getElementById ( item1 ).style.display = 
-                      event.target.className === "plus-button" ? 
-                                                  'none' : 'block' }>
+              onclick= "hideItem1 = event.target.className === 'minus-button';
+                  event.target.className = hideItem1 ? 'plus-button' : 'minus-button';
+                  document.getElementById ( item1 ).style.display = event.target.className === 'plus-button' ? 'none' : 'block'">
           Плейсхолдер router-view
 </button>
 <div class="expand-elem" id="item1" style="display:none">
