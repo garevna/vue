@@ -2,12 +2,8 @@
             onload="console.info('styles seccessfully loaded')" 
             onerror="console.error('Error loading styles')"/>
 <script>
-  const routerSampleStore = new Vuex.Store({
-  // strict: true,
-  state: {
-    items: [
-    `
-      Обратите внимание на плейсхолдер для компонента, 
+  const items = [
+  `Обратите внимание на плейсхолдер для компонента, 
   который будет смонтирован для отображения контента при 
   переходе на маршрут роутера:<br/>
   <pre class="code-snippet">
@@ -177,19 +173,24 @@ params, в котором и будет находиться переменна�
 Т.е. если компонент получает name === 'attr', он берет значение name из 
 своих атрибутов $attrs (в данном случае - атрибута company), во всех 
 остальных случаях (т.е. на всех выше описанных маршрутах) он оставляет 
-значение name таким, как есть<br/>
-    `
-    ]
-  },
-  mutations: {
-    updateData: function ( state, { index, value } ) {
-      Object.assign ( state.items, {
-        [ index ]: value
-      })
-    }
-  }
-})
+значение name таким, как есть<br/>`
+]
+var changeView = function ( elemId ) {
+      console.log ( this.localData )
+      hideItem = event.target.className === "minus-button"
+      event.target.className = hideItem ? 
+                "plus-button" : "minus-button"
+      var property = `--y`
+      if ( document.getElementById ( elemId ) ) {
+        var size = document.getElementById ( elemId ).offsetHeight
+      }
+      else size = Math.round ( window.innerHeight * 0.7 )
+      document.documentElement.style.removeProperty ( property )
+      document.documentElement.style.setProperty ( property, size + 'px' )
+      return hideItem
+ }
 </script>
+
 <div id="router-sample">
       <section>
         <button class="plus-button"
@@ -198,7 +199,7 @@ params, в котором и будет находиться переменна�
         </button>
         <transition name = "expand-elem">
           <div class="expand-elem" id="item1" v-if="!hideItem1">
-            <code v-html="localData[0]"></code>
+            <code v-html="items[0]"></code>
           </div>
         </transition>
       </section>
@@ -228,29 +229,14 @@ params, в котором и будет находиться переменна�
   store: routerSampleStore,
   data: function () {
     return {
-      console.log ( 'Store data: ', this.$store.state.items )
-      localData: JSON.parse( JSON.stringify(
-              this.$store.state.items ) ),
+      console.log ( 'Store data: ', items )
+      localData: JSON.parse( JSON.stringify( items ) ),
       hideItem1:true,
       hideItem2:true,
       hideItem3:true,
     }
   },
   methods: {
-    changeView: function ( elemId ) {
-      console.log ( this.localData )
-      hideItem = event.target.className === "minus-button"
-      event.target.className = hideItem ? 
-                "plus-button" : "minus-button"
-      var property = `--y`
-      if ( document.getElementById ( elemId ) ) {
-        var size = document.getElementById ( elemId ).offsetHeight
-      }
-      else size = Math.round ( window.innerHeight * 0.7 )
-      document.documentElement.style.removeProperty ( property )
-      document.documentElement.style.setProperty ( property, size + 'px' )
-      return hideItem
-    },
     changeData: function ( field ) {
       console.log ( this.localData )
       this.localData [ field ] = event.target.value
