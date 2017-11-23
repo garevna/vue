@@ -175,8 +175,8 @@ params, в котором и будет находиться переменна�
 остальных случаях (т.е. на всех выше описанных маршрутах) он оставляет 
 значение name таким, как есть<br/>`
 ]
-var changeView = function ( elemId ) {
-      console.log ( this.localData )
+
+document.changeView = function ( elemId ) {
       hideItem = event.target.className === "minus-button"
       event.target.className = hideItem ? 
                 "plus-button" : "minus-button"
@@ -194,7 +194,7 @@ var changeView = function ( elemId ) {
 <div id="router-sample">
       <section>
         <button class="plus-button"
-              onclick="console.log (this); hideItem1 = changeView( 'item1' )">
+              onclick="hideItem1 = document.changeView( 'item1' )">
           Плейсхолдер router-view
         </button>
         <transition name = "expand-elem">
@@ -204,21 +204,21 @@ var changeView = function ( elemId ) {
         </transition>
       </section>
       <button class="plus-button"
-              onclick="hideItem2 = changeView( 'item2' )">
+              onclick="hideItem2 = document.changeView( 'item2' )">
         Параметры на входе компонента
       </button>
       <transition name = "expand-elem">
         <div class="expand-elem" id="item2" v-if="!hideItem2">
-          <code v-html="localData[1]"></code>
+          <code v-html="item[1]"></code>
         </div>
       </transition>
       <button class="plus-button"
-              onclick="hideItem3 = changeView( 'item3' )">
+              onclick="hideItem3 = document.changeView( 'item3' )">
         Определение маршрутов роутера
       </button>
       <transition name = "expand-elem">
         <div class="expand-elem" id="item3" v-if="!hideItem3">
-          <code v-html="localData[2]"></code>
+          <code v-html="item[2]"></code>
         </div>
       </transition>
     </div>
@@ -247,7 +247,7 @@ var changeView = function ( elemId ) {
     }
   },
   mounted: function () {
-    console.log ( 'Vue instance data: ', this.localData )
+    console.log ( 'Vue instance: ', this )
   }
 })
 </script>
