@@ -518,6 +518,14 @@
       "readme":"https://garevna.github.io/vue.github.io/data/router/03.html",
       "text":"Часто удобно отслеживать изменение маршрута, устанавливая наблюдателя на свойство $route",
       "ref":["https://plnkr.co/edit/9tX5uw1cEMTHEaSODs3Z?p=preview"]
+    },
+    {
+      "head":"params",
+      "picture":false,
+      "code":false,
+      "readme":"https://garevna.github.io/vue.github.io/data/router/04.html",
+      "text":"Передача параметров маршрута компоненту",
+      "ref":["https://plnkr.co/edit/MEtMANbrgVXuoR8A8esb?p=preview"]
     }
   ],
   "Vuex":[
