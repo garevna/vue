@@ -1,3 +1,4 @@
+console.log ('routerSampleStore')
 const routerSampleStore = new Vuex.Store({
   // strict: true,
   state: {
