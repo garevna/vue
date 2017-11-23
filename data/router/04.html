@@ -187,7 +187,10 @@ params, в котором и будет находиться переменна�
         [ index ]: value
       })
     }
-  }
+  },
+              mounted: function () {
+                    console.log (this)
+              }
 })
 </script>
 <div id="router-sample">
@@ -238,6 +241,7 @@ params, в котором и будет находиться переменна�
   },
   methods: {
     changeView: function ( elemId ) {
+      console.log ( this.localData )
       hideItem = event.target.className === "minus-button"
       event.target.className = hideItem ? 
                 "plus-button" : "minus-button"
@@ -251,6 +255,7 @@ params, в котором и будет находиться переменна�
       return hideItem
     },
     changeData: function ( field ) {
+      console.log ( this.localData )
       this.localData [ field ] = event.target.value
       this.$store.commit( 'updateData', {
                   field: field,
