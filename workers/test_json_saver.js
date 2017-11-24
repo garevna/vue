@@ -46,7 +46,7 @@ this.addEventListener ( 'message', function ( message ) {
 	
 	console.log ( 'worker reseived data: ', theData )
 	
-	if ( data.operation === "save" )
+	if ( theData.data.operation === "save" )
 		this.save_file ( theData.phpFileURL, theData.dataFileURL, theData.dataFileContent )
-	else this.read_file ( dataFileURL )
+	else this.read_file ( theData.dataFileURL )
 })
