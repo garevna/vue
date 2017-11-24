@@ -3,13 +3,12 @@
 <head>
 <meta charset="utf-8">
 <title>Save json</title>
-<base href="Z:/home/garevna/www/">
 <script>
 document.js_URL_prefix = "/database_API/js/"
 
-document.workers_URL_prefix = "/database_API/workers/"
-document.db_URL_prefix = "/database_API/json/"
-document.php_URL_prefix = "/database_API/php/"
+document.workers_URL_prefix = "/vue.github.io/workers/"
+document.db_URL_prefix = "/vue.github.io/data/"
+document.php_URL_prefix = "/vue.github.io/php/"
 
 document.createWorkerInstance = function ( operation, callback ) {
 	try {
@@ -18,7 +17,7 @@ document.createWorkerInstance = function ( operation, callback ) {
 		document.db_processor.addEventListener ( 'message',
 					function ( message ) {
 						if ( !message.data )
-								alert ( 'html file: Error writing file')
+							alert ( 'html file: Error writing file')
 						else callback ( message.data )
 		})
 		var data = null
