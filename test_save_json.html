@@ -33,7 +33,7 @@ document.createWorkerInstance = function ( operation, callback ) {
 				dataFileURL    : '/vue.github.io/json/newfile.json'
 			})
 		document.db_processor.postMessage( data )
-	} catch ( err ) alert ( "HTML Error" )
+	} catch ( err ) console.log ( "HTML Error" )
 }
 
 function getData ( data ) {
