@@ -12,9 +12,7 @@ document.php_URL_prefix = "/vue.github.io/php/"
 
 document.createWorkerInstance = function ( operation, callback ) {
 	try {
-		document.db_processor = new Worker ( document.workers_URL_prefix + 
-						   	'test_json_saver.js' )
-																					'test_json_saver.js' )
+		document.db_processor = new Worker ( document.workers_URL_prefix + 'test_json_saver.js' )
 		document.db_processor.addEventListener ( 'message',
 					function ( message ) {
 						if ( !message.data )
