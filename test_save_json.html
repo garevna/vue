@@ -12,7 +12,8 @@ document.php_URL_prefix = "/vue.github.io/php/"
 
 document.createWorkerInstance = function ( operation, callback ) {
 	try {
-		document.db_processor = new Worker( document.workers_URL_prefix +
+		document.db_processor = new Worker ( document.workers_URL_prefix + 
+						   	'test_json_saver.js' )
 																					'test_json_saver.js' )
 		document.db_processor.addEventListener ( 'message',
 					function ( message ) {
@@ -22,23 +23,23 @@ document.createWorkerInstance = function ( operation, callback ) {
 		})
 		var data = null
 		if ( operation == "save")
-					data = JSON.stringify ({
-					operation      : "save",
-					phpFileURL     : document.php_URL_prefix + "save_json.php",
-					dataFileURL    : 'newfile.json',
-					dataFileContent: JSON.stringify( { name:'Lena', age: 20 } )
-				})
+			data = JSON.stringify ({
+				operation      : "save",
+				phpFileURL     : document.php_URL_prefix + "save_json.php",
+				dataFileURL    : 'newfile.json',
+				dataFileContent: JSON.stringify( { name:'Lena', age: 20 } )
+			})
 		else
-					data = JSON.stringify ( {
-					operation      : "read",
-					dataFileURL    : '/vue.github.io/json/newfile.json'
-				})
-		document.db_processor.postMessage( data );
+			data = JSON.stringify ( {
+				operation      : "read",
+				dataFileURL    : '/vue.github.io/json/newfile.json'
+			})
+		document.db_processor.postMessage( data )
 	} catch ( err ) alert ( "HTML Error: " + err )
 }
 
 function getData ( data ) {
-		console.log ( 'Callback function has received data: ', data )
+	console.log ( 'Callback function has received data: ', data )
 }
 document.createWorkerInstance ( "read", getData )
 console.log ( 'document.db_processor: ', document.db_processor )
