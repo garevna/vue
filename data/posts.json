@@ -429,7 +429,7 @@
         ],
       "text":"Использование встроенных компонентов transition и transition-group с классами -enter | -leave для анимации появления / исчезновения элементов DOM",
       "ref":[
-	      'https://plnkr.co/edit/GgZwzN3319U2QM9q8FvC?p=preview',
+	      "https://plnkr.co/edit/GgZwzN3319U2QM9q8FvC?p=preview",
 	      "https://codepen.io/garevna/pen/XewZZz",
 	      "https://plnkr.co/edit/c5pN5tiIEU75ZbnDMxdW?p=preview",
 	      "https://plnkr.co/edit/brgMsFIcY71mTr8Yf44m?p=preview",
