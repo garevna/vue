@@ -86,6 +86,38 @@
         "ref":[
           "https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd"
         ]
+    },
+    {
+        "head":"filters",
+        "picture":false,
+        "code":[
+		"// Глобальный фильтр",
+		"Vue.filter ( 'toUA', function ( value ) {",
+		"     return `${value} грн`",
+		"})",		
+		"new Vue({",
+		"     el: '#sample',",
+		"     data: {",
+		"         name: 'windows'",
+		"     }",
+		"     // Локальный фильтр",
+		"     filters: {",
+		"         bigLetters ( value ) {",
+		"     }",
+		"})",
+		"",
+		"",
+		"// index.html:",
+		"<div id='sample'>",
+		"     <p>{{ price | toUA }}</p>",
+		"     <p>{{ 'windows' | bigLetters }}</p>",
+		"</div>"
+	],
+        "text":"Собственные фильты можно зарегистрировать глобально и локально<br/>Объявление фильтра нужно делать до создания экземпляра Vue<br/>Фильтры - это обычные функции, поэтому им можно передавать параметры",
+	"readme":false,
+        "ref":[
+          "https://plnkr.co/edit/Adqs21lTs6snJXnRpHZu?p=preview"
+        ]
     }
   ],
   "Directives": [
@@ -210,6 +242,14 @@
       "readme":"https://garevna.github.io/vue.github.io/data/components/dynamic.html",
       "text":"Пример компонента dropdown-menu, в котором при выборе одного из элементов меню происходит отправка события родителю (экземпляру Vue) с передачей внутреннего содержимого выбранного пункта меню.<br/>В экземпляре Vue происходит обработка события и вывод соотвествующего текста на страницу",
       "ref":[ "https://plnkr.co/edit/RXcN5V5T7iW51b30XMm0?p=preview" ]
+    },
+    {
+      "head":"Recursive component",
+      "picture":false,
+      "code":[],
+      "readme":false,
+      "text":"Пример рекурсивного компонента",
+      "ref":[ "https://plnkr.co/edit/mFmaocEKAzJVOwIK6Wwu?p=preview" ]
     },
     {
       "head":"Array",
