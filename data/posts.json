@@ -99,7 +99,7 @@
 			"textURL":"",
 			"readme":"https://garevna.github.io/vue.github.io/data/vue/devtools.html",
 			"ref":[
-				"https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd"
+				"https://plnkr.co/edit/vdEIxZYvoN4x6VFMX3kb?p=preview"
 			],
 			"samples":[
 				"https://plnkr.co/edit/vdEIxZYvoN4x6VFMX3kb?p=preview"
@@ -147,7 +147,7 @@
 	"Directives": [
 		{
 			"head":"v-bind",
-			"picture":false,
+			"picture":"https://upload.wikimedia.org/wikipedia/commons/9/93/Protein_MBL2_PDB_1hup.png",
 			"code":[
 				"// imageSrc - свойство родителя",
 				"<img v-bind:src = 'imageSrc'/>",
@@ -168,7 +168,7 @@
 		},
 		{
 			"head":"v-model",
-			"picture":false,
+			"picture":"https://www.mycanceriq.ca/Content/images/HelpfulLinks_Banner.png",
 			"code":[],
 			"text":"Служит для двустороннего связывания потомка и родителя.<br/>Соответствующее свойство, указанное в директиве, может быть изменено в потомке, что будет реактивно отражено в родителе.<br/>Обычно используется для элементов форм",
 			"textURL":"",
@@ -360,7 +360,7 @@
 	"Events":[
 		{
 			"head":"Отцы и дети",
-			"picture":false,
+			"picture":"http://www.playcast.ru/uploads/2016/09/12/19876831.gif",
 			"code":[],
 			"text":"Передача события из вложенных компонентов",
 			"textURL":"",
@@ -374,7 +374,7 @@
 			"head":"Шина событий",
 			"picture":false,
 			"code":[],
-			"readme":"https://garevna.github.io/vue.github.io/data/events/01.html",
+			"readme":"http://vignette4.wikia.nocookie.net/dont-starve/images/8/82/Webber_%28HD%29.png",
 			"text":"Передача событий через общую шину",
 			"textURL":"",
 			"ref":["https://plnkr.co/edit/XRznjj6FTBbyuwiVHSeC?p=preview"],
@@ -385,7 +385,7 @@
 		},
 		{
 			"head":"Шина данных",
-			"picture":false,
+			"picture":"https://garevna.github.io/vue.github.io/data/events/01.html",
 			"code":[],
 			"readme":"https://garevna.github.io/vue.github.io/data/http/01.html",
 			"text":"Использование общего хранилища данных, загружаемых асинхронно с помощью метода $http.get плагина vue-resource<br/><a href='https://github.com/pagekit/vue-resource'>https://github.com/pagekit/vue-resource</a>)",
