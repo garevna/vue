@@ -385,7 +385,7 @@
 		},
 		{
 			"head":"Шина данных",
-			"picture":"https://garevna.github.io/vue.github.io/data/events/01.html",
+			"picture":"http://nizhnevartovsk.altronshina.ru/image/cache/hamburger-altron-465x500.png",
 			"code":[],
 			"readme":"https://garevna.github.io/vue.github.io/data/http/data_bus.html",
 			"text":"Использование общего хранилища данных, загружаемых асинхронно с помощью метода $http.get плагина vue-resource<br/><a href='https://github.com/pagekit/vue-resource'>https://github.com/pagekit/vue-resource</a>)",
