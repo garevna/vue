@@ -92,6 +92,18 @@
 			"usefull":[]
 		},
 		{
+			"head":"CSS",
+			"picture":"https://vuetifyjs.com/static/doc-images/logo.svg",
+			"code":false,
+			"text":"Material Component Framework",
+			"textURL":"",
+			"readme":"",
+			"samples":[],
+			"usefull":[
+				"https://vuetifyjs.com/"
+			]
+		},
+		{
 			"head":"vue-devtools",
 			"picture":false,
 			"code":false,
@@ -818,7 +830,7 @@
 			"picture":false,
 			"code":[],
 			"readme":"https://garevna.github.io/vue.github.io/data/AJAX/axios.html",
-			"text":"<a href='https://serversideup.net/uploading-files-vuejs-axios/?utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers' target='_blank'>Статья (на англ.)</a>",
+			"text":"",
 			"textURL":"",
 			"ref":[ "https://plnkr.co/edit/lZLVjgPDmkpgmIwzebMd?p=preview" ],
 			"samples": [ "https://plnkr.co/edit/lZLVjgPDmkpgmIwzebMd?p=preview" ],
