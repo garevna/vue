@@ -6,6 +6,7 @@
 		"ref":"https://docs.google.com/presentation/d/1Ngckdav0zi7vPw9V8FC7aJGsXIsYDCy_Bi6aBXcZzjo/edit?usp=sharing",
 		"picture":false,
 		"usefull":[
+			"https://laravel.ru/posts/391",
 			"https://vuetifyjs.com/?ref=vuejsdevelopers&utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers",
 			"https://www.fusioncharts.com/blog/create-charts-vue-js/?utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers",
 			"https://m.serversideup.net/api-driven-development-with-laravel-and-vuejs-c30869060bb1",
@@ -75,7 +76,10 @@
 		"title":"События",
 		"comment":"Событийная модель Vue.js",
 		"ref":"https://plnkr.co/edit/vdEIxZYvoN4x6VFMX3kb?p=preview",
-		"picture":false
+		"picture":false,
+		"usefull":[
+			"https://alligator.io/vuejs/global-event-bus/"
+		]
 	},
 	{
 		"name":"Templates",
@@ -128,6 +132,7 @@
 		"ref":"https://ru.vuejs.org/v2/guide/transitions.html",
 		"picture":false,
 		"usefull":[
+			"https://alligator.io/vuejs/understanding-transitions/"
 		]
 	},
 	{
