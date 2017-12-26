@@ -2,8 +2,60 @@
 
 .section-container,
 .section-article {
-	width:100%;
+	position:absolute;
+	left:20%;
+	right:20%;
 	box-sizing:border-box;
+}
+.section-picture { max-width: 20%; min-width: 200px; float:left; margin-right: 10px; }
+.samples-section,
+.refs-section {
+	counter-reset: section;
+	list-style-type:none;
+	display:inline-block;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	padding:5px 8px;
+	width:auto;
+	border-radius:4px;
+	color:#333;
+  margin-left:10px;
+  display:block;
+  animation: show-menu 1s forwards;
+  font-family:'Papyrus';
+}
+.samples-section-item,
+.refs-section-item {
+	display: inline-block;
+	padding:5px 10px;
+	margin:5px;
+  outline:none;
+  border:none;
+  background:linear-gradient(to bottom, #dadada, #efefef );
+  box-shadow:
+	 -0.5px -0.5px 0 1px #fff,
+	  0.1px -0.1px 0 2px #888,
+	  0.1px -0.1px 0 1px #fff,
+	 -0.5px  0.5px 0 2px #999;
+	border-top-left-radius: 10px;
+	box-sizing: border-box;
+}
+.refs-section-item:before {
+  counter-increment: section;
+  content:"\26FD \0020 \0020" counter(section);
+}
+.refs-section-item:hover:before {
+  content:"\26FD \0020 \0020" counter(section);
+}
+.samples-section-item:before {
+  counter-increment: section;
+  content:"\2615 \0020 \0020 sample \0020" counter(section);
+}
+.samples-section-item:hover:before {
+  content:"\2691 \0020 \0020 sample \0020" counter(section);
+}
+.samples-section-item:visited:before, .sample-button:active:before {
+  content:"\26F3 \0020 \0020 sample";
 }
 
 .section-article-title {
@@ -14,11 +66,7 @@
 	color: #bbb;
 	padding-left:20px;
 }
-.section-article ol {
-	display:inline-block;
-	-webkit-margin-before: 0;
-	-webkit-margin-after: 0;
-}
+
 .section-article .content {
   position:relative;
   top:-80px;
@@ -31,7 +79,6 @@
 }
 .section-article {
 	width:100%;
-	counter-reset: section;
 }
 .content {
 	width:85%;
@@ -58,56 +105,61 @@
 	-webkit-appearance: button;
 	background-color: buttonface;
 }
-.section-article li {
-	padding:5px 8px;
-	width:auto;
-	border-radius:4px;
-	color:#333;
-  margin-left:10px;
-  display:inline-block;
-  animation: show-menu 1s forwards;
-  font-family:'Papyrus';
-}
-.section-article section {
-  counter-reset: section;
-}
-.section-article li:before {
-  counter-increment: section;
-  content:"\2615 \0020 \0020 sample \0020" counter(section);
-}
-.section-article li:hover:before {
-  content:"\2691 \0020 \0020 sample \0020" counter(section);
-}
-.section-article li:visited:before, .article a:active:before {
-  content:"\26F3 \0020 \0020 sample";
-}
+
 .readme-button, .readme-button-active,
 .code-button, .code-button-active {
-	position: relative;
-	display:block;
-	top:0px;
-	left:93%;
-	font-size:30px;
-	outline:none;
-	padding: 0 5px;
+		/*position: absolute;*/
+		display:inline-block;
+		background:none;
+		border: 0;
+		outline:none;
+		top:0px;
+		/* right:-30px; */
+		font-size:30px;
+		font-family: papyrus, monospace;
+		padding: 0 5px;
 }
 .code-button:before {
-	content: "\25E9";
+	/*content: "\25E9";*/
+		content: "\2774 \2775";
+		display:inline-block;
+		transition:all 0.5s;
 }
 .code-button:hover:before {
-	content: "\25EA";
+		/*content: "\25EA";*/
+		-webkit-transform: rotate(90deg);
+		transform: rotate(90deg);
 }
 .code-button-active:before {
-	content: "\25EA";
+	/*content: "\25EA";*/
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+	color: #900;
 }
 .readme-button:before {
-	content: '\25D0';
+		/*content: '\25D0';*/
+		content: '\2753';
+		border:solid 1px;
+		border-radius:100%;
+		width:40px;
+		height:40px;
+		padding:0;
+		box-sizing: border-box;
+		display:inline-block;
+		transition:all 0.5s;
 }
 .readme-button:hover:before {
-	content: '\25D1';
+	/*content: '\25D1';
+	content: '\2047';*/
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+
 }
 .readme-button-active:before {
-	content: '\25D1';
+	/*content: '\25D1';*/
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+	color: #900;
 }
 .readme {
 	position:relative;
@@ -116,4 +168,34 @@
 	width:72%;
 	padding:10px 20px;
 	/*border: inset 1px;*/
+}
+
+@media screen and (max-width:720px) and (min-width:481px) {
+	.section-container,
+	.section-article {
+		left:5%;
+		right:5%;
+	}
+}
+@media screen and (max-width:999px) and (min-width:721px) {
+	.section-container,
+	.section-article {
+		left:10%;
+		right:10%;
+	}
+}
+
+@media screen and (max-width:480px) {
+	.section-container,
+	.section-article {
+		left:20px;
+		right:20px;
+	}
+}
+@media screen and (min-width:1000px) {
+	.section-container,
+	.section-article {
+		left:20%;
+		right:20%;
+	}
 }
