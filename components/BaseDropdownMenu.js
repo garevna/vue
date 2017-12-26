@@ -27,26 +27,26 @@ const BaseDropdownMenu = ( 'dropdown-menu', {
     }
   },
   methods: {
-	  changeMenuVisibility: function ( event ) {
-		  this.visibleStatus = !this.visibleStatus
-	  },
-	  setUnvisible: function ( event ) {
-		  this.visibleStatus = false
-	  }
+    changeMenuVisibility: function ( event ) {
+      this.visibleStatus = !this.visibleStatus
+    },
+    hideMenu: function ( event ) {
+      this.visibleStatus = false
+    }
   },
   mounted: function () {
-	this.$on ('menuSelect', function ( val ) {
-		this.visibleStatus = false
-		this.$parent.$emit ( 'menuSelect', val )
-	} )
+    this.$on ( 'menuSelect', function ( val ) {
+      this.visibleStatus = false
+      this.$parent.$emit ( 'menuSelect', val )
+    })
   },
   components: {
     'menu-option': {
       props: {
-        val: { 
+        val: {
           type: String,
           required: true
-        }, 
+        },
         css: {
           type: String,
           default:'dropdown-menu-item'
@@ -58,9 +58,8 @@ const BaseDropdownMenu = ( 'dropdown-menu', {
       },
       methods: {
         clickHandler: function ( event ) {
-          this.$parent.$emit ( 'menuSelect', 
+          this.$parent.$emit ( 'menuSelect',
                   event.target.innerHTML.trim() )
-	  this.visibleStatus = false
         }
       },
       template:`
@@ -75,11 +74,11 @@ const BaseDropdownMenu = ( 'dropdown-menu', {
   },
   template: `
     <div>
-      <button :class="buttonClass" 
+      <button :class="buttonClass"
           @click="changeMenuVisibility">
       </button>
-      <div :class="menuClass" @mouseleave = "setUnvisible">
-          <menu-option 
+      <div :class="menuClass" @mouseleave="hideMenu">
+          <menu-option
               v-for = "item in options"
               :val="item"
               :css="optionsClass"
