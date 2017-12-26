@@ -9,7 +9,8 @@
 			"https://vuetifyjs.com/?ref=vuejsdevelopers&utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers",
 			"https://www.fusioncharts.com/blog/create-charts-vue-js/?utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers",
 			"https://m.serversideup.net/api-driven-development-with-laravel-and-vuejs-c30869060bb1",
-			"https://johnpapa.net/vue-typescript/?utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers"
+			"https://johnpapa.net/vue-typescript/?utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers",
+			"https://vuejsdevelopers.com/"
 		]
 	},
 	{
@@ -37,6 +38,7 @@
 		"ref":"https://docs.google.com/presentation/d/1igrCFnps4TL7aebpWPPVeCveO7dYhO8NVQ9oVCRrcEw/edit?usp=sharing",
 		"picture":false,
 		"usefull": [
+			"http://vegibit.com/vue-js-directives/"
 		]
 	},
 	{
@@ -156,7 +158,11 @@
 		"ref":"https://vuex.vuejs.org/en/",
 		"picture":"https://d2eip9sf3oo6c2.cloudfront.net/series/square_covers/000/000/111/full/EGH_VueJSNuxt_Final_1000.png",
 		"usefull":[
-			""
+			"https://medium.com/3yourmind/large-scale-vuex-application-structures-651e44863e2f",
+			"https://alligator.io/vuejs/intro-to-vuex/",
+			"https://scotch.io/tutorials/state-management-in-vue-getting-started-with-vue",
+			"https://medium.com/frontend-fun/vuejs-introduction-to-vuex-82bf35be5130",
+			"https://vuejsdevelopers.com/2017/11/13/vue-js-vuex-undo-redo/?jsdojo_id=revue_vur&utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers"
 		]
   }
 ]
