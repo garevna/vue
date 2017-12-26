@@ -94,6 +94,6 @@ const currentPost = ( 'current-post', {
     })
   },
   components: {
-    'readme-content': readmeContent
+    //'readme-content': readmeContent
   }
 })
