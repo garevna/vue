@@ -1,6 +1,6 @@
 @charset "utf-8";
 .section {
-  padding:0px 10px;
+  padding:10px;
 }
 .section-picture,
 .section-title,
@@ -52,4 +52,3 @@
   .section { font-size:14px; }
   .section pre { font-size:12px; }
 }
-
