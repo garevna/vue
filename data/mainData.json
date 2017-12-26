@@ -1,136 +1,162 @@
 [
-  {
-    "name":"Vue.js",
-    "title":"Model | View",
-    "comment":"Подключение библиотеки Vue.js:<br/> &lt;script src ='https://unpkg.com/vue'>&lt;/script>",
-    "ref":"https://docs.google.com/presentation/d/1Ngckdav0zi7vPw9V8FC7aJGsXIsYDCy_Bi6aBXcZzjo/edit?usp=sharing",
-    "picture":false
-  },
-  {
-    "name":"Directives",
-    "title":"Директивы Vue.js",
-    "comment":"Директивы расширяют множество стандартных атрибутов тегов, позволяя использовать встроенные возможности Vue.js по управлению отображением данных модели в представлении.<br/>По сути, директива - это особый токен в разметке, который сообщает библиотеке Vue.js, что делать с элементом DOM.<br/>Все директивы Vue.js имеют префикс (v-)",
-    "code": [
-      "<tag v-[directiveId] = '...'></tag>",
-      "// Следующая директива инструктирует",
-      "// Vue.js обновлять текст в элементе ",
-      "// div при изменении значения message ",
-      "// в модели",
-      "<div v-text='message'></div>",
-      "// Далее используется вычисляемое ",
-      "// выражение вместо одного ключевого ",
-      "// свойства. ",
-      "// Vue.js автоматически отслеживает ",
-      "// свойства, от которых зависит ",
-      "// выражение, и обновляет директиву, ",
-      "// когда изменяется зависимость",
-      "<div ",
-      "    v-text='message + user.name'>",
-      "</div>"
-    ],
-    "ref":"https://docs.google.com/presentation/d/1igrCFnps4TL7aebpWPPVeCveO7dYhO8NVQ9oVCRrcEw/edit?usp=sharing",
-    "picture":false
-  },
-  {
-    "name":"Components",
-    "title":"Компоненты",
-    "comment":"Основа модульной системы Vue.js<br/>Структура компонента может быть достаточно сложной, но, как правило (за исключением случая функционального компонента), в описание компонента входит свойство template",
-    "code": [
-      "const TheChild = ( 'child-component', {",
-      "    props:['rec'],",
-      "    data: function () {",
-      "        return {",
-      "            articleText: this.rec.text,",
-      "            pictURL: this.rec.picture",
-      "        }",
-      "    template: `",
-      "        <article>",
-      "            <img :src='pictURL'",
-      "                 class='picture'/>",
-      "            <div class='articleClass'",
-      "                 v-html='articleText'>",
-      "            </div>",
-      "        </article>`",
-      "</div>"
-    ],
-    "ref":"https://docs.google.com/presentation/d/1wc3MBlxkmpnB5AdsvQq1b7rtvWfnKUDJez9FO3z60oM/edit?usp=sharing",
-    "picture":"./images/broke.gif"
-  },
-  {
-    "name":"Events",
-    "title":"События",
-    "comment":"Событийная модель Vue.js",
-    "ref":"https://plnkr.co/edit/vdEIxZYvoN4x6VFMX3kb?p=preview",
-    "picture":false
-  },
-  {
-    "name":"Templates",
-    "title":"Шаблоны",
-    "comment":"Существует досточное разнообразие способов определения шаблона компонента: символьной строкой (String), литералом (Template literal), X-Templates, Inline, рендер-функцией (Render functions), JSX и Single page components. Шаблоны Vue.js обеспечивают почти все, что нужно в приложении.",
-    "code":[
-      "// Можно задать именованный шаблон ",
-      "// как обычный тег в html",
-      "<template id='child'>",
-      "  <div>",
-      "    <slot name='original-slot'>",
-      "    </slot>",
-      "    <slot name='scoped-slot'",
-      "          :message='childMessage'>",
-      "    </slot>",
-      "  </div>",
-      "</template>",
-      "// а затем в коде компонента указать ссылку на id шаблона",
-      "template:'#child'"
-    ],
-    "ref":"",
-    "picture":false
-  },
-  {
-    "name":"Slots",
-    "title":"Дистрибуция контента",
-    "comment":"Слоты позволяют вставить контент родителя в определенное место потомка.<br/>Для доступа к слотам существует свойство $slots",
-    "ref":"https://docs.google.com/presentation/d/1-Cu9dLOg5CVRFOHUbKy7PqSL0upFlnEakT-HLofbTdY/edit?usp=sharing",
-    "picture":false
-  },
-  {
-    "name":"Router",
-    "title":"Маршрутизатор",
-    "comment":"vue-router официально поддерживается командой разработчиков Vue.js",
-    "code":["<script src='https://unpkg.com/vue-router/dist/vue-router.js'></script>"],
-    "ref":false,
-    "picture":"./images/cabine.gif"
-  },
-  {
-    "name":"Transitions",
-    "title":"Анимация состояний компонентов или элементов",
-    "comment":"Vue отрабатывает анимационные переходы, добавляя и удаляя классы компонентам / элементам в процессе перехода из одного состояния в другое.<br/>Всего предусмотрено шесть классов переходов",
-    "ref":"https://ru.vuejs.org/v2/guide/transitions.html",
-    "picture":false
-  },
-  {
-    "name":"AJAX",
-    "title":"vue-resource",
-    "comment":"Метод <code>this.$http.get( sourceUrl )</code> возвращает объект <b>promise</b>, т.е. объект, имеющий состояние.<br/> Пока операция не завершена, состояние объекта будет <em>pending</em>, т.е. объект находится в ожидании завершения операции.<br/>Если операция завершена успешно, состояние объекта становится <em>fulfilled</em>, в противном случае - <em>rejected</em>.<br/> Для обработки изменения состояния объекта на него  нужно навесить обработчики.<br/> * Детальнее: <i>https://github.com/pagekit/vue-resource</i><br/> * Ссылка на библиотеку: <i>https://cdn.jsdelivr.net/npm/vue-resource@1.3.4</i><br/> * Для создания и редактирования JSON-файлов можно использовать сервис <i>http://www.jsoneditoronline.org/</i><br/><small>Создайте репозиторий на гитхабе, куда поместите свой JSON-файл<br/>* Сервис <i>https://jsonplaceholder.typicode.com/</i> можно использовать как эмулятор удаленного сервера</small>",
-    "code":[
-		  "var sourceUrl = 'https://garevna.github.io/vue.github.io/data/posts.json'",
-		  "var promise = this.$http.get( sourceUrl )",
-		  "promise.then ( successCallback, failureCallback )",
-		  "// или еще проще:",
-		  "this.$http.get( sourceUrl ).then(",
+	{
+		"name":"Vue.js",
+		"title":"Model | View",
+		"comment":"Подключение библиотеки Vue.js:<br/> &lt;script src ='https://unpkg.com/vue'>&lt;/script>",
+		"ref":"https://docs.google.com/presentation/d/1Ngckdav0zi7vPw9V8FC7aJGsXIsYDCy_Bi6aBXcZzjo/edit?usp=sharing",
+		"picture":false,
+		"usefull":[
+			"https://vuetifyjs.com/?ref=vuejsdevelopers&utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers",
+			"https://www.fusioncharts.com/blog/create-charts-vue-js/?utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers",
+			"https://m.serversideup.net/api-driven-development-with-laravel-and-vuejs-c30869060bb1",
+			"https://johnpapa.net/vue-typescript/?utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers"
+		]
+	},
+	{
+		"name":"Directives",
+		"title":"Директивы Vue.js",
+		"comment":"Директивы расширяют множество стандартных атрибутов тегов, позволяя использовать встроенные возможности Vue.js по управлению отображением данных модели в представлении.<br/>По сути, директива - это особый токен в разметке, который сообщает библиотеке Vue.js, что делать с элементом DOM.<br/>Все директивы Vue.js имеют префикс (v-)",
+		"code": [
+			"<tag v-[directiveId] = '...'></tag>",
+			"// Следующая директива инструктирует",
+			"// Vue.js обновлять текст в элементе ",
+			"// div при изменении значения message ",
+			"// в модели",
+			"<div v-text='message'></div>",
+			"// Далее используется вычисляемое ",
+			"// выражение вместо одного ключевого ",
+			"// свойства. ",
+			"// Vue.js автоматически отслеживает ",
+			"// свойства, от которых зависит ",
+			"// выражение, и обновляет директиву, ",
+			"// когда изменяется зависимость",
+			"<div ",
+			"    v-text='message + user.name'>",
+			"</div>"
+		],
+		"ref":"https://docs.google.com/presentation/d/1igrCFnps4TL7aebpWPPVeCveO7dYhO8NVQ9oVCRrcEw/edit?usp=sharing",
+		"picture":false,
+		"usefull": [
+		]
+	},
+	{
+		"name":"Components",
+		"title":"Компоненты",
+		"comment":"Основа модульной системы Vue.js<br/>Структура компонента может быть достаточно сложной, но, как правило (за исключением случая функционального компонента), в описание компонента входит свойство template",
+		"code": [
+			"const TheChild = ( 'child-component', {",
+			"    props:['rec'],",
+			"    data: function () {",
+			"        return {",
+			"            articleText: this.rec.text,",
+			"            pictURL: this.rec.picture",
+			"        }",
+			"    template: `",
+			"        <article>",
+			"            <img :src='pictURL'",
+			"                 class='picture'/>",
+			"            <div class='articleClass'",
+			"                 v-html='articleText'>",
+			"            </div>",
+			"        </article>`",
+			"</div>"
+		],
+		"ref":"https://docs.google.com/presentation/d/1wc3MBlxkmpnB5AdsvQq1b7rtvWfnKUDJez9FO3z60oM/edit?usp=sharing",
+		"picture":"./images/broke.gif",
+		"usefull": [
+			"http://marcelpociot.de/blog/2017-12-08-using-custom-vuejs-elements?utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers",
+			"https://nick-basile.com/blog/post/how-to-build-a-vuejs-component-with-tailwind-in-a-laravel-project?utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers"
+		]
+	},
+	{
+		"name":"Events",
+		"title":"События",
+		"comment":"Событийная модель Vue.js",
+		"ref":"https://plnkr.co/edit/vdEIxZYvoN4x6VFMX3kb?p=preview",
+		"picture":false
+	},
+	{
+		"name":"Templates",
+		"title":"Шаблоны",
+		"comment":"Существует досточное разнообразие способов определения шаблона компонента: символьной строкой (String), литералом (Template literal), X-Templates, Inline, рендер-функцией (Render functions), JSX и Single page components. Шаблоны Vue.js обеспечивают почти все, что нужно в приложении.",
+		"code":[
+			"// Можно задать именованный шаблон ",
+			"// как обычный тег в html",
+			"<template id='child'>",
+			"  <div>",
+			"    <slot name='original-slot'>",
+			"    </slot>",
+			"    <slot name='scoped-slot'",
+			"          :message='childMessage'>",
+			"    </slot>",
+			"  </div>",
+			"</template>",
+			"// а затем в коде компонента указать ссылку на id шаблона",
+			"template:'#child'"
+		],
+		"ref":"",
+		"picture":false,
+		"usefull":[
+		]
+	},
+	{
+		"name":"Slots",
+		"title":"Дистрибуция контента",
+		"comment":"Слоты позволяют вставить контент родителя в определенное место потомка.<br/>Для доступа к слотам существует свойство $slots",
+		"ref":"https://docs.google.com/presentation/d/1-Cu9dLOg5CVRFOHUbKy7PqSL0upFlnEakT-HLofbTdY/edit?usp=sharing",
+		"picture":false,
+		"usefull":[
+		]
+	},
+	{
+		"name":"Router",
+		"title":"Маршрутизатор",
+		"comment":"vue-router официально поддерживается командой разработчиков Vue.js",
+		"code":["<script src='https://unpkg.com/vue-router/dist/vue-router.js'></script>"],
+		"ref":false,
+		"picture":"./images/cabine.gif",
+		"usefull":[
+			"https://vuejsdevelopers.com/2017/12/11/vue-ssr-router/?jsdojo_id=revue_sgd&utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers"
+		]
+	},
+	{
+		"name":"Transitions",
+		"title":"Анимация состояний компонентов или элементов",
+		"comment":"Vue отрабатывает анимационные переходы, добавляя и удаляя классы компонентам / элементам в процессе перехода из одного состояния в другое.<br/>Всего предусмотрено шесть классов переходов",
+		"ref":"https://ru.vuejs.org/v2/guide/transitions.html",
+		"picture":false,
+		"usefull":[
+		]
+	},
+	{
+		"name":"AJAX",
+		"title":"vue-resource",
+		"comment":"Метод <code>this.$http.get( sourceUrl )</code> возвращает объект <b>promise</b>, т.е. объект, имеющий состояние.<br/> Пока операция не завершена, состояние объекта будет <em>pending</em>, т.е. объект находится в ожидании завершения операции.<br/>Если операция завершена успешно, состояние объекта становится <em>fulfilled</em>, в противном случае - <em>rejected</em>.<br/> Для обработки изменения состояния объекта на него  нужно навесить обработчики.<br/> * Детальнее: <i>https://github.com/pagekit/vue-resource</i><br/> * Ссылка на библиотеку: <i>https://cdn.jsdelivr.net/npm/vue-resource@1.3.4</i><br/> * Для создания и редактирования JSON-файлов можно использовать сервис <i>http://www.jsoneditoronline.org/</i><br/><small>Создайте репозиторий на гитхабе, куда поместите свой JSON-файл<br/>* Сервис <i>https://jsonplaceholder.typicode.com/</i> можно использовать как эмулятор удаленного сервера</small>",
+		"code":[
+			"var sourceUrl = 'https://garevna.github.io/vue.github.io/data/posts.json'",
+			"var promise = this.$http.get( sourceUrl )",
+			"promise.then ( successCallback, failureCallback )",
+			"// или еще проще:",
+			"this.$http.get( sourceUrl ).then(",
 			"      successCallback, failureCallback)",
 			"// функции-обработчики:",
 			"// successCallback -  успешного завершения операции",
 			"// failureCallback -  завершения операции с ошибкой"
 		],
-    "ref":"https://plnkr.co/edit/lZLVjgPDmkpgmIwzebMd?p=preview",
-    "picture":false
-  },
-  {
-    "name":"Vuex",
-    "title":"State management",
-    "comment":"В крупном проекте упрощает процесс отслеживания реактивных зависимостей при обмене данными между компонентами",
-    "code":false,
-    "ref":"https://vuex.vuejs.org/en/",
-    "picture":"https://d2eip9sf3oo6c2.cloudfront.net/series/square_covers/000/000/111/full/EGH_VueJSNuxt_Final_1000.png"
+		"ref":"https://plnkr.co/edit/lZLVjgPDmkpgmIwzebMd?p=preview",
+		"picture":false,
+		"usefull":[
+		]
+	},
+	{
+		"name":"Vuex",
+		"title":"State management",
+		"comment":"В крупном проекте упрощает процесс отслеживания реактивных зависимостей при обмене данными между компонентами",
+		"code":false,
+		"ref":"https://vuex.vuejs.org/en/",
+		"picture":"https://d2eip9sf3oo6c2.cloudfront.net/series/square_covers/000/000/111/full/EGH_VueJSNuxt_Final_1000.png",
+		"usefull":[
+			""
+		]
   }
 ]
