@@ -55,7 +55,9 @@
 				"https://codepen.io/garevna/pen/QqEMoa",
 				"https://codepen.io/garevna/pen/dZVqqZ"
 			],
-			"usefull":[]
+			"usefull":[
+				"https://alligator.io/vuejs/property-validation/"
+			]
 		},
 		{
 			"head":"computed",
@@ -155,7 +157,9 @@
 			"samples":[
 				"https://plnkr.co/edit/Adqs21lTs6snJXnRpHZu?p=preview"
 			],
-			"usefull":[]
+			"usefull":[
+				"https://scotch.io/tutorials/how-to-create-filters-in-vuejs-with-examples?utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers"
+			]
 		}
 	],
 	"Directives": [
@@ -672,7 +676,10 @@
 				"https://codepen.io/garevna/pen/yzWrdN",
 				"https://codepen.io/garevna/pen/mBYNEM"
 			],
-			"usefull":[]
+			"usefull":[
+				"https://alligator.io/vuejs/understanding-transitions/",
+				"https://x-team.com/blog/vue-animation-data-visualization/?utm_content=buffer0798c&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer"
+			]
 		}
 	],
 	"Router":[
