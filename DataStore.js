@@ -1,57 +1,57 @@
-var dataStore = new Vue ({
-  data: {
-    currentSectionId:null,
-    mainDataIsReady: false,
-    postDataIsReady: false,
-    mainData: null,
-    postData: null,
-    mainMenuOptions: null,
-    sectionInfo: null,
-    sectionPosts: null,
-    currentPostReadme: null
+const store = new Vuex.Store ({
+  state: {
+      mainData: null,
+      postData: null,
+      currentSectionId: null,
+      currentPostReadme: [],
+      sectionMenuSelected: null,
+      mainDataIsReady: false,
+      postDataIsReady: false,
+      sectionInfo: null,
+      sectionPosts: null,
+      emptyPost: [{
+          head: "В работе...",
+          pict: "./images/smile-03.gif",
+          text: `К сожалению, материал еще не готов`
+      }]
   },
-  methods: {
-    getCurrentSectionInfo: function () {
-      if ( !this.currentSectionId || !this.mainDataIsReady ) return
-      this.sectionInfo = this.mainData.filter (
-        item => item.name === this.currentSectionId
-      )[0]
+  getters: {
+    dataIsReady:  state => state.mainDataIsReady && state.postDataIsReady,
+    sectionIdDefined:  state => state.currentSectionId !== null,
+    sectionIsReady:  state =>
+          state.mainDataIsReady && state.postDataIsReady &&
+                            state.currentSectionId !== null
+    ,
+    mainMenuitems: state =>
+          state.mainDataIsReady ?
+          state.mainData.map ( item => item.name ) : [],
+  },
+  mutations: {
+    changeCurrentSectionId: ( state, sectionId ) => {
+        if ( sectionId === 'about' || sectionId === 'details' )
+              state.sectionMenuSelected = sectionId
+        else {
+          state.currentSectionId = sectionId
+        }
     },
-    getCurrentSectionPosts: function () {
-      if ( !this.currentSectionId || !this.postDataIsReady ) return
-      this.sectionPosts = this.postData [ this.currentSectionId ]
-    }
+    getCurrentSectionInfo: state => {
+      state.sectionInfo = state.mainData.filter ( item =>
+                          item.name === state.currentSectionId )[0]
+    },
+    getCurrentSectionPosts: state => {
+      state.sectionPosts = state.postData [ state.currentSectionId ]
+    } ,
+    getMainData: ( state, mainData ) => {
+        state.mainData = mainData
+        state.mainDataIsReady = true
+        state.mainMenuOptions = mainData.map ( item => item.name )
+    },
+    getPostData: ( state, postData ) => {
+        state.postData = postData
+        state.postDataIsReady = true
+    },
+  },
+  actions: {
+      
   }
-})
-// Events from $http
-dataStore.$on ( 'main-data-is-ready', function ( theData ) {
-  this.mainDataIsReady = true
-  this.mainData = theData
-  this.mainMenuOptions = this.mainData.map ( item => item.name )
-  this.getCurrentSectionInfo ()
-  this.$emit ( 'main-data' )
-})
-dataStore.$on ( 'main-data-error', function ( theData ) {
-  this.mainDataIsReady = false
-  console.error ( theData )
-})
-dataStore.$on ( 'post-data-is-ready', function ( theData ) {
-  this.postDataIsReady = true
-  this.postData = theData
-  this.getCurrentSectionPosts ()
-  this.$emit ( 'post-data' )
-})
-dataStore.$on ( 'post-data-error', function ( theData ) {
-  this.postDataIsReady = false
-  console.error ( theData )
-})
-// Events from Vue instance - request for current section data
-dataStore.$on ( 'get-section-onfo', function ( currentSectionId ) {
-    this.currentSectionId = currentSectionId
-    this.getCurrentSectionInfo ()
-    this.getCurrentSectionPosts ()
-})
-dataStore.$on ( 'readme-file', function ( theData ) {
-    this.currentPostReadme = theData
-    this.$emit ( 'readme-ready', theData )
 })
