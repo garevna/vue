@@ -2,7 +2,7 @@
 .left-dropdown-menu-button, .right-dropdown-menu-button {
 	position:fixed;
 	top:10px;
-	font-size:30px;
+	font-size:50px;
 	font-weight:bold;
 	text-align:center;
 	cursor:pointer;
@@ -25,7 +25,8 @@
 	content: "\2261";
 }
 .left-dropdown-menu-button:hover:before {
-	content: "\2237";
+	/*content: "\2237";*/
+	color: #ddf;
 }
 .right-dropdown-menu-button:before {
 	content: "\25E7";
@@ -33,14 +34,14 @@
 .right-dropdown-menu-button:hover:before {
 	content: "\25E8";
 }
-.left-dropdown-menu-button:hover:before, 
+.left-dropdown-menu-button:hover:before,
 .right-dropdown-menu-button:hover:before {
-	color:#aaa;
-	font-size:40px;
+	/*color:#aaa;*/
 }
 .left-dropdown-menu-button:hover,
 .right-dropdown-menu-button:hover {
-	margin-top:-10px;
+		color:#fff;
+		text-shadow: 0px 0px 2px rgba(0,0,0,0.7);
 }
 .left-dropdown-menu,
 .right-dropdown-menu {
@@ -51,6 +52,8 @@
   background-color:transparent;
   max-height:80%;
   overflow:auto;
+	z-index:1000;
+	box-shadow: 5px 5px 10px rgba(0,0,0,0.58);
 }
 .left-dropdown-menu {
   left:10px;
@@ -62,21 +65,26 @@
   position:relative;
   display:block;
   text-decoration:none;
-  color:#555;
-  padding: 10px;
-  background-color:#ddd;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	background: linear-gradient(to bottom, #fff, #ddd);
+	box-shadow: inset 2px 2px 4px rgba(0,0,0,0.4);
+	/*border-radius:4px;*/
+  color:#447;
+  padding: 10px 20px;
+  /*background-color:#dde;*/
   cursor:pointer;
-  text-overflow: ellipsis;
+	transition: all 0.5s;
 }
 .dropdown-menu-item:before {
 	content: "\2235 \0020";
 }
 .dropdown-menu-item:hover {
-  border:dashed 1px #777;
-  background-color:#555;
-  color:white;
+  border:dashed 1px #eef;
+  background-color:#447;
 }
 .dropdown-menu-item:hover:before {
 	content: "\2234 \0020";
+	сolor:red;
 }
-
