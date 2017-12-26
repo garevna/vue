@@ -16,25 +16,32 @@
     <script src="https://cdn.jsdelivr.net/vue.resource/1.2.1/vue-resource.min.js"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
     <script src="https://unpkg.com/vuex@3.0.1/dist/vuex.js"></script>
-    <!--<script src="./data/mainData.js"></script>
-    <script src="./data/sectionPosts.js"></script>-->
+
+
+    <script src="filters.js"></script>
   </head>
 
   <body>
-    <main id="vue-courseware" class="main-content">
-      <dropdown-menu v-if = "this.store.mainDataIsReady"
-          :options="this.store.mainMenuOptions">
+    <main class = "main-content" id = "VueCourseware">
+      <dropdown-menu v-if = "mainMenuReady"
+                      :options = "mainMenuitems">
       </dropdown-menu>
-      <router-view class="inner-content"></router-view>
+      <router-view class = "inner-content"></router-view>
     </main>
     <footer></footer>
 
-    <script src="DataStore.js"></script>
-    <script src="./components/BaseDropdownMenu.js"></script>
-    <script src="./components/SectionInfo.js"></script>
-    <script src="./components/SectionDetails.js"></script>
-    <script src="./components/mainSection.js"></script>
-    <script src="./components/routerInstance.js"></script>
+    <script src="./js/library.js"></script>
+
+    <script src="./DataStore.js" onerror="console.error('DataStore.js error')"></script>
+    <script src="./components/HomePage.js" onerror="console.error('HomePage.js error')"></script>
+    <script src="./components/readmeContent.js" onerror="console.error('readmeContent.js error')"></script>
+    <script src="./components/currentPost.js" onerror="console.error('currentPost.js error')"></script>
+    <script src="./components/SectionPost.js" onerror="console.error('SectionPost.js error')"></script>
+    <script src="./components/BaseDropdownMenu.js" onerror="console.error('BaseDropdownMenu.js error')"></script>
+    <script src="./components/SectionInfo.js" onerror="console.error('SectionInfo.js error')"></script>
+    <script src="./components/SectionDetails.js" onerror="console.error('SectionDetails.js error')"></script>
+    <script src="./components/mainSection.js" onerror="console.error('mainSection.js error')"></script>
+    <script src="./components/routerInstance.js" onerror="console.error('routerInstance.js error')"></script>
 
     <script src="VueInstance.js"></script>
   </body>
