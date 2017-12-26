@@ -1,37 +1,35 @@
 const SectionInfo = {
-  props:['id'],
-  data: function () {
-    return {
-      store: this.$root.store
+  props:[ 'id' ],
+  computed: {
+    sectionIsReady: function () {
+      return this.$root.$store.getters.sectionIsReady
+    },
+    sectionInfo: function () {
+      this.$root.$store.commit ( 'getCurrentSectionInfo' )
+      return this.$root.$store.state.sectionInfo
     }
   },
   methods: {
-    sendSectionEvent ( eventType ) {
-      this.$parent.$emit('section-event', {
-                            type: eventType,
-                            section: this.currentSection
-                          } )
-    }
   },
   template: `
     <transition name="slideRight">
-      <div class="section">
-          <img v-if="store.sectionInfo.picture"
+      <div class="section" v-if="sectionIsReady">
+          <img v-if="sectionInfo.picture"
                class="section-picture"
-               :src="store.sectionInfo.picture"/>
-          <a v-if="store.sectionInfo.ref"
+               :src="sectionInfo.picture"/>
+          <a v-if="sectionInfo.ref"
                 target="_blank"
                 class="menu-item"
-                :href="store.sectionInfo.ref">
-            <span v-if="store.sectionInfo.ref">Demo</span>
+                :href="sectionInfo.ref">
+            <span v-if="sectionInfo.ref">Demo</span>
           </a>
           <div class="section-title">
-              {{ store.sectionInfo.title }}
+              {{ sectionInfo.title }}
           </div>
-          <p v-html="store.sectionInfo.comment"></p>
-          <div v-if="store.sectionInfo.code"
+          <p v-html="sectionInfo.comment"></p>
+          <div v-if="sectionInfo.code"
                 class="code-snippet">
-            <p v-for="item in store.sectionInfo.code">
+            <p v-for="item in sectionInfo.code">
                 {{ item.replace(/ /g,"&nbsp;") }}
             </p>
           </div>
