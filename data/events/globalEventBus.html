@@ -21,7 +21,7 @@
 
 <p>Шина событий - это просто компонент Vue. Он должен быть выделенным компонентом</p>
 
-<pre>
+<pre class="code-snippet">
 const EventBus = new Vue({
   created () {
     this.$on ( 'some-event', this.handleSomeEvent )
@@ -42,7 +42,7 @@ Object.defineProperties ( Vue.prototype, {
 })
 </pre>
 <p>В темплейте компонента можно создать кнопку для отправки события на шину</p>
-<pre>
+<pre class="code-snippet">
 &lt;div>
    &lt;button @click="$bus.$emit('some-event')">
         Отправить событие
