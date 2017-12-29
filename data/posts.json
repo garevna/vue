@@ -396,12 +396,16 @@
 			"code":[],
 			"readme":"https://garevna.github.io/vue.github.io/data/events/event_bus.html",
 			"text":"Передача событий через общую шину",
-			"textURL":"",
+			"textURL":"https://garevna.github.io/vue.github.io/data/events/globalEventBus.html",
 			"ref":["https://plnkr.co/edit/XRznjj6FTBbyuwiVHSeC?p=preview"],
 			"samples":[
 				"https://plnkr.co/edit/XRznjj6FTBbyuwiVHSeC?p=preview"
 			],
-			"usefull":[]
+			"usefull":[
+				"https://alligator.io/vuejs/global-event-bus/",
+				"https://devblog.digimondo.io/building-a-simple-eventbus-in-vue-js-64b70fb90834",
+				"http://vuetips.com/global-event-bus"
+			]
 		},
 		{
 			"head":"Шина данных",
@@ -415,7 +419,9 @@
 				"https://plnkr.co/edit/asuwUwM2UGKpWshgS4lG?p=preview"
 			],
 			"usefull":[
-				"https://github.com/pagekit/vue-resource'>https://github.com/pagekit/vue-resource"
+				"https://devblog.digimondo.io/building-a-simple-eventbus-in-vue-js-64b70fb90834",
+				"http://vuetips.com/global-event-bus",
+				"https://vuejs.org/v2/guide/components.html#Non-Parent-Child-Communication"
 			]
 		}
 	],
