@@ -30,7 +30,7 @@
 .section-picture {
     max-width:10%;
     min-width:80px;
-    float:left;
+    float:right;
     margin-right: 10px;
 }
 .section-title, .section-ref {
@@ -43,16 +43,13 @@
   color:#36465d;
 }
 .section a {
-  text-decoration: none;
-  cursor:pointer;
-  -webkit-user-select: none;
+  	text-decoration: none;
+  	cursor:pointer;
+  	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
-  user-select: none;
+  	user-select: none;
 }
-/*.section a:visited {
-  color:#444;
-}*/
 @media screen and (max-width:400px) {
   .section-title { font-size:14px; }
   .section-picture { max-height:20%; }
