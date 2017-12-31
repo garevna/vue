@@ -8,19 +8,10 @@ function menuAppearFromCenter ( menuElement ) {
     menuElement.style.bottom = marg + "%"
     menuElement.style.right = marg + "%"
     menuElement.style.opacity = "" + __opacity
-    menuElement.style.boxShadow = shad + "px " + shad + "px " + ( shad * 2 ) + "px " + " rgba(0,0,0,0.5)"
   }
   function init () {
-    menuElement.style.position = "fixed"
+    menuElement.className = "popup-window"
     menuElement.style.overflow = "hidden"
-    menuElement.style.backgroundColor = "#eee"
-    menuElement.style.borderRadius = "5px"
-    menuElement.style.borderTop = "solid 40px #eee"
-    menuElement.style.borderLeft = "solid 15px #eee"
-    menuElement.style.borderRight = "solid 15px #eee"
-    menuElement.style.borderBottom = "solid 15px #eee"
-    menuElement.style.zIndex = "1500"
-    menuElement.style.padding = "20px 25px"
 
     setSize ( margins, shadow, __opacity )
   }
@@ -33,9 +24,8 @@ function menuAppearFromCenter ( menuElement ) {
     if ( margins < 10 ) {
       clearInterval ( __interval )
       menuElement.style.overflow = "auto"
-      menuElement.style.boxShadow = 'inset 1px 1px 1px gray, ' + menuElement.style.boxShadow
       var closeButton = document.createElement ( 'button' )
-      closeButton.className = "closeButton"
+      closeButton.className = "popup-window-closeButton"
 
       closeButton.objToRemove = menuElement
 
