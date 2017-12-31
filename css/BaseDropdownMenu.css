@@ -1,7 +1,6 @@
 @charset "utf-8";
 .left-dropdown-menu-button, .right-dropdown-menu-button {
 	position:fixed;
-	top:10px;
 	font-size:50px;
 	font-weight:bold;
 	text-align:center;
@@ -14,12 +13,15 @@
 	-ms-user-select: none;
 	user-select: none;
 	outline:none;
+	color:#dde;
 }
 .left-dropdown-menu-button {
 	left:10px;
+	top: 0px;
 }
 .right-dropdown-menu-button {
-	right:50px;
+	right:20px;
+	top:-10px;
 }
 .left-dropdown-menu-button:before {
 	content: "\2261";
@@ -33,10 +35,6 @@
 }
 .right-dropdown-menu-button:hover:before {
 	content: "\25E8";
-}
-.left-dropdown-menu-button:hover:before,
-.right-dropdown-menu-button:hover:before {
-	/*color:#aaa;*/
 }
 .left-dropdown-menu-button:hover,
 .right-dropdown-menu-button:hover {
@@ -59,7 +57,8 @@
   left:10px;
 }
 .right-dropdown-menu {
-  right:50px;
+  right:20px;
+	top:-10px;
 }
 .dropdown-menu-item {
   position:relative;
@@ -70,10 +69,8 @@
 	text-overflow: ellipsis;
 	background: linear-gradient(to bottom, #fff, #ddd);
 	box-shadow: inset 2px 2px 4px rgba(0,0,0,0.4);
-	/*border-radius:4px;*/
   color:#447;
   padding: 10px 20px;
-  /*background-color:#dde;*/
   cursor:pointer;
 	transition: all 0.5s;
 }
