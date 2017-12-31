@@ -2,12 +2,10 @@ const SectionDetails = {
   props:[ 'id' ],
   computed: {
     sectionIsReady: function () {
-      console.log ('******* ', this.$root.$store.getters.sectionIsReady)
       return this.$root.$store.getters.sectionIsReady
     } ,
     sectionPosts: function () {
       this.$root.$store.commit ( 'getCurrentSectionPosts' )
-      console.log ('######## ', this.$root.$store.state.sectionPosts)
       return this.$root.$store.state.sectionPosts
     }
   },
