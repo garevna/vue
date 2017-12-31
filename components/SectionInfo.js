@@ -10,6 +10,7 @@ const SectionInfo = {
     }
   },
   methods: {
+    openRef: ref => window.open ( ref, "_blank" )
   },
   template: `
     <transition name="slideRight">
@@ -19,9 +20,8 @@ const SectionInfo = {
                :src="sectionInfo.picture"/>
           <a v-if="sectionInfo.ref"
                 target="_blank"
-                class="menu-item"
+                class="demo-button"
                 :href="sectionInfo.ref">
-            <span v-if="sectionInfo.ref">Demo</span>
           </a>
           <div class="section-title">
               {{ sectionInfo.title }}
@@ -33,6 +33,13 @@ const SectionInfo = {
                 {{ item.replace(/ /g,"&nbsp;") }}
             </p>
           </div>
+          <section class="refs-section" v-if="sectionInfo.usefull">
+                <span v-for="ref in sectionInfo.usefull">
+                    <span class="refs-section-item"
+                        @click="openRef(ref)">
+                    </span>
+                </span>
+          </section>
       </div>
     </transition>`
 }
