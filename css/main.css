@@ -241,8 +241,8 @@ input[type="checkbox"] {
 .popup-window-closeButton {
     font-size: 25px;
     position: fixed;
-    top:10%;
-    right:10%;
+    top:8%;
+    right:5%;
     margin:4px 7px;
     z-index: 2000;
     border:0;
