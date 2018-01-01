@@ -25,6 +25,8 @@ function menuAppearFromCenter ( menuElement ) {
     if ( margins [0] < 9 && margins [1] < 5 ) {
       clearInterval ( __interval )
       menuElement.style.overflow = "auto"
+      __opacity = 1
+      menuElement.style.opacity = "1"
       var closeButton = document.createElement ( 'button' )
       closeButton.className = "popup-window-closeButton"
 
