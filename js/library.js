@@ -1,27 +1,28 @@
 function menuAppearFromCenter ( menuElement ) {
-  var margins = 40
-  var shadow = 5
+  var margins = [ 45, 45, 45, 45 ]
   var __opacity = 0
-  function setSize ( marg, shad, __opacity ) {
-    menuElement.style.top = marg + "%"
-    menuElement.style.left = marg + "%"
-    menuElement.style.bottom = marg + "%"
-    menuElement.style.right = marg + "%"
+  function setSize ( marg, __opacity ) {
+    menuElement.style.top = marg [0] + "%"
+    menuElement.style.bottom = marg [2] + "%"
+    menuElement.style.right = marg [1] + "%"
+    menuElement.style.left = marg [3] + "%"
     menuElement.style.opacity = "" + __opacity
   }
   function init () {
     menuElement.className = "popup-window"
     menuElement.style.overflow = "hidden"
 
-    setSize ( margins, shadow, __opacity )
+    setSize ( margins, __opacity )
   }
 
   init ()
   var __interval = setInterval ( function () {
-    margins -= 1
-    shadow += 1
-    __opacity +=5
-    if ( margins < 10 ) {
+    margins [0] -= margins [0] < 9 ? 0 : 1
+    margins [1] -= margins [1] < 5 ? 0 : 1
+    margins [2] -= margins [2] < 9 ? 0 : 1
+    margins [3] -= margins [3] < 5 ? 0 : 1
+    __opacity += __opacity === 1 ? 0 : 0.1
+    if ( margins [0] < 9 && margins [1] < 5 ) {
       clearInterval ( __interval )
       menuElement.style.overflow = "auto"
       var closeButton = document.createElement ( 'button' )
@@ -35,17 +36,19 @@ function menuAppearFromCenter ( menuElement ) {
         var removingObject = this.objToRemove
         removingObject.style.overflow = "hidden"
         var __interval = setInterval ( function () {
-          margins += 1
-          shadow -= 1
-          __opacity -=5
-          if ( margins > 40 ) {
+          margins [0] += margins [0] > 48 ? 0 : 1
+          margins [1] += margins [1] > 48 ? 0 : 1
+          margins [2] += margins [2] > 48 ? 0 : 1
+          margins [3] += margins [3] > 48 ? 0 : 1
+          __opacity -= 0.1
+          if ( margins [0] > 48 && margins [1] > 48 && __opacity < 0.1 ) {
             clearInterval ( __interval )
             removingObject.parentNode.removeChild ( removingObject )
-          } else setSize ( margins, shadow, __opacity )
+          } else setSize ( margins, __opacity )
         }, 20 )
         this.parentNode.removeChild ( this )
       }
     }
-    else setSize ( margins, shadow, __opacity )
+    else setSize ( margins, __opacity )
   }, 20 )
 }
