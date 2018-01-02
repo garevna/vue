@@ -32,7 +32,10 @@
 			"textURL":"",
 			"ref":false,
 			"samples":[],
-			"usefull":[]
+			"usefull":[
+				"https://www.neontsunami.com/posts/mounting-a-vue-instance-to-a-dom-element",
+				"https://codingexplained.com/coding/front-end/vue-js/mounting-templates-dynamically"
+			]
 		},
 		{
 			"head":"data | computed",
