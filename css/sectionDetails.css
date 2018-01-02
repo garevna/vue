@@ -38,35 +38,32 @@
 		color:#fff;
 }
 .refs-section-item {
-		/*background-image:url(../images/ref.png);*/
-		background-image:url(http://www.iconarchive.com/download/i84514/designbolts/seo/Natural-Link.ico);
+		background-image:url(../images/link.ico);
 		background-size:70%;
 		background-repeat:no-repeat;
 		background-position: top left;
 		text-align: right;
 }
 .refs-section-item:before {
-		counter-increment: section;
+	counter-increment: section;
   	content:"\0020 \0020" counter(section);
 }
 .refs-section-item:hover {
-		background-image:none;
+	background-image:none;
 }
 .refs-section-item:hover:before {
-		text-align: left;
+	text-align: left;
   	content:"\26FD \0020 \0020" counter(section);
 }
 .samples-section-item:before {
-  counter-increment: section;
-  /*content:"\2615 \0020 \0020 sample \0020" counter(section);*/
+  	counter-increment: section;
 	content:"\2615 \0020 \0020" counter(section);
 }
 .samples-section-item:hover:before {
-  /*content:"\2691 \0020 \0020 sample \0020" counter(section);*/
 	content:"{} \0020" counter(section);
 }
 .samples-section-item:visited:before, .sample-button:active:before {
-  content:"\26F3 \0020 \0020 sample";
+  	content:"\26F3 \0020 \0020 sample";
 }
 
 .section-article-title {
