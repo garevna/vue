@@ -6,7 +6,7 @@
 		"ref":"https://docs.google.com/presentation/d/1Ngckdav0zi7vPw9V8FC7aJGsXIsYDCy_Bi6aBXcZzjo/edit?usp=sharing",
 		"picture":false,
 		"usefull":[
-			"https://laravel.ru/posts/391",
+			"https://medium.com/vue-mastery/why-43-of-front-end-developers-want-to-learn-vue-js-7f23348bc5be",
 			"https://vuetifyjs.com/?ref=vuejsdevelopers&utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers",
 			"https://www.fusioncharts.com/blog/create-charts-vue-js/?utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers",
 			"https://m.serversideup.net/api-driven-development-with-laravel-and-vuejs-c30869060bb1",
@@ -122,6 +122,7 @@
 		"ref":false,
 		"picture":"./images/cabine.gif",
 		"usefull":[
+			"https://laravel.ru/posts/391",
 			"https://vuejsdevelopers.com/2017/12/11/vue-ssr-router/?jsdojo_id=revue_sgd&utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers"
 		]
 	},
