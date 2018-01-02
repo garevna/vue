@@ -926,9 +926,9 @@
 			"readme":"https://garevna.github.io/vue.github.io/data/vuex/start.html",
 			"text":"Vuex.Store имеет состояние state<br/>По сути, это объект с реактивными данными всего приложения<br/>Эти данные подвергаются изменениям с помощью методов, описанных в объекте 'mutations'<br/>",
 			"textURL":"",
-			"ref":[ "https://plnkr.co/edit/aqZ1cfiHEc1jJYovg0VE?p=preview" ],
 			"samples": [ "https://plnkr.co/edit/aqZ1cfiHEc1jJYovg0VE?p=preview" ],
 			"usefull": [
+				"https://medium.com/3yourmind/large-scale-vuex-application-structures-651e44863e2f"
 			]
 		},
 		{
@@ -938,11 +938,6 @@
 			"readme":"https://garevna.github.io/vue.github.io/data/vuex/01.html",
 			"text":"Мутация состояний Vuex-store<br/>Двустороннаяя привязка к элементам форм<br/>Вычисляемые свойства экземпляра, привязка к состоянию хранилища с помощью геттеров и сеттеров<br/>Глубокая привязка объекта",
 			"textURL":"",
-			"ref":[
-				"https://plnkr.co/edit/a5xPAy7ifDkVuN7FoDHz?p=preview",
-				"https://plnkr.co/edit/W3wajZV3dLCaX48EtqmH?p=preview",
-				"https://plnkr.co/edit/YZqbMDYh4vuv80WbjqOc?p=preview"
-			],
 			"samples": [
 				"https://plnkr.co/edit/a5xPAy7ifDkVuN7FoDHz?p=preview",
 				"https://plnkr.co/edit/W3wajZV3dLCaX48EtqmH?p=preview",
@@ -958,10 +953,6 @@
 			"readme":"https://garevna.github.io/vue.github.io/data/vuex/01-1.html",
 			"text":"Мутация состояний Vuex-store<br/>Привязка к элементам форм<br/>Объекты с глубокой структурой<br/>Работа с массивами<br/>Использование компонентов",
 			"textURL":"",
-			"ref":[
-				"https://plnkr.co/edit/qfxaRe4NRGHy8MrSgP1b?p=preview",
-				"https://plnkr.co/edit/q5zdUERK2biVxfeTvUbe?p=preview"
-			],
 			"samples": [
 				"https://plnkr.co/edit/qfxaRe4NRGHy8MrSgP1b?p=preview",
 				"https://plnkr.co/edit/q5zdUERK2biVxfeTvUbe?p=preview"
@@ -976,9 +967,6 @@
 			"readme":"https://garevna.github.io/vue.github.io/data/vuex/02.html",
 			"text":"Объект getters содержит вычисляемые свойства объекта store<br/>Для асинхронных операций предусмотрены actions<br/>",
 			"textURL":"",
-			"ref":[
-				"https://plnkr.co/edit/LHXDJv8S0ECIDHLkm3M0?p=preview"
-			],
 			"samples": [
 				"https://plnkr.co/edit/LHXDJv8S0ECIDHLkm3M0?p=preview"
 			],
