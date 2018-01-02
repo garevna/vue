@@ -26,11 +26,8 @@ const MainSection = {
   },
 
   mounted: function () {
-    console.log ( 'MainSection: ', this.id )
-    console.log ( 'MainSection sectionMenu: ', this.sectionMenu )
     store.commit ( 'changeCurrentSectionId', this.id )
     this.$on ( 'menuSelect', function ( val ) {
-      console.info ( 'MainSection menuSelect: ' + val )
       this.$router.push ( { name: val, props: true } )
     } )
   },
