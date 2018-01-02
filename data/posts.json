@@ -16,7 +16,9 @@
 			"textURL":"",
 			"ref":false,
 			"samples":[],
-			"usefull":[]
+			"usefull":[
+				"https://vuejs.org/v2/guide/instance.html"
+			]
 		},
 		{
 			"head":"$mount",
@@ -87,7 +89,7 @@
 			"head":"$emit",
 			"picture":false,
 			"code":false,
-			"text":"",
+			"text":"Метод, позволяющий эмитировать событие ( подробнее см. раздел Events )",
 			"textURL":"",
 			"ref":[ "https://plnkr.co/edit/vdEIxZYvoN4x6VFMX3kb?p=preview" ],
 			"samples":[
@@ -158,7 +160,27 @@
 				"https://plnkr.co/edit/Adqs21lTs6snJXnRpHZu?p=preview"
 			],
 			"usefull":[
-				"https://scotch.io/tutorials/how-to-create-filters-in-vuejs-with-examples?utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers"
+				"https://ru.vuejs.org/v2/guide/filters.html",
+				"https://css-tricks.com/using-filters-vue-js/",
+				"https://alligator.io/vuejs/using-filters/",
+				"https://scotch.io/tutorials/how-to-create-filters-in-vuejs-with-examples"
+			]
+		},
+		{
+			"head":"life cycle",
+			"picture":false,
+			"code":[],
+			"text":"Хуки жизненного цикла",
+			"textURL":"",
+			"readme":false,
+			"samples":[
+			],
+			"usefull":[
+				"https://ru.vuejs.org/v2/guide/instance.html",
+				"https://alligator.io/vuejs/component-lifecycle/",
+				"https://scotch.io/tutorials/demystifying-vue-lifecycle-methods",
+				"https://codingexplained.com/coding/front-end/vue-js/using-vue-instance-lifecycle-hooks",
+				"https://metanit.com/web/vuejs/1.13.php"
 			]
 		}
 	],
@@ -223,7 +245,9 @@
 			"samples":[
 				"https://codepen.io/garevna/pen/EwXGPB"
 			],
-			"usefull":[]
+			"usefull":[
+				"https://metanit.com/web/vuejs/2.3.php"
+			]
 		},
 		{
 			"head":"v-show",
@@ -235,7 +259,9 @@
 			"samples":[
 				"https://codepen.io/garevna/pen/OxjRJW"
 			],
-			"usefull":[]
+			"usefull":[
+				"https://metanit.com/web/vuejs/2.2.php"
+			]
 		},
 		{
 			"head":"v-if",
@@ -254,7 +280,9 @@
 				"https://codepen.io/garevna/pen/EwvgKJ",
 				"https://codepen.io/garevna/pen/NavRdX"
 			],
-			"usefull":[]
+			"usefull":[
+				"https://metanit.com/web/vuejs/2.1.php"
+			]
 		},
 		{
 			"head":"v-on",
@@ -280,7 +308,10 @@
 				"https://codepen.io/garevna/pen/veJZOb",
 				"https://codepen.io/garevna/pen/YrVpmm"
 			],
-			"usefull":[]
+			"usefull":[
+				"https://v1.vuejs.org/guide/events.html",
+				"https://alligator.io/vuejs/events/"
+			]
 		},
 		{
 			"head":"v-cloak",
@@ -364,7 +395,7 @@
 			]
 		},
 		{
-			"head":"Array",
+			"head":"props & data",
 			"picture":false,
 			"code":[],
 			"readme":"https://garevna.github.io/vue.github.io/data/components/array.html",
@@ -374,7 +405,22 @@
 			"samples":[
 				"http://plnkr.co/edit/t4UbB25dtNCpNAAxIZJR?p=preview"
 			],
-			"usefull":[]
+			"usefull":[
+				"https://css-tricks.com/intro-to-vue-2-components-props-slots/"
+			]
+		},
+		{
+			"head":"lifecycle",
+			"picture":false,
+			"code":[],
+			"readme":"",
+			"text":"Хуки жизненного цикла компонента",
+			"textURL":"",
+			"samples":[
+			],
+			"usefull":[
+				"https://scotch.io/tutorials/demystifying-vue-lifecycle-methods"
+			]
 		}
 	],
 	"Events":[
@@ -650,7 +696,9 @@
 				"https://plnkr.co/edit/H0GhWgLKuiw1zaFGQLZ1?p=preview",
 				"https://plnkr.co/edit/7gKCXrakfSf5EDFBokN5?p=preview"
 			],
-			"usefull":[]
+			"usefull":[
+				"https://medium.com/js-dojo/getting-your-head-around-vue-js-scoped-slots-281bf82a1e4e"
+			]
 		}
 	],
 	"Transitions":[
