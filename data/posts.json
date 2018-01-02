@@ -92,7 +92,7 @@
 			"head":"$emit",
 			"picture":false,
 			"code":false,
-			"text":"Метод, позволяющий эмитировать событие ( подробнее см. раздел Events )",
+			"text":"Метод, позволяющий эмитировать событие<br/>( подробнее см. раздел Events )",
 			"textURL":"",
 			"ref":[ "https://plnkr.co/edit/vdEIxZYvoN4x6VFMX3kb?p=preview" ],
 			"samples":[
