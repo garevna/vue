@@ -120,6 +120,7 @@
 		"ref":false,
 		"picture":"./images/cabine.gif",
 		"usefull":[
+			"https://vuejsdevelopers.com/2017/12/18/single-page-application-ux/?jsdojo_id=revue_spx&utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers",
 			"https://laravel.ru/posts/391",
 			"https://vuejsdevelopers.com/2017/12/11/vue-ssr-router/?jsdojo_id=revue_sgd&utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers"
 		]
