@@ -190,7 +190,7 @@
 	"Directives": [
 		{
 			"head":"v-bind",
-			"picture":"https://upload.wikimedia.org/wikipedia/commons/9/93/Protein_MBL2_PDB_1hup.png",
+			"picture":"",
 			"code":[
 				"// imageSrc - свойство родителя",
 				"<img v-bind:src = 'imageSrc'/>",
@@ -211,7 +211,7 @@
 		},
 		{
 			"head":"v-model",
-			"picture":"https://www.mycanceriq.ca/Content/images/HelpfulLinks_Banner.png",
+			"picture":"",
 			"code":[],
 			"text":"Служит для двустороннего связывания потомка и родителя.<br/>Соответствующее свойство, указанное в директиве, может быть изменено в потомке, что будет реактивно отражено в родителе.<br/>Обычно используется для элементов форм",
 			"textURL":"",
@@ -235,7 +235,7 @@
 		},
 		{
 			"head":"v-for",
-			"picture":"https://media.giphy.com/media/PGbycv8RLT5Ze/giphy.gif",
+			"picture":"",
 			"code":[
 				"<div v-for='item in items'>",
 				"  {{ item.name }}",
@@ -254,7 +254,7 @@
 		},
 		{
 			"head":"v-show",
-			"picture":"https://cdn.pixabay.com/photo/2012/04/24/13/08/smiley-39984_960_720.png",
+			"picture":"",
 			"code":[],
 			"text":"Директива, позволяющая управлять отображением элементов в представлении на основании значений переменных модели",
 			"textURL":"",
@@ -268,7 +268,7 @@
 		},
 		{
 			"head":"v-if",
-			"picture":"https://cdnsc.azureedge.net/resources/logo.min-sha2UrlX-5wEsrrV0qRDj5z4xoWgLBo.png",
+			"picture":"",
 			"code":[
 				"<p v-if='expr'>{{ message }}</p>",
 				"<p v-else> {{ error }}</p>"
