@@ -1,7 +1,7 @@
 {
 	"Vue.js": [
 		{
-			"head":"Vue",
+			"head":"el",
 			"picture":false,
 			"code":[
 				"new Vue  ( {",
@@ -19,7 +19,7 @@
 			"usefull":[]
 		},
 		{
-			"head":"Model -> view",
+			"head":"$mount",
 			"picture":false,
 			"code":[
 				"const app = new Vue( {",
