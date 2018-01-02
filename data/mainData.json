@@ -9,7 +9,8 @@
 			"https://medium.com/vue-mastery/why-43-of-front-end-developers-want-to-learn-vue-js-7f23348bc5be",
 			"https://medium.com/js-dojo/whats-the-deal-with-vue-s-virtual-dom-3ed4fc0dbb20",
 			"https://vuetifyjs.com/?ref=vuejsdevelopers&utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers",
-			"https://johnpapa.net/vue-typescript/?utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers"
+			"https://johnpapa.net/vue-typescript/?utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers",
+			"http://devdocs.io/vue~2/"
 		]
 	},
 	{
@@ -37,7 +38,8 @@
 		"ref":"https://docs.google.com/presentation/d/1igrCFnps4TL7aebpWPPVeCveO7dYhO8NVQ9oVCRrcEw/edit?usp=sharing",
 		"picture":false,
 		"usefull": [
-			"http://vegibit.com/vue-js-directives/"
+			"http://vegibit.com/vue-js-directives/",
+			"https://ru.vuejs.org/v2/guide/custom-directive.html"
 		]
 	},
 	{
@@ -66,7 +68,9 @@
 		"picture":"./images/broke.gif",
 		"usefull": [
 			"http://marcelpociot.de/blog/2017-12-08-using-custom-vuejs-elements?utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers",
-			"https://nick-basile.com/blog/post/how-to-build-a-vuejs-component-with-tailwind-in-a-laravel-project?utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers"
+			"https://nick-basile.com/blog/post/how-to-build-a-vuejs-component-with-tailwind-in-a-laravel-project?utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers",
+			"https://medium.com/@sky790312/about-vue-2-parent-to-child-props-af3b5bb59829",
+			"https://medium.com/tldr-tech/vuejs-series-part-2-1-components-custom-events-630c1595cfcb"
 		]
 	},
 	{
@@ -76,7 +80,9 @@
 		"ref":"https://plnkr.co/edit/vdEIxZYvoN4x6VFMX3kb?p=preview",
 		"picture":false,
 		"usefull":[
-			"https://alligator.io/vuejs/global-event-bus/"
+			"https://medium.com/@sky790312/about-vue-2-parent-to-child-props-af3b5bb59829",
+			"https://alligator.io/vuejs/global-event-bus/",
+			"https://medium.com/tldr-tech/vuejs-series-part-2-1-components-custom-events-630c1595cfcb"
 		]
 	},
 	{
@@ -101,6 +107,7 @@
 		"ref":"",
 		"picture":false,
 		"usefull":[
+			"https://tuhub.ru/frontend/rabota-s-shablonami-v-vue-js-2"
 		]
 	},
 	{
@@ -110,6 +117,8 @@
 		"ref":"https://docs.google.com/presentation/d/1-Cu9dLOg5CVRFOHUbKy7PqSL0upFlnEakT-HLofbTdY/edit?usp=sharing",
 		"picture":false,
 		"usefull":[
+			"https://alligator.io/vuejs/component-slots/",
+			"https://css-tricks.com/intro-to-vue-2-components-props-slots/"
 		]
 	},
 	{
@@ -122,6 +131,7 @@
 		"usefull":[
 			"https://vuejsdevelopers.com/2017/12/18/single-page-application-ux/?jsdojo_id=revue_spx&utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers",
 			"https://laravel.ru/posts/391",
+			"https://router.vuejs.org/en/advanced/navigation-guards.html",
 			"https://vuejsdevelopers.com/2017/12/11/vue-ssr-router/?jsdojo_id=revue_sgd&utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers"
 		]
 	},
@@ -132,7 +142,8 @@
 		"ref":"https://ru.vuejs.org/v2/guide/transitions.html",
 		"picture":false,
 		"usefull":[
-			"https://alligator.io/vuejs/understanding-transitions/"
+			"https://alligator.io/vuejs/understanding-transitions/",
+			"https://web-juice.ru/intro-to-vue-js-5-animations/"
 		]
 	},
 	{
@@ -165,9 +176,24 @@
 		"usefull":[
 			"https://medium.com/3yourmind/large-scale-vuex-application-structures-651e44863e2f",
 			"https://alligator.io/vuejs/intro-to-vuex/",
+			"https://web-juice.ru/intro-to-vue-js-4-vuex/",
 			"https://scotch.io/tutorials/state-management-in-vue-getting-started-with-vue",
 			"https://medium.com/frontend-fun/vuejs-introduction-to-vuex-82bf35be5130",
 			"https://vuejsdevelopers.com/2017/11/13/vue-js-vuex-undo-redo/?jsdojo_id=revue_vur&utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers"
 		]
-  }
+	},
+	{
+		"name":"Style Guide",
+		"title":"Рекомендации и советы",
+		"comment":"От разработчиков и не только...",
+		"code":false,
+		"ref":"",
+		"picture":"https://ru.vuejs.org/images/stdlib.png",
+		"usefull":[
+			"https://ru.vuejs.org/v2/style-guide/",
+			"https://github.com/pablohpsilva/vuejs-component-style-guide/blob/master/README-RU.md",
+			"https://habrahabr.ru/post/332628/",
+			"https://medium.com/@modex13/vue-js-2-%D1%81%D0%B1%D0%BE%D1%80%D0%BD%D0%B8%D0%BA-%D0%BC%D0%B5%D0%BB%D0%BA%D0%B8%D1%85-%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D0%BE%D0%B2-6e9897cf3d37"
+		]
+	}
 ]
