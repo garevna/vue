@@ -706,7 +706,7 @@
 	],
 	"Transitions":[
 		{
-			"head":"Анимация",
+			"head":"transition",
 			"picture":false,
 			"code":[
 				"<transition name='sliding'>",
@@ -717,14 +717,6 @@
 			],
 			"text":"Использование встроенных компонентов transition и transition-group с классами -enter | -leave для анимации появления / исчезновения элементов DOM",
 			"textURL":"",
-			"ref":[
-				"https://plnkr.co/edit/GgZwzN3319U2QM9q8FvC?p=preview",
-				"https://codepen.io/garevna/pen/XewZZz",
-				"https://plnkr.co/edit/c5pN5tiIEU75ZbnDMxdW?p=preview",
-				"https://plnkr.co/edit/brgMsFIcY71mTr8Yf44m?p=preview",
-				"https://codepen.io/garevna/pen/yzWrdN",
-				"https://codepen.io/garevna/pen/mBYNEM"
-			],
 			"samples":[
 				"https://plnkr.co/edit/GgZwzN3319U2QM9q8FvC?p=preview",
 				"https://codepen.io/garevna/pen/XewZZz",
@@ -736,6 +728,26 @@
 			"usefull":[
 				"https://alligator.io/vuejs/understanding-transitions/",
 				"https://x-team.com/blog/vue-animation-data-visualization/?utm_content=buffer0798c&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer"
+			]
+		},
+		{
+			"head":"Slider",
+			"picture":false,
+			"code":[
+				"<transition :name = 'transitionName'>",
+				"    <img :src='picture'",
+				"         :key='currentImageCounterValue'>",
+				"         class='slider-elem'/>",
+				"</transition>"
+			],
+			"text":"Анимирование состояний компонента. Использование атрибута key для отслеживания изменений состояния",
+			"textURL":"",
+			"samples":[
+				"https://plnkr.co/edit/24DHnSdDsFIfPlF1uXHx?p=preview"
+			],
+			"usefull":[
+				"https://ru.vuejs.org/v2/guide/transitions.html",
+				"https://ru.vuejs.org/v2/guide/transitions.html#JavaScript-%D1%85%D1%83%D0%BA%D0%B8"
 			]
 		}
 	],
