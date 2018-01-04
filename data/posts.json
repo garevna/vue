@@ -763,7 +763,7 @@
 				"    v-on:leave='leave'",
 				"    v-on:after-leave='afterLeave'",
 				"    v-on:leave-cancelled='leaveCancelled'",
-				">"
+				">",
 				"</transition>"
 			],
 			"text":"Хуки жизненного цикла анимационных переходов<br/>Не забудьте в методах объявить соответствующие обработчики",
