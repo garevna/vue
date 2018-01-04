@@ -162,9 +162,10 @@
 			"// successCallback -  успешного завершения операции",
 			"// failureCallback -  завершения операции с ошибкой"
 		],
-		"ref":"https://plnkr.co/edit/lZLVjgPDmkpgmIwzebMd?p=preview",
-		"picture":false,
+		"ref":false,
+		"picture":"./images/AJAX.png",
 		"usefull":[
+			"https://plnkr.co/edit/lZLVjgPDmkpgmIwzebMd?p=preview"
 		]
 	},
 	{
