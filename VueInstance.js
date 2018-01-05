@@ -24,22 +24,22 @@ const app = new Vue ( {
 			})
 	},
 	mounted: function () {
-			this.$on ( 'menuSelect', function ( val ) {
-					this.$store.commit( 'changeCurrentSectionId', val )
-					this.$store.commit( 'getCurrentSectionInfo' )
-					this.$store.commit( 'getCurrentSectionPosts' )
-					this.$router.push (
-						{ name: "mainSection", params: { id: val } }
-					)
-			}),
-			,
-			window.addEventListener ( 'resize', function ( event ) {
-					var asp = window.innerWidth / window.innerHeight
-					document.body.style.backgroundSize = 
-						Math.min ( window.innerHeight, window.innerWidth )*1.4 + "px"
-					document.body.style.backgroundPosition = ( asp <= 1.1 && asp >= 0.9 ) ?
+		this.winResize ()
+		this.$on ( 'menuSelect', function ( val ) {
+			this.$store.commit( 'changeCurrentSectionId', val )
+			this.$store.commit( 'getCurrentSectionInfo' )
+			this.$store.commit( 'getCurrentSectionPosts' )
+			this.$router.push ( { name: "mainSection", params: { id: val } } )
+		})
+		window.addEventListener ( 'resize', winResize )
+	},
+	methods: {
+		winResize: function ( event ) {
+			var asp = window.innerWidth / window.innerHeight
+			document.body.style.backgroundSize = Math.min ( window.innerHeight, window.innerWidth )*1.4 + "px"
+			document.body.style.backgroundPosition = ( asp <= 1.1 && asp >= 0.9 ) ?
 						"10%" : ( asp < 0.9 ? ( -10 / asp ) + "%" : "10%" )
-			})
+		}
 	},
 	components: {
 		'dropdown-menu': BaseDropdownMenu,
