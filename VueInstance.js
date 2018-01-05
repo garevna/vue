@@ -31,7 +31,7 @@ const app = new Vue ( {
 			this.$store.commit( 'getCurrentSectionPosts' )
 			this.$router.push ( { name: "mainSection", params: { id: val } } )
 		})
-		window.addEventListener ( 'resize', winResize )
+		window.addEventListener ( 'resize', this.winResize )
 	},
 	methods: {
 		winResize: function ( event ) {
