@@ -36,8 +36,9 @@ const app = new Vue ( {
 	methods: {
 		winResize: function ( event ) {
 			var asp = window.innerWidth / window.innerHeight
+			document.body.style.backgroundPosition = "center top"
 			document.body.style.backgroundSize = Math.min ( window.innerHeight, window.innerWidth )*1.4 + "px"
-			document.body.style.backgroundPosition = ( asp <= 1.1 && asp >= 0.9 ) ?
+			document.body.style.backgroundPositionY = ( asp <= 1.1 && asp >= 0.9 ) ?
 						"10%" : ( asp < 0.9 ? ( -10 / asp ) + "%" : "10%" )
 		}
 	},
