@@ -114,7 +114,7 @@
 		},
 		{
 			"head":"CSS",
-			"picture":"https://vuetifyjs.com/static/doc-images/logo.svg",
+			"picture":"./images/css3.png",
 			"code":[
 				"// Условное подключение класса active ",
 				"// в зависимости от значения переменной isActive",
