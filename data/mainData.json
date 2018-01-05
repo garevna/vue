@@ -173,7 +173,7 @@
 		"title":"State management",
 		"comment":"В крупном проекте упрощает процесс отслеживания реактивных зависимостей при обмене данными между компонентами",
 		"code":false,
-		"ref":"https://vuex.vuejs.org/en/",
+		"ref":false,
 		"picture":"https://d2eip9sf3oo6c2.cloudfront.net/series/square_covers/000/000/111/full/EGH_VueJSNuxt_Final_1000.png",
 		"usefull":[
 			"https://medium.com/3yourmind/large-scale-vuex-application-structures-651e44863e2f",
@@ -181,6 +181,7 @@
 			"https://web-juice.ru/intro-to-vue-js-4-vuex/",
 			"https://scotch.io/tutorials/state-management-in-vue-getting-started-with-vue",
 			"https://medium.com/frontend-fun/vuejs-introduction-to-vuex-82bf35be5130",
+			"https://vuex.vuejs.org/en/",
 			"https://vuejsdevelopers.com/2017/11/13/vue-js-vuex-undo-redo/?jsdojo_id=revue_vur&utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers"
 		]
 	},
