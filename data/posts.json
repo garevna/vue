@@ -101,7 +101,7 @@
 			"usefull":[]
 		},
 		{
-			"head":"CSS",
+			"head":"Vuetify",
 			"picture":"https://vuetifyjs.com/static/doc-images/logo.svg",
 			"code":false,
 			"text":"Material Component Framework",
@@ -110,6 +110,39 @@
 			"samples":[],
 			"usefull":[
 				"https://vuetifyjs.com/"
+			]
+		},
+		{
+			"head":"CSS",
+			"picture":"https://vuetifyjs.com/static/doc-images/logo.svg",
+			"code":[
+				"// Условное подключение класса active ",
+				"// в зависимости от значения переменной isActive",
+				"<div :class='{ active: isActive }'></div>",
+				"// Можно передавать объект классов по ссылке",
+				"<div :class='classObject'></div>",
+				"// В объекте data компонента или экземпляра",
+				"// объект classObject должен быть объявлен",
+				"data: {",
+				"    classObject: {",
+				"        active: true,",
+				"        'text-danger': false",
+				"    }",
+				"}",
+				"// Можно подключить сразу несколько классов ",
+				"<div :class='[ firstClass, secondClass ]'></div>",
+				"// Можно использовать тернарный оператор",
+				"<div :class='[ isFirst ? firstClass : secondClass ]'>",
+				"</div>"
+			],
+			"text":"Различные способы привязки стилей и классов",
+			"textURL":"",
+			"readme":"",
+			"samples":[
+				
+			],
+			"usefull":[
+				"https://ru.vuejs.org/v2/guide/class-and-style.html"
 			]
 		},
 		{
@@ -363,7 +396,6 @@
 			"code":[],
 			"text":"Пример компонента dropdown-menu, в котором при выборе одного из элементов меню происходит отправка события родителю (экземпляру Vue) с передачей внутреннего содержимого выбранного пункта меню.<br/>В экземпляре Vue происходит обработка события и вывод соотвествующего текста на страницу",
 			"textURL":"",
-			"ref":[ "https://plnkr.co/edit/qKB8ACBVu7jZvqnBscn6?p=preview" ],
 			"samples":[
 				"https://plnkr.co/edit/qKB8ACBVu7jZvqnBscn6?p=preview"
 			],
@@ -372,15 +404,23 @@
 		{
 			"head":"Dynamic component",
 			"picture":false,
-			"code":[],
+			"code":[
+				"// Статическая привязка компонента по имени",
+				"<component is='first'></component>",
+				"// Динамическая привязка через переменную ",
+				"// currentComponent, содержащую имя компонента ",
+				"<component :is='currentComponent'></component>"
+			],
 			"readme":"https://garevna.github.io/vue.github.io/data/components/dynamic.html",
-			"text":"Пример компонента dropdown-menu, в котором при выборе одного из элементов меню происходит отправка события родителю (экземпляру Vue) с передачей внутреннего содержимого выбранного пункта меню.<br/>В экземпляре Vue происходит обработка события и вывод соотвествующего текста на страницу",
+			"text":"Чтобы подключить несколько различных компонентов к одной и той же точке монтирования и динамически переключаться между ними, используем плейсхолдер - псевдоэлемент &lt;component><br/>Связь с реальным компонентом, который будет помещен на место плейсхолдера, осуществляется с помощью атрибута is",
 			"textURL":"",
-			"ref":[ "https://plnkr.co/edit/RXcN5V5T7iW51b30XMm0?p=preview" ],
 			"samples":[
 				"https://plnkr.co/edit/RXcN5V5T7iW51b30XMm0?p=preview"
 			],
-			"usefull":[]
+			"usefull":[
+				"https://goo.gl/nyYqje",
+				"https://goo.gl/fQbUuG"
+			]
 		},
 		{
 			"head":"Recursive component",
