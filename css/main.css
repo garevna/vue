@@ -85,7 +85,7 @@ footer:before {
 	font-family:monospace;
 }
 .my-photo {
-	position:fixed;
+	position:absolute;
 	bottom:10px;
 	right:10px;
 	max-height: 100px;
