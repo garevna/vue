@@ -43,13 +43,14 @@
 }
 .left-dropdown-menu,
 .right-dropdown-menu {
-  position:fixed;
-  top:40px;
-  z-index:300;
-  margin:0;
-  background-color:transparent;
-  max-height:80%;
-  overflow:auto;
+	position:fixed;
+	top:40px;
+	z-index:300;
+	margin:0;
+	font-size: 18px;
+	background-color:transparent;
+	max-height:80%;
+	overflow:auto;
 	z-index:1000;
 	box-shadow: 5px 5px 10px rgba(0,0,0,0.58);
 }
