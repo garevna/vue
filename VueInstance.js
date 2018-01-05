@@ -2,7 +2,7 @@ Vue.config.silent = true
 const app = new Vue ( {
 	data: {
 		mainDataSource: "https://garevna.github.io/vue.github.io/data/mainData.json",
-    postDataSource: "https://garevna.github.io/vue.github.io/data/posts.json",
+    		postDataSource: "https://garevna.github.io/vue.github.io/data/posts.json",
 		section:false,
 		details:false,
 		mainMenuReady: false,
@@ -25,7 +25,6 @@ const app = new Vue ( {
 	},
 	mounted: function () {
 			this.$on ( 'menuSelect', function ( val ) {
-					console.log ( 'Vue instance menu selected: ' + val )
 					this.$store.commit( 'changeCurrentSectionId', val )
 					this.$store.commit( 'getCurrentSectionInfo' )
 					this.$store.commit( 'getCurrentSectionPosts' )
