@@ -17,7 +17,7 @@
 
 <p>Но мы можем создать в экземпляре <span class="spec">Vue</span> локальную копию объекта, 
 находящегося в хранилище, и сделать двустороннюю привязку свойства <span class="spec">value</span> элементов форм 
-к этой локальной копии (точнее, к ее свойстам)</p>
+к этой локальной копии (точнее, к ее свойствам)</p>
 
 <p>Предположим, в хранилище ( в объекте <span class="spec">state</span> ) есть объект <span class="words">human</span></p>
 <pre class="code-snippet">
@@ -86,12 +86,5 @@ methods: {
 }
 </pre>
 <p>Метод <span class="words">changeData</span> активирует мутацию состояния <span class="spec">Vuex-store</span></p>
-<pre class="code-snippet">
-mutations: {
-    updateData: function ( state, { field, value } ) {
-      Object.assign ( state.human, { [ field ]: value })
-    }
-}
-</pre>
 
 
