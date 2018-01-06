@@ -3,7 +3,7 @@
 		"name":"Vue.js",
 		"title":"Model | View",
 		"comment":"Подключение библиотеки Vue.js:<br/> &lt;script src ='https://unpkg.com/vue'>&lt;/script>",
-		"ref":"https://docs.google.com/presentation/d/1Ngckdav0zi7vPw9V8FC7aJGsXIsYDCy_Bi6aBXcZzjo/edit?usp=sharing",
+		"ref":"https://docs.google.com/presentation/d/e/2PACX-1vSZ7CaHA3n6o6tcyg_bImUvDQM2bukJacPcBbMVCUasx4MuvVMmVI-_77bg9Xd-3nTxGvks3n59TUCR/pub?start=true&loop=true&delayms=60000",
 		"picture":false,
 		"usefull":[
 			"https://medium.com/vue-mastery/why-43-of-front-end-developers-want-to-learn-vue-js-7f23348bc5be",
@@ -35,7 +35,7 @@
 			"    v-text='message + user.name'>",
 			"</div>"
 		],
-		"ref":"https://docs.google.com/presentation/d/1igrCFnps4TL7aebpWPPVeCveO7dYhO8NVQ9oVCRrcEw/edit?usp=sharing",
+		"ref":"https://docs.google.com/presentation/d/e/2PACX-1vSn1eN9Gd55gzgGVT7Xa1Qle6btYpjZaZjN7gGdQpOPjkwn69YsEnscM5QrYdMY-QbuQpngagtTAJRc/pub?start=true&loop=true&delayms=60000",
 		"picture":false,
 		"usefull": [
 			"http://vegibit.com/vue-js-directives/",
@@ -64,7 +64,7 @@
 			"        </article>`",
 			"</div>"
 		],
-		"ref":"https://docs.google.com/presentation/d/1wc3MBlxkmpnB5AdsvQq1b7rtvWfnKUDJez9FO3z60oM/edit?usp=sharing",
+		"ref":"https://docs.google.com/presentation/d/e/2PACX-1vTv_TIAOs3rHy-QQKl_NYkL98MMOztYRIKX90aP_Lrw-rTCK8-MPKOu5FXGOrl9rptxY8qgk5WxfBer/pub?start=true&loop=true&delayms=60000",
 		"picture":"./images/broke.gif",
 		"usefull": [
 			"http://marcelpociot.de/blog/2017-12-08-using-custom-vuejs-elements?utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=Vue.js%20Developers",
@@ -77,7 +77,7 @@
 		"name":"Events",
 		"title":"События",
 		"comment":"Событийная модель Vue.js",
-		"ref":"https://plnkr.co/edit/vdEIxZYvoN4x6VFMX3kb?p=preview",
+		"ref":false,
 		"picture":false,
 		"usefull":[
 			"https://medium.com/@sky790312/about-vue-2-parent-to-child-props-af3b5bb59829",
