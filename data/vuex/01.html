@@ -10,10 +10,21 @@
   .word {
     color:#7cdef3;
   }
+  .rule {
+    color: #75f17e;
+    font-size:25px;
+  }
+  .rule:before {
+    content:"\2776 "
+  }
+  .rule-text {
+    border: solid 1px #75f17e;
+    padding: 4px 8px;
+  }
 </style>
 
-<p><b>Священное правило № 1</b></p>
-<p>Изменять состояние <span class="spec">Vuex</span>-хранилища можно только с помощью мутаций</p>
+<p class="rule">cвященное правило</p>
+<p class="rule-text">Изменять состояние <span class="spec">Vuex</span>-хранилища можно только с помощью мутаций</p>
 
 <p>Но как же быть, если нам нужно связать данные, находящиеся в хранилище, с
 элементами <span class="spec">input</span>?</p>
@@ -21,7 +32,7 @@
 <p>В <span class="spec">Vuex</span>-хранилище у нас находится объект <span class="word">theRecord</span></p>
 
 <p>Нам нужно обеспечить возможность ввода / редактирования свойств 
-объекта <span class="word">theRecord</span>, не нарушая священное правило № 1</p>
+  объекта <span class="word">theRecord</span>, не нарушая <span class="rule"></span></p>
 
 <p>Для этого в экземпляре <span class="spec">Vue</span> мы создаем локальную копию <span class="word">localdata</span> объекта 
 <span class="word">theRecord</span>, находящегося в хранилище</p>
