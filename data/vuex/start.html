@@ -14,20 +14,20 @@ const store = new Vuex.Store({
 </pre>
 <p>Он хранит состояние приложения</p>
 
-<p>Реактивные данные объекта store находятся в свойстве <span style="font-size=20px">state</span></p>
+<p>Реактивные данные объекта store находятся в свойстве <span style="font-size:20px">state</span></p>
 <p>Изменение реактивных данных состояния приведет к изменениям во всех компонентах модели</p>
 
 <p>Именно поэтому изменения состояния этого объекта называют 
-  <i>мутациями</i> (<span style="font-size=20px">mutations</span>), а не методами</p>
+  <i>мутациями</i> (<span style="font-size:20px">mutations</span>), а не методами</p>
 
 <p>Мутации являются синхронными операциями</p>
 <p>Они подобны обработчикам событий</p>
 
-<p>Вызвать мутацию (измененить состояние объекта <span style="font-size=20px">store</span>) можно 
-  с помощью метода <span style="font-size=20px">commit</span></p>
+<p>Вызвать мутацию (измененить состояние объекта <span style="font-size:20px">store</span>) можно 
+  с помощью метода <span style="font-size:20px">commit</span></p>
 
-<p>Параметром метода <span style="font-size=20px">commit</span> будет любая мутация из 
-описанных в свойстве <span style="font-size=20px">mutations</span>:</p>
+<p>Параметром метода <span style="font-size:20px">commit</span> будет любая мутация из 
+описанных в свойстве <span style="font-size:20px">mutations</span>:</p>
 <pre class="code-snippet">
 methods: {
     gotoNext: () => store.commit('nextPicture'),
@@ -35,8 +35,8 @@ methods: {
   }
 </pre>
 
-<p>Доступ к глобальному объекту <span style="font-size=20px">store</span>, а, следовательно,
-  к его состоянию <b font-size="18px">store.state</b> возможен из любого компонента</p>
+<p>Доступ к глобальному объекту <span style="font-size:20px">store</span>, а, следовательно,
+  к его состоянию <span style="font-size:20px">store.state</span> возможен из любого компонента</p>
 <pre class="code-snippet">
 computed: {
     img: () => 
@@ -44,11 +44,11 @@ computed: {
   }
 </pre>
 <p>При этом в компонентах нужно создавать вычисляемые свойства 
-(<span style="font-size=20px">computed</span>), чтобы все мутации объекта <span style="font-size=20px">store</span> (изменения его 
+(<span style="font-size:20px">computed</span>), чтобы все мутации объекта <span style="font-size:20px">store</span> (изменения его 
 состояния) реактивно отражались в компонентах.</p>
 
-<p>Любой компонент может вызвать мутацию <span style="font-size=20px">store</span> с помощью метода 
-<span style="font-size=20px">commit</span>:</p>
+<p>Любой компонент может вызвать мутацию <span style="font-size:20px">store</span> с помощью метода 
+<span style="font-size:20px">commit</span>:</p>
 <pre class="code-snippet">
 methods: {
     gotoNext: () => store.commit ( 'nextPicture' ),
