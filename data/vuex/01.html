@@ -1,16 +1,30 @@
-<b>Священное правило № 1</b><br/>
-Изменять состояние Vuex-хранилища можно только с помощью мутаций<br/>
-<br/>
-Но как же быть, если нам нужно связать данные, находящиеся в хранилище, с
-элементами input?<br/>
-<br/>
-В Vuex-хранилище у нас находится объект <i>theRecord</i><br/>
-<br/>
-Нам нужно обеспечить возможность ввода / редактирования свойств 
-объекта theRecord, не нарушая священное правило № 1<br/>
-<br/>
-Для этого в экземпляре Vue мы создаем локальную копию <i>localdata</i> объекта 
-<i>theRecord</i>, находящегося в хранилище<br/>
+<style>
+  .spec, .words {
+    display:inline-block;
+    margin: 0 7px;
+    font-size: 20px;
+  }
+  .spec {
+    color:orange;
+  }
+  .words {
+    color:#7cdef3;
+  }
+</style>
+
+<p><b>Священное правило № 1</b></p>
+<p>Изменять состояние <span class="spec">Vuex</span>-хранилища можно только с помощью мутаций</p>
+
+<p>Но как же быть, если нам нужно связать данные, находящиеся в хранилище, с
+элементами <span class="spec">input</span>?</p>
+
+<p>В <span class="spec">Vuex</span>-хранилище у нас находится объект <span class="word">theRecord</span></p>
+
+<p>Нам нужно обеспечить возможность ввода / редактирования свойств 
+объекта <span class="word">theRecord</span>, не нарушая священное правило № 1</p>
+
+<p>Для этого в экземпляре <span class="spec">Vue</span> мы создаем локальную копию <span class="word">localdata</span> объекта 
+<span class="word">theRecord</span>, находящегося в хранилище</p>
 
 <pre class="code-snippet">
 data: function () {
@@ -20,19 +34,19 @@ data: function () {
                         this.$store.state.theRecord ) )
     }
 }
-</pre><br/>
+</pre>
 
-Теперь мы имеем локальную копию объекта <i>theRecord</i>, находящегося в хранилище 
-Vuex. Свойства этой копии можно совершенно спокойно связать с элементами input 
-с помощью директивы <b>v-model</b><br/> 
+<p>Теперь мы имеем локальную копию объекта <span class="word">theRecord</span>, находящегося в хранилище 
+<span class="spec">Vuex</span>. Свойства этой копии можно совершенно спокойно связать с элементами <span class="spec">input</span> 
+с помощью директивы <span class="spec">v-model</span></p> 
 <pre class="code-snippet">
 &lt;input v-model="localdata.id"/>
 &lt;input v-model="localdata.data.year"/>
 &lt;input v-model="localdata.data.details"/>
-</pre><br/>
-Таким образом, мы изменяем локальный объект localdata, а затем вызываем 
-мутацию <i>updateData</i>, которая изменит состояние хранилища 
-(значения соответствующих свойств объекта theRecord)<br/>
+</pre>
+<p>Таким образом, мы изменяем локальный объект <span class="word">localdata</span>, а затем вызываем 
+мутацию <span class="word">updateData</span>, которая изменит состояние хранилища 
+(значения соответствующих свойств объекта <span class="word">theRecord</span>)</p>
 <pre class="code-snippet">
 watch: {
     localdata: {
@@ -41,16 +55,15 @@ watch: {
       }, deep: true
     }
 }
-</pre><br/>
-<small>
-      <b>Примечание:</b><br/>
-      Для получения локальной копии localdata место Object.assign мы 
-      используем <b>JSON.stringify -> JSON.parse</b><br/>
+</pre>
+<p>
+    <b><i>Примечание:</i></b><br/>
+Для получения локальной копии <span class="word">localdata</span> вместо <span class="spec">Object.assign</span> мы 
+используем <span class="spec">JSON.stringify -> JSON.parse</span><br/>
 
-      Так мы осуществляем глубокое копирование (т.е. копирование 
-      объектов, являющихся свойствами объекта localdata)<br/>
+Так мы осуществляем глубокое копирование (т.е. копирование объектов, являющихся свойствами объекта 
+<span class="word">localdata</span>)<br/>
 
-      Object.assign () копирует значения свойств. <br/>
-      Если значение свойства является ссылкой на объект, то будет 
-      скопирована ссылка, а не сам объект<br/>
-</small>
+<span class="spec">Object.assign ()</span> копирует значения свойств. <br/>
+Если значение свойства является ссылкой на объект, то будет скопирована ссылка, а не сам объект<br/>
+</p>
