@@ -10,6 +10,13 @@
   .words {
     color:#7cdef3;
   }
+  .rule {
+      color: #75f17e;
+  }
+  .rule:before {
+      content:"\2776 ";
+      font-size:25px;
+  }
 </style>
 
 <p>В этом примере мы выносим в компоненты работу с данными, включая коммиты мутаций состояния <span class="spec">Vuex-store</span></p>
@@ -24,8 +31,8 @@ localdata: this.$store.state.theRecord
 <p>По факту, <span class="words">localdata</span> - это ссылка на объект <span class="words">theRecord</span>, 
 который находится в хранилище <span class="spec">Vuex</span></p>
 
-<p>Мы не будем менять свойства этого объекта, поскольку тогда мы нарушим священное 
-  правило №1 - изменим состояние хранилища, минуя мутации</p>
+<p>Мы не будем менять свойства этого объекта, поскольку тогда мы нарушим <span class="rule"></span> - изменим 
+состояние хранилища напрямую, минуя мутации</p>
 
 <p>В компоненты мы передаем значения свойств <span class="words">localdata</span> 
 (через <span class="spec">props</span> в компоненте и <span class="spec">v-bind</span> при его вызове)</p>
