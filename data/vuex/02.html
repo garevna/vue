@@ -1,11 +1,35 @@
-Свойства объекта Vuex.Store
+<style>
+  .spec, .word {
+    display:inline-block;
+    margin: 0 7px;
+    font-size: 20px;
+  }
+  .spec {
+    color:orange;
+  }
+  .word {
+    color:#7cdef3;
+  }
+  .rule {
+      color: #75f17e;
+  }
+  .rule:before {
+      content:"\2776 ";
+      font-size:25px;
+  }
+  .rule-text {
+    border: dotted 3px #75f17e;
+    padding: 4px 8px;
+  }
+</style>
+
+<p>Свойства объекта <span class="spec">Vuex.Store</span></p>
 <hr/>
-<b>getters</b> - аналог вычисляемых свойств компонентов
-<br/>
-В геттеры можно вынести вычисление индекса следующего 
-слайда (nextCounterValue), вытягивание текущей (currentPicture) и 
-следующей (nextPicture) картинки из массива pictures:
-<br/>
+<p><span class="spec">getters</span> - аналог вычисляемых свойств компонентов</p>
+<p>В геттеры можно вынести вычисление индекса следующего слайда (<span class="word">nextCounterValue</span>), 
+вытягивание текущей (<span class="word">currentPicture</span>) и 
+следующей (<span class="word">nextPicture</span>) картинки из массива <span class="word">pictures</span>:</p>
+
 <pre class="code-snippet">
 getters: {
     nextCounterValue ( state ) {
@@ -20,13 +44,13 @@ getters: {
       return state.pictures [ store.getters.nextCounterValue ]
     }
 }
-</pre><br/>
-доступ к свойству в геттере:<br/>
+</pre>
+<p>доступ к свойству в геттере:</p>
 <pre class="code-snippet">
-  store.getters.nextCounterValue
+store.getters.nextCounterValue
 </pre><hr/>
-Действия (<b>actions</b>) предназначены для выполнения асинхронных операций, 
-возвращающих промисы<br/>
+<p>Действия (<span class="spec">actions</span>) предназначены для выполнения асинхронных операций, 
+возвращающих промисы</p>
 <pre class="code-snippet">
 actions: {
   getNextPicture: function ( context ) {
@@ -50,15 +74,14 @@ actions: {
           })
   }
 }
-</pre><br/>
-Вызывать действие из компонента или корневого экземпляра нужно с 
-помощью метода <b>dispatch</b><br/>
+</pre>
+<p>Вызывать действие из компонента или корневого экземпляра нужно с помощью метода <span class="spec">dispatch</span></p>
 <pre class="code-snippet">
 methods: {
     gotoNext: () => store.dispatch ( 'getNextPicture' ),
 }
-</pre><br/>
-В функции-обработчики передаётся объект context:<br/>
+</pre>
+<p>В функции-обработчики передаётся объект <span class="spec">context</span>:</p>
 <pre class="code-snippet">
 actions: {
     getNextPicture: function ( context ) {
@@ -82,18 +105,18 @@ actions: {
           })
     }
   }
-</pre><hr/>
-Операторы отображения scope объекта store в локальный scope 
-компонента<br/>
-
-<b>Vuex.mapState</b>,<br/>
-<b>Vuex.mapMutations</b>,<br/>
-<b>Vuex.mapActions</b>,<br/>
-<b>Vuex.mapGetters</b><br/>
-
-В компонентах можно упростить доступ к состоянию, геттерам, мутациям и 
-действиям с помощью Vuex.mapState, Vuex.mapGetters, Vuex.mapMutations и 
-Vuex.mapActions соответственно<br/>
+</pre>
+<p>Операторы отображения свойств объекта <span class="spec">store</span> 
+в область видимости компонента</p>
+<p>
+<span class="spec">Vuex.mapState</span>,<br/>
+<span class="spec">Vuex.mapMutations</span>,<br/>
+<span class="spec">Vuex.mapActions</span>,<br/>
+<span class="spec">Vuex.mapGetters</span><br/>
+</p>
+<p>В компонентах можно упростить доступ к состоянию, геттерам, мутациям и 
+действиям с помощью <span class="spec">Vuex.mapState</span>, <span class="spec">Vuex.mapGetters</span>, 
+<span class="spec">Vuex.mapMutations</span> и <span class="spec">Vuex.mapActions</span> соответственно</p>
 <pre class="code-snippet">
 computed: Vuex.mapState ( {
     img ( state ) {
@@ -101,7 +124,7 @@ computed: Vuex.mapState ( {
       return state.pictures [ ind ]
     },
 })
-</pre><br/>
+</pre>
 
 <pre class="code-snippet">
 computed: {
@@ -110,6 +133,6 @@ computed: {
        pict: 'currentPicture'
     ])
 }
-</pre><br/>
-Теперь геттеры nextCounterValue и currentPicture доступны в 
-компоненте как вычисляемые свойства nextInd и pict
+</pre>
+<p>Теперь геттеры <span class="word">nextCounterValue</span> и <span class="word">currentPicture</span> доступны в 
+компоненте как вычисляемые свойства <span class="word">nextInd</span> и <span class="word">pict</span></p>
