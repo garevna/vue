@@ -1,4 +1,4 @@
-<p>Создаем хранилище данных dataStore:</p>
+<p>Создаем хранилище данных <i>dataStore</i>:</p>
 <pre class="code-snippet">
 var dataStore = new Vue ()
 </pre>
@@ -12,12 +12,17 @@ var theApp = new Vue ({
   }
 }
 </pre>
-<p>_________________________________________________
 <p>Теперь мы сможем ссылаться на хранилище данных</p>
 
-<p>из экземпляра Vue так:        this.store
-<p>из вложенных компонентов так: this.$root.store
-_________________________________________________
+<p>из экземпляра Vue так:</p>
+<pre class="code-snippet">
+this.store
+</pre>
+<p>из вложенных компонентов так:</p>
+<pre class="code-snippet">
+this.$root.store
+</pre>
+
 <p>В хранилище dataStore создаем объект data,
 где будем хранить данные:</p>
 <pre class="code-snippet">
