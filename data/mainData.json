@@ -171,8 +171,22 @@
 	{
 		"name":"Vuex",
 		"title":"State management",
-		"comment":"В крупном проекте упрощает процесс отслеживания реактивных зависимостей при обмене данными между компонентами",
-		"code":false,
+		"comment":"<p>В крупном проекте упрощает процесс отслеживания реактивных зависимостей при обмене данными между компонентами</p>Подключить библиотеку Vuex можно в теге скрипт:<pre class='code-snippet'><script src='https://unpkg.com/vuex@3.0.1/dist/vuex.js'></script></pre><p>Ядром любого Vuex-приложения явлется реактивный объект, создать который можно с помощью конструктора <b>Vuex.Store</b></p>",
+		"code":[
+			"const store = new Vuex.Store ({",
+			"     state: {",
+			"          currentCounterValue:  0,",
+			"          previousCounterValue: 0",
+			"     },",
+			"     getters: { ... },",
+			"     mutations: {",
+			"          nextPicture: state => { ... },",
+			"          previousPicture: state => { ... }",
+			"     }",
+			"     actions: { ... }",
+			"})",
+			""
+		],
 		"ref":false,
 		"picture":"https://d2eip9sf3oo6c2.cloudfront.net/series/square_covers/000/000/111/full/EGH_VueJSNuxt_Final_1000.png",
 		"usefull":[
