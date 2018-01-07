@@ -88,13 +88,14 @@
 				"watch: {",
 				"  'sampleArray': {",
 				"      handler: function ( newVal, oldVal ) {",
-				"           console.info ( 'Объект sampleArray изменен' )",
+				"           console.info ( 'Массив sampleArray изменен' )",
 				"      }",
 				"   }",
 				"}"
 			],
 			"text":"Отслеживание изменения значений реактивных данных модели",
 			"textURL":"./data/vue/reactivity-array.html",
+			"readme":"./data/vue/reactivity-array.html",
 			"samples":[
 				"https://plnkr.co/edit/PBmd2rVMsmWBKNjiQzsf?p=preview"
 			],
@@ -119,6 +120,7 @@
 			],
 			"text":"Отслеживание изменения значений реактивных данных модели<br/>Глубокое отслеживание объектов<br/>",
 			"textURL":"./data/vue/reactivity-object.html",
+			"readme":"./data/vue/reactivity-object.html",
 			"samples":[
 				"https://plnkr.co/edit/XkqjUURxbw5WtFq0rK0J?p=preview",
 				"https://plnkr.co/edit/HJKbjwFpifE4RxD2JjTG?p=preview"
@@ -136,7 +138,6 @@
 			"code":false,
 			"text":"Метод, позволяющий эмитировать событие<br/>( подробнее см. раздел Events )",
 			"textURL":"",
-			"ref":[ "https://plnkr.co/edit/vdEIxZYvoN4x6VFMX3kb?p=preview" ],
 			"samples":[
 				"https://plnkr.co/edit/vdEIxZYvoN4x6VFMX3kb?p=preview"
 			],
