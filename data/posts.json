@@ -985,7 +985,7 @@
 			"code":false,
 			"text":"",
 			"textURL":"./data/vue/promise.html",
-			"readme":"https://garevna.github.io/vue.github.io/data/vue/promise.html",
+			"readme":"",
 			"samples":[ "https://repl.it/@garevna/Vueandpromise" ],
 			"usefull": [
 				"https://scotch.io/tutorials/javascript-promises-for-dummies",
@@ -1007,12 +1007,12 @@
 				"// successCallback -  успешного завершения операции",
 				"// failureCallback -  завершения операции с ошибкой"
 			],
-			"readme":"https://garevna.github.io/vue.github.io/data/AJAX/vue-resource.html",
+			"readme":"./data/AJAX/vue-resource.html",
 			"text":"Ссылка на библиотеку: https://cdn.jsdelivr.net/npm/vue-resource@1.3.4",
 			"textURL":"",
-			"ref":[ "https://plnkr.co/edit/lZLVjgPDmkpgmIwzebMd?p=preview" ],
 			"samples": [ "https://plnkr.co/edit/lZLVjgPDmkpgmIwzebMd?p=preview" ],
 			"usefull": [
+				"https://appdividend.com/2017/08/02/use-vue-resource-in-vuejs/",
 				"https://github.com/pagekit/vue-resource"
 			]
 		},
