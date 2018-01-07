@@ -188,7 +188,7 @@ input[type="checkbox"] {
 .expand-elem {
   position:relative;
   border: inset 1px;
-  background-image: linear-gradient(#ffffffb7, #ffffff70, #ffffffaa, , #ffffff80);
+  background-image: linear-gradient(#ffffffb7, #ffffff70, #ffffffaa, #ffffff80);
   padding:7px 10px 20px 15px;
   transition: height 1s, opacity 1s;
   transform-origin:0 0;
