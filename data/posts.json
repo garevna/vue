@@ -984,9 +984,8 @@
 			"picture":false,
 			"code":false,
 			"text":"",
-			"textURL":"",
+			"textURL":"./data/vue/promise.html",
 			"readme":"https://garevna.github.io/vue.github.io/data/vue/promise.html",
-			"ref":[ "https://repl.it/@garevna/Vueandpromise" ],
 			"samples":[ "https://repl.it/@garevna/Vueandpromise" ],
 			"usefull": [
 				"https://scotch.io/tutorials/javascript-promises-for-dummies",
