@@ -20,22 +20,31 @@ new Vue ({
 <p>Для вывода элементов массива используется директива v-for</p>
 <p>В следующем фрагменте кода массив не будет реактивным</p>
 <pre class="code-snippet">
-<ul>
-    <li v-for = "flower in flowers">
-        <input v-model = "flower" />
-    </li>
-</ul>
+&lt;ul>
+    &lt;li v-for = "flower in flowers">
+        &lt;input v-model = "flower" />
+    &lt;/li>
+&lt;/ul>
 </pre>
 <p>А вот такой вариант обеспечивает реактивность массива flowers</p>
 <pre class="code-snippet">
-<ul>
-    <li v-for = "( flower, index ) in flowers">
-        <input v-model = "flowers [ index ]" />
-    </li>
-</ul>
+&lt;ul>
+    &lt;li v-for = "( flower, index ) in flowers">
+        &lt;input v-model = "flowers [ index ]" />
+    &lt;/li>
+&lt;/ul>
 </pre>
 
 <p>Для отслеживания изменений массива можно использовать свойство watch экземпляра Vue</p>
+<pre class="code-snippet">
+watch: {
+    'flowers': function ( newVal, oldVal ) {
+        console.info ( 'Массив flowers был изменен' )
+    }
+}
+</pre>
+<p>При отслеживании изменений массива с помощью watch можно использовать handler</p>
+<pre class="code-snippet">
 watch: {
     'flowers': {
         handler: function ( newVal, oldVal ) {
@@ -43,4 +52,5 @@ watch: {
         }
     }
 }
-<p>Обратите внимание на свойство handler - обработчик события изменения указанного реактивного свойства</p>
+</pre>
+<p>Свойство handler - обработчик события изменения указанного реактивного свойства</p>
