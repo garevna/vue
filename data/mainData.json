@@ -149,8 +149,8 @@
 	},
 	{
 		"name":"AJAX",
-		"title":"vue-resource",
-		"comment":"Метод <code>this.$http.get( sourceUrl )</code> возвращает объект <b>promise</b>, т.е. объект, имеющий состояние.<br/> Пока операция не завершена, состояние объекта будет <em>pending</em>, т.е. объект находится в ожидании завершения операции.<br/>Если операция завершена успешно, состояние объекта становится <em>fulfilled</em>, в противном случае - <em>rejected</em>.<br/> Для обработки изменения состояния объекта на него  нужно навесить обработчики.<br/> * Детальнее: <i>https://github.com/pagekit/vue-resource</i><br/> * Ссылка на библиотеку: <i>https://cdn.jsdelivr.net/npm/vue-resource@1.3.4</i><br/> * Для создания и редактирования JSON-файлов можно использовать сервис <i>http://www.jsoneditoronline.org/</i><br/><small>Создайте репозиторий на гитхабе, куда поместите свой JSON-файл<br/>* Сервис <i>https://jsonplaceholder.typicode.com/</i> можно использовать как эмулятор удаленного сервера</small>",
+		"title":"HTTP",
+		"comment":"Vue.js не поставляется со встроенной библиотекой HTTP, и не без оснований. В наши дни API-интерфейс <a href='https://www.sitepoint.com/introduction-to-the-fetch-api/' target=''>Fetch</a> поддерживается во многих браузерах, но если вам не нравится API-интерфейс Fetch, то для HTTP есть много сторонних подключаемых библиотек, что обеспечивает гибкость в выборе оптимального решения для проекта",
 		"code":[
 			"var sourceUrl = 'https://garevna.github.io/vue.github.io/data/posts.json'",
 			"var promise = this.$http.get( sourceUrl )",
@@ -165,7 +165,10 @@
 		"ref":false,
 		"picture":"./images/AJAX.png",
 		"usefull":[
-			"https://plnkr.co/edit/lZLVjgPDmkpgmIwzebMd?p=preview"
+			"https://github.com/pagekit/vue-resource",
+			"https://cdn.jsdelivr.net/npm/vue-resource@1.3.4",
+			"https://jsoneditoronline.org/",
+			"https://jsonplaceholder.typicode.com/"
 		]
 	},
 	{
