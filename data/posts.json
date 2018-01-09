@@ -367,6 +367,22 @@
 			]
 		},
 		{
+			"head":"v-text | v-html",
+			"picture":"",
+			"code":[
+				"<p v-html = 'showMessage'></p>",
+				"<p v-text = 'showMessage'></p>"
+			],
+			"text":"Вывод текстовых значений<br/>Директива v-text позволяет вывести текстовое содержимое переменной, а v-html - вывести это содержимое как html-код",
+			"textURL":"",
+			"samples":[
+				"https://repl.it/@garevna/Vue-v-html-vs-v-text"
+			],
+			"usefull":[
+				"https://ru.vuejs.org/v2/guide/syntax.html"
+			]
+		},
+		{
 			"head":"v-on",
 			"picture":false,
 			"code":[
