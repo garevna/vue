@@ -255,6 +255,7 @@
 			"textURL":"",
 			"readme":false,
 			"samples":[
+				"https://repl.it/@garevna/Vue-Lificycle-Hooks"
 			],
 			"usefull":[
 				"https://ru.vuejs.org/v2/guide/instance.html",
