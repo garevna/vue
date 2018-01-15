@@ -117,32 +117,26 @@
 
 .readme-button, .readme-button-active,
 .code-button, .code-button-active {
-		/*position: absolute;*/
-		display:inline-block;
-		background:none;
-		border: 0;
-		color:#dde;
-		text-shadow: 0px 0px 1px rgba(0,0,0,0.7);
-		/*outline:none;*/
-		top:0px;
-		/* right:-30px; */
-		font-size:30px;
-		font-family: papyrus, monospace;
-		padding: 0 5px;
+	display:inline-block;
+	background:none;
+	border: 0;
+	color:#dde;
+	text-shadow: 0px 0px 1px rgba(0,0,0,0.7);
+	top:0px;
+	font-family: papyrus, monospace;
+	padding: 0 5px;
 }
 .code-button:before {
-	/*content: "\25E9";*/
-		content: "\2774 \2775";
-		display:inline-block;
-		transition:all 0.5s;
+	font-size:30px;
+	content: "\2774 \2775";
+	display:inline-block;
+	transition:all 0.5s;
 }
 .code-button:hover:before {
-		/*content: "\25EA";*/
-		-webkit-transform: rotate(90deg);
-		transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
 }
 .code-button-active:before {
-	/*content: "\25EA";*/
 	-webkit-transform: rotate(90deg);
 	transform: rotate(90deg);
 	color: #900;
