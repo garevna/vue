@@ -1,7 +1,5 @@
 const router = new VueRouter({
   props: ["id"],
-  mode:'history',
-  base: "/vue.github.io/",
   routes: [
     {
       path: '/',
