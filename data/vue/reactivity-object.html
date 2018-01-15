@@ -66,7 +66,8 @@ watch: {
 }
 </pre>
 <p>Теперь изменение значений свойств объекта <span class="words">sampleData</span> реактивно отбражается наблюдателем за счет того, 
-  что для свойства <span class="spec">handler</span> мы установили опцию <span class="spec">deep</span>: true</p>
+что для свойства <span class="spec">handler</span> мы установили опцию 
+<span class="spec">deep</span>: <span class="words">true</span></p>
 <p>Попробуйте убрать эту опцию, и глубокие изменения в объекте <span class="words">sampleData</span> перестанут быть реактивными <br/>
 ( глубокие изменения - это изменение значений свойств вложенных объектов, 
 например, <span class="words">sampleData.subject.details</span> )</p>
