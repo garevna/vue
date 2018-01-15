@@ -148,16 +148,17 @@
 	color: #900;
 }
 .readme-button:before {
-		/*content: '\25D0';*/
-		content: '\2753';
-		border:solid 1px;
-		border-radius:100%;
-		width:40px;
-		height:40px;
-		padding:0;
-		box-sizing: border-box;
-		display:inline-block;
-		transition:all 0.5s;
+	content: '?';
+	border:solid 1px;
+	border-radius:100%;
+	width:40px;
+	height:40px;
+	padding:0;
+	font-sie:25px;
+	font-weight:bold;
+	box-sizing: border-box;
+	display:inline-block;
+	transition:all 0.5s;
 }
 .readme-button:hover:before {
 	/*content: '\25D1';
