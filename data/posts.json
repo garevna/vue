@@ -82,57 +82,6 @@
 			]
 		},
 		{
-			"head":"reactivity & array",
-			"picture":"",
-			"code":[
-				"watch: {",
-				"  'sampleArray': {",
-				"      handler: function ( newVal, oldVal ) {",
-				"           console.info ( 'Массив sampleArray изменен' )",
-				"      }",
-				"   }",
-				"}"
-			],
-			"text":"Отслеживание изменения значений реактивных данных модели",
-			"textURL":"./data/vue/reactivity-array.html",
-			"readme":"./data/vue/reactivity-array.html",
-			"samples":[
-				"https://plnkr.co/edit/PBmd2rVMsmWBKNjiQzsf?p=preview"
-			],
-			"usefull":[
-				"https://ru.vuejs.org/v2/guide/reactivity.html",
-				"https://vuejs.org/2016/02/06/common-gotchas/",
-				"https://vuejs.org/v2/guide/reactivity.html"
-				
-			]
-		},
-		{
-			"head":"reactivity & object",
-			"picture":"",
-			"code":[
-				"watch: {",
-				"  'sample': {",
-				"      handler: function ( newVal, oldVal ) {",
-				"           console.info ( 'Объект sample изменен' )",
-				"      }, deep: true",
-				"   }",
-				"}"
-			],
-			"text":"Отслеживание изменения значений реактивных данных модели<br/>Глубокое отслеживание объектов<br/>",
-			"textURL":"./data/vue/reactivity-object.html",
-			"readme":"./data/vue/reactivity-object.html",
-			"samples":[
-				"https://plnkr.co/edit/XkqjUURxbw5WtFq0rK0J?p=preview",
-				"https://plnkr.co/edit/HJKbjwFpifE4RxD2JjTG?p=preview"
-			],
-			"usefull":[
-				"https://ru.vuejs.org/v2/guide/computed.html#%D0%92%D1%8B%D1%87%D0%B8%D1%81%D0%BB%D1%8F%D0%B5%D0%BC%D1%8B%D0%B5-%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0-%D0%B8-%D1%81%D0%BB%D0%B5%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5",
-				"https://medium.com/@modex13/vue-js-2-computed-%D0%B2%D1%8B%D1%87%D0%B8%D1%81%D0%BB%D1%8F%D0%B5%D0%BC%D1%8B%D0%B5-%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0-6649a2169b67",
-				"https://vuejs.org/v2/guide/computed.html#Computed-vs-Watched-Property",
-				"https://vuejs.org/v2/api/#watch"
-			]
-		},
-		{
 			"head":"$emit",
 			"picture":false,
 			"code":false,
@@ -428,6 +377,57 @@
 		}
 	],
 	"Components": [
+		{
+			"head":"reactivity & array",
+			"picture":"",
+			"code":[
+				"watch: {",
+				"  'sampleArray': {",
+				"      handler: function ( newVal, oldVal ) {",
+				"           console.info ( 'Массив sampleArray изменен' )",
+				"      }",
+				"   }",
+				"}"
+			],
+			"text":"Отслеживание изменения значений реактивных данных модели",
+			"textURL":"./data/vue/reactivity-array.html",
+			"readme":"./data/vue/reactivity-array.html",
+			"samples":[
+				"https://plnkr.co/edit/PBmd2rVMsmWBKNjiQzsf?p=preview"
+			],
+			"usefull":[
+				"https://ru.vuejs.org/v2/guide/reactivity.html",
+				"https://vuejs.org/2016/02/06/common-gotchas/",
+				"https://vuejs.org/v2/guide/reactivity.html"
+				
+			]
+		},
+		{
+			"head":"reactivity & object",
+			"picture":"",
+			"code":[
+				"watch: {",
+				"  'sample': {",
+				"      handler: function ( newVal, oldVal ) {",
+				"           console.info ( 'Объект sample изменен' )",
+				"      }, deep: true",
+				"   }",
+				"}"
+			],
+			"text":"Отслеживание изменения значений реактивных данных модели<br/>Глубокое отслеживание объектов<br/>",
+			"textURL":"./data/vue/reactivity-object.html",
+			"readme":"./data/vue/reactivity-object.html",
+			"samples":[
+				"https://plnkr.co/edit/XkqjUURxbw5WtFq0rK0J?p=preview",
+				"https://plnkr.co/edit/HJKbjwFpifE4RxD2JjTG?p=preview"
+			],
+			"usefull":[
+				"https://ru.vuejs.org/v2/guide/computed.html#%D0%92%D1%8B%D1%87%D0%B8%D1%81%D0%BB%D1%8F%D0%B5%D0%BC%D1%8B%D0%B5-%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0-%D0%B8-%D1%81%D0%BB%D0%B5%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5",
+				"https://medium.com/@modex13/vue-js-2-computed-%D0%B2%D1%8B%D1%87%D0%B8%D1%81%D0%BB%D1%8F%D0%B5%D0%BC%D1%8B%D0%B5-%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0-6649a2169b67",
+				"https://vuejs.org/v2/guide/computed.html#Computed-vs-Watched-Property",
+				"https://vuejs.org/v2/api/#watch"
+			]
+		},
 		{
 			"head":"Radio button",
 			"picture":false,
