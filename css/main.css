@@ -119,23 +119,26 @@ footer:before {
 input[type="button"],
 input[type="radio"],
 input[type="checkbox"] {
-  -webkit-user-select: none;
+	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
-  user-select: none;
+	user-select: none;
 }
 .code-snippet {
-  padding: 10px 20px;
-  font-family: monospace;
-  font-size:15px;
+	padding: 10px 20px;
+	font-family: monospace;
+	font-size:15px;
 	overflow:auto;
-  color:#335;
-  position:relative;
-  top:10px;
-  left:-5px;
-  right:10px;
-  box-shadow: inset 4px 4px 8px rgba(0,0,0,0.5);
-  margin-bottom:10px;
+	color:#335;
+	position:relative;
+	top:10px;
+	left:-5px;
+	right:10px;
+	box-shadow: inset 4px 4px 8px rgba(0,0,0,0.5);
+	margin-bottom:10px;
+}
+.code-snippet > p {
+	line-height: 10px;
 }
 /* ======= hide || show content buttons ======= */
 :root {
