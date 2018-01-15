@@ -51,8 +51,8 @@ const currentPost = ( 'current-post', {
   `,
   methods: {
     changeView: function () {
-      this.hideItem = event.target.className === "minus-button"
-      event.target.className = this.hideItem ?
+      this.hideItem = this.className === "minus-button"
+      this.className = this.hideItem ?
                 "plus-button" : "minus-button"
       var property = `--y`
       var size = Math.round ( window.innerHeight * 0.7 )
