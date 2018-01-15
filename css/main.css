@@ -138,7 +138,8 @@ input[type="checkbox"] {
 	margin-bottom:10px;
 }
 .code-snippet > p {
-	line-height: 10px!important;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 /* ======= hide || show content buttons ======= */
 :root {
