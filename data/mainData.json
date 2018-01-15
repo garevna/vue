@@ -5,6 +5,21 @@
 		"comment":"Подключение библиотеки Vue.js:<br/> &lt;script src ='https://unpkg.com/vue'>&lt;/script>",
 		"ref":"https://docs.google.com/presentation/d/e/2PACX-1vSZ7CaHA3n6o6tcyg_bImUvDQM2bukJacPcBbMVCUasx4MuvVMmVI-_77bg9Xd-3nTxGvks3n59TUCR/pub?start=true&loop=true&delayms=60000",
 		"picture":false,
+		"code": [
+			"Vue был успешно принят ",
+			"рядом компаний по всему миру, ",
+			"включая Adobe, GitLab, Codeship",
+			"",
+			"Evan You, the creator of Vue.js",
+			"",
+			"It (Vue.js) has also grown from ",
+			"“yet another side project” ",
+			"into an ecosystem with ",
+			"over 300 contributors ",
+			"across the Vue.js organization, and",
+			"maintained by a core team of over ",
+			"20 active members across the globe."
+		],
 		"usefull":[
 			"https://medium.com/vue-mastery/why-43-of-front-end-developers-want-to-learn-vue-js-7f23348bc5be",
 			"https://medium.com/js-dojo/whats-the-deal-with-vue-s-virtual-dom-3ed4fc0dbb20",
