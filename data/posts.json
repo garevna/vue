@@ -924,6 +924,8 @@
 				"https://plnkr.co/edit/fqer871u9AOOORbbVu5E?p=preview"
 			],
 			"usefull":[
+				"https://router.vuejs.org/ru/api/options.html",
+				"https://router.vuejs.org/ru/essentials/redirect-and-alias.html",
 				"https://medium.com/js-dojo/build-a-lazy-load-router-with-vue-js-and-the-latest-browser-features-a1b52fe52dda"
 			]
 		},
@@ -978,7 +980,9 @@
 			"samples":[
 				"https://plnkr.co/edit/9tX5uw1cEMTHEaSODs3Z?p=preview"
 			],
-			"usefull":[]
+			"usefull":[
+				"https://router.vuejs.org/ru/api/router-link.html"
+			]
 		},
 		{
 			"head":"params",
