@@ -1,8 +1,10 @@
 Используем компонент-шаблон 'main-content' для вывода данных компонентов 'first-component' и 'second-component'<br/>
 
-Содержимое этих компонентов - кнопка, окошко для вывода контента загруженных файлов и футер, куда выводится сообщение о получении данных или ошибке<br/>
+Содержимое этих компонентов - кнопка, окошко для вывода контента загруженных файлов и футер, 
+куда выводится сообщение о получении данных или ошибке<br/>
 
-Компонент 'main-content' должен быть дочерним для 'first-component' и 'second-component', т.е. внутри каждого из этих компонентов задаем свойство components<br/>
+Компонент 'main-content' должен быть дочерним для 'first-component' и 'second-component', 
+т.е. внутри каждого из этих компонентов задаем свойство components<br/>
 <br/>
 <pre>
 components: {
@@ -10,7 +12,8 @@ components: {
 }
 </pre>
 <br/>
-Внутри 'main-content' определяем плейсхолдеры для контента родительских компонентов 'first-component' и 'second-component' с помощью именованных слотов <br/>
+Внутри 'main-content' определяем плейсхолдеры для контента родительских компонентов 'first-component' 
+и 'second-component' с помощью именованных слотов <br/>
 <br/>
 <pre>
 const MainContent = ( 'main-content', {
@@ -26,7 +29,8 @@ const MainContent = ( 'main-content', {
 })
 </pre>
 <br/>
-Теперь привязываем контент наших компонентов 'first-component' и 'second-component' к плейсхолдерам в 'main-content' с помощью атрибутов <br/>
+Теперь привязываем контент наших компонентов 'first-component' и 'second-component' к плейсхолдерам 
+в 'main-content' с помощью атрибутов <br/>
 slot = 'button',<br/>
 slot='content'   и   <br/>
 slot='footer'<br/>
