@@ -17,35 +17,35 @@ const MainContent = ( 'main-content', {
     template: `
         &lt;div>
           &lt;nav>
-            &lt;slot name="button">&lt;/slot>
+            &lt;slot name='button'>&lt;/slot>
           &lt;/nav>
-          &lt;slot name="content">&lt;/slot>
-          &lt;slot name="footer">&lt;/slot>
+          &lt;slot name='content'>&lt;/slot>
+          &lt;slot name='footer'>&lt;/slot>
         &lt;/div>
       `
 })
 </pre>
 <br/>
 Теперь привязываем контент наших компонентов 'first-component' и 'second-component' к плейсхолдерам в 'main-content' с помощью атрибутов <br/>
-slot = "button",<br/>
-slot="content"   и   <br/>
-slot="footer"<br/>
+slot = 'button',<br/>
+slot='content'   и   <br/>
+slot='footer'<br/>
 <br/>
 <pre>
 template: `
     &lt;main-content>
         &lt;button @click="thisClickHandler" 
-                v-if = "dataIsReady"
-                slot = "button">
+                v-if = 'dataIsReady'
+                slot = 'button'>
           first
         &lt;/button>
-        &lt;div class="demo"
-              slot="content"
-              v-html="mess"
-              v-if="contentIsVisible">
+        &lt;div class='demo'
+              slot='content'
+              v-html='mess'
+              v-if='contentIsVisible'>
         &lt;/div>
-        &lt;div slot="footer"
-              v-html="messageToShow">
+        &lt;div slot='footer'
+              v-html='messageToShow'>
         &lt;/div>
     &lt;/main-content>
 `
