@@ -40,6 +40,9 @@ const app = new Vue ( {
 			document.body.style.backgroundSize = Math.min ( window.innerHeight, window.innerWidth )*1.4 + "px"
 			document.body.style.backgroundPositionY = ( asp <= 1.1 && asp >= 0.9 ) ?
 						"10%" : ( asp < 0.9 ? ( -10 / asp ) + "%" : "10%" )
+		},
+		newVersion: function () {
+			window.open ( 'https://garevna.github.io/vue-course.github.io/#/', '_self' )
 		}
 	},
 	components: {
