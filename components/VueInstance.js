@@ -22,7 +22,8 @@ const firebaseConfig = {
 }
 const firebaseApp = firebase.initializeApp ( firebaseConfig )
 const firebaseDB = firebaseApp.database()
-const firebaseAuthUI = new firebaseui.auth.AuthUI( firebase.auth() )
+//const firebaseAuthUI = new firebaseui.auth.AuthUI( firebase.auth() )
+//console.log ( 'firebaseAuthUI: \n', firebaseAuthUI )
 
 import googleFonts from '../css/googleFonts.css'
 
@@ -73,50 +74,51 @@ new Vue ( {
 		}
 	},
 	computed: {
-		user: function () { return this.$store.state.user },
-		userInfoDialog: function () { return !!this.user },
-		currentDate: function () { return this.$store.state.messagesDate },
-		currentSectionId: function () { return this.$store.state.currentSectionId },
-		mainMenuReady: function () { return this.$store.getters.mainMenuReady },
-		mainMenuItems: function () { return this.$store.getters.mainMenuItems },
-		sectionIsReady: function () { return this.$store.getters.sectionIsReady },
-		sectionMenu: function () { return this.$store.getters.sectionMenu }
+			user: function () { return this.$store.state.user },
+			userInfoDialog: function () { return !!this.user },
+			currentDate: function () { return this.$store.state.messagesDate },
+			currentSectionId: function () { return this.$store.state.currentSectionId },
+			mainMenuReady: function () { return this.$store.getters.mainMenuReady },
+			mainMenuItems: function () { return this.$store.getters.mainMenuItems },
+			sectionIsReady: function () { return this.$store.getters.sectionIsReady },
+			sectionMenu: function () { return this.$store.getters.sectionMenu }
 	},
 	created: function () {
-		this.$http.get ( this.mainDataSource )
-				.then ( response => {
-					this.$store.commit ( 'getMainData', response.body )
-				})
-				.catch ( err => {
-					console.log ( 'ОШИБКА ', err )
-				})
-		this.$http.get ( this.postDataSource )
-				.then ( response => {
-					this.$store.commit ( 'getPostData', response.body )
-				})
-				.catch ( err => {
+			this.$http.get ( this.mainDataSource )
+					.then ( response => {
+						this.$store.commit ( 'getMainData', response.body )
+					})
+					.catch ( err => {
 						console.log ( 'ОШИБКА ', err )
-				})
+					})
+			this.$http.get ( this.postDataSource )
+					.then ( response => {
+						this.$store.commit ( 'getPostData', response.body )
+					})
+					.catch ( err => {
+							console.log ( 'ОШИБКА ', err )
+					})
 
-		this.usersDBref = firebaseDB.ref ( 'users' )
-		this.messagesDBref = firebaseDB.ref ( 'message' )
-
-		const __vue = this
-		firebase.auth().onAuthStateChanged ( function ( user ) {
-			if ( !!user ) {
-				user.getIdToken().then (
-					accessToken => {
-						__vue.$store.dispatch ( 'registerUser', user )
-						//__vue.$store.dispatch ( 'getDataFromUsersDB' )
-					},
-					error => {
-						console.error ( 'accessToken ERROR ' + error )
-						__vue.$store.commit ( 'userLoginError', user )
+			this.usersDBref = firebaseDB.ref ( 'users' )
+			this.messagesDBref = firebaseDB.ref ( 'message' )
+			console.log ( this.usersDBref )
+			console.log ( this.messagesDBref )
+			const __vue = this
+			firebase.auth().onAuthStateChanged ( function ( user ) {
+					if ( !!user ) {
+						user.getIdToken().then (
+							accessToken => {
+								__vue.$store.dispatch ( 'registerUser', user )
+								//__vue.$store.dispatch ( 'getDataFromUsersDB' )
+							},
+							error => {
+								console.error ( 'accessToken ERROR ' + error )
+								__vue.$store.commit ( 'userLoginError', user )
+							}
+						)
 					}
-				)
-			}
-			else __vue.$store.commit ( 'userLogOut' )
-		})
+					else __vue.$store.commit ( 'userLogOut' )
+			})
 	},
 	mounted: function () {
 		this.$store.dispatch ( 'getAllUsers' )
