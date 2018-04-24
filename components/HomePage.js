@@ -1,8 +1,9 @@
-const HomePage = ( 'home-page', {
+'use strict'
+
+const HomePage = {
   template: `
     <div class="home-page">
-      <img src="./images/my-photo.png" class="my-photo"/>
-      <h3>Front End</h3>
     </div>
   `
-})
+}
+export default HomePage

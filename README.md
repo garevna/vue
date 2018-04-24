@@ -1,4 +1,4 @@
-# vue.github.io
-Project for my students learning front-end (Vue.js)
+# vue-course.github.io
+Vue.js courseware for my students
 
-Visit at https://garevna.github.io/vue.github.io/.
+demo:   https://garevna.github.io/vue-course.github.io/

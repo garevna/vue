@@ -1,99 +1,159 @@
+'use strict'
+
+import BottomSheet from './bottomSheet'
+import FullScreenDialogWindow from './FullScreenDialogWindow'
+import cardTemplate from './cardTemplate'
+
 const currentPost = ( 'current-post', {
-  props: [ "index", "postObject" ],
   data: function () {
     return {
-      hideItem: true,
-      readmeContent: null
+        postObject: null,
+        readmeContent: null,
+        readmeType: 'none',
+        text: null,
+        state: this.$root.$store.state,
+        scrollPosition: 0
     }
   },
   computed: {
-    codeExist: function () {
-      return this.postObject.code.length > 0
-    }
+      readmeItems: function () {
+          return this.readmeType !== 'js' ? [] : this.$root.$store.state.currenPostReadmeItems
+      },
+      styleObject: {
+        get: function () {
+          return { top: this.scrollPosition + "px" }
+        },
+        set: function ( newValue ) {
+          this.styleObject = { top: newValue + 'px' }
+        }
+      },
+      postName: function () { return this.$root.$route.params.post },
+      codeExist: function () {
+        return this.postObject.code.length > 0
+      },
+  },
+  watch: {
+      postName: function ( newVal, oldVal ) {
+        this.getPostObject ()
+      },
+      'state.sectionPosts': function ( newVal, oldVal ) {
+        this.getPostObject ()
+      }
   },
   template: `
-    <section>
-      <button class="plus-button" @click="changeView">
-          {{ postObject.head }}
-      </button>
-      <button class = "readme-button"
-              v-if = "postObject.readme"
-              @click = "showReadme">
-      </button>
-      <transition name = "expand-elem">
-        <div class="expand-elem" v-if="!hideItem">
-            <img v-if="postObject.picture" class="section-picture"
-                  :src="postObject.picture"/>
+    <section id = "CURRENT POST" v-if = "postObject">
+      <v-toolbar class = "dark accent" prominent height = "36px">
 
-            <code v-html="postObject.text"></code>
-            <div class="code-snippet" v-if="codeExist">
-              <div v-for="code_item in postObject.code">
-                  {{ code_item.replace(/ /g,"&nbsp;") }}
+        <full-screen-dialog-window
+                  :__title = "postObject.head"
+                  :__content = "readmeContent"
+                  :__type = "readmeType"
+                  v-if = "readmeType !== 'none'">
+        </full-screen-dialog-window>
+
+        <bottom-sheet class = "dark transparent"
+                      v-if = "postObject.usefull"
+                      :usefull_links = "postObject.usefull">
+        </bottom-sheet>
+      </v-toolbar>
+      <card-template v-resize = "$root.windowResized" :text="text" :picture="postObject.picture">
+      </card-template>
+      <v-card>
+        <!--<v-container fluid grid-list-lg class = "transparent">
+          <v-layout row wrap>
+            <v-flex xs12 sm8>
+                <div v-html = "text"></div>
+            </v-flex>
+            <v-flex xs12 sm4>
+                <v-card-media v-if = "postObject.picture"
+                  :src = "postObject.picture"
+                  height = "200"
+                  contain
+                ></v-card-media>
+            </v-flex>-->
+
+          <v-container fluid grid-list-lg class = "transparent">
+            <v-flex xs12>
+              <div class = "code-snippet" v-if = "codeExist">
+                <div v-for = "(code_item, index) in postObject.code"
+                      :key = "index">
+                      {{ code_item.replace(/ /g,"&nbsp;") }}
+                </div>
               </div>
+            </v-flex>
+          </v-layout>
+        </v-container>
+          <v-card-actions class = "dark accent">
+            <div class="text-xs-center">
+                <v-btn  flat dark accent icon
+                        v-for = "( sample, index ) in postObject.samples"
+                        :key = "index"
+                        @click = "openRef(sample)">
+                  <v-badge right color = "warning">
+                    <span slot = "badge">{{ (index+1) }}</span>
+                    <v-icon>local_cafe</v-icon>
+                  </v-badge>
+                </v-btn>
             </div>
-            <section class="samples-section">
-                <span v-for="sample in postObject.samples">
-                    <span class="samples-section-item"
-                        @click="openRef(sample)">
-                    </span>
-                </span>
-            </section>
-            <section class="refs-section">
-                <span v-for="ref in postObject.usefull">
-                    <span class="refs-section-item"
-                        @click="openRef(ref)">
-                    </span>
-                </span>
-            </section>
-        </div>
-      </transition>
+          </v-card-actions>
+        </v-card>
     </section>
   `,
   methods: {
-    changeView: function () {
-      this.hideItem = this.className === "minus-button"
-      this.className = this.hideItem ?
-                "plus-button" : "minus-button"
-      var property = `--y`
-      var size = Math.round ( window.innerHeight * 0.7 )
-      document.documentElement.style.removeProperty ( property )
-      document.documentElement.style.setProperty ( property, size + 'px' )
-    },
-    showReadme: function () {
-        var readme = document.createElement ( 'article' )
-        document.body.appendChild ( readme )
-        readme.innerHTML = this.readmeContent
-
-        menuAppearFromCenter ( readme )
-    },
-    changeCodeVisibility: function () {
-      this.setButtons ()
-    },
-    setReadmeVisible: function () {
-      this.setButtons ()
-    },
-    setButtons: function () {
-      this.textIsVisible = !this.readmeIsVisible
-      this.codeButtonClass = this.codeIsVisible ?
-                          "code-button-active" :
-                          "code-button"
-      this.readmeButtonClass = this.readmeIsVisible ?
-                          "readme-button-active" :
-                          "readme-button"
-    },
-    openRef: ref => window.open ( ref, "_blank" )
+      openRef: ref => window.open ( ref, "_blank" ),
+      getScriptItems: function ( fileName ) {
+        var scriptElement = document.getElementById ( "dynamicJS" )
+        if ( scriptElement ) {
+          if ( scriptElement.src === fileName ) return
+          scriptElement.parentNode.removeChild ( scriptElement )
+        }
+        scriptElement = document.createElement ( 'script' )
+        document.getElementsByTagName('head')[0].appendChild ( scriptElement )
+        scriptElement.id = "dynamicJS"
+        var store = this.$store
+        scriptElement.onload = function () {
+            store.commit( 'setCurrentPostIdReadmeItems', items )
+            store.commit( 'setCurrentPostIdReadmeCommonText', items )
+        }
+        scriptElement.src = fileName
+      },
+      getPostObject: function () {
+        var getReady = new Promise ( ( resolve, reject ) => {
+                if ( this.state.sectionPosts && this.postName ) {
+                    var tmp = this.state.sectionPosts.filter ( post =>
+                                                  post.head === this.postName )
+                    resolve ( ( tmp.length === 0 ) ? this.state.emptyPost : tmp [0] )
+                }
+        })
+        getReady.then ( res => {
+            this.postObject = res
+            if ( !this.postObject.readme ) {
+                this.readmeContent = null
+                this.readmeType = 'none'
+            } else {
+              this.readmeType = this.postObject.readme.indexOf ('.js') > 0 ? 'js' : 'html'
+              if ( this.readmeType === 'js' )
+                  this.getScriptItems ( this.postObject.readme )
+              else
+                  this.$root.$http.get ( this.postObject.readme ).then ( response => {
+                      this.readmeContent = response.body
+                  })
+            }
+            if ( this.postObject.textURL )
+                  this.$root.$http.get ( this.postObject.textURL ).then ( response => {
+                      this.text = response.body
+                  })
+            else this.text = this.postObject.text
+        })
+      },
   },
   mounted: function () {
-    if ( !this.postObject.readme ) return
-    this.$root.$http.get ( this.postObject.readme ).then ( response => {
-            this.readmeContent = response.body
-    })
-    if ( !this.postObject.textURL ) return
-    this.$root.$http.get ( this.postObject.textURL ).then ( response => {
-            this.postObject.text = response.body
-    })
+      this.getPostObject ()
   },
   components: {
-    //'readme-content': readmeContent
+    'bottom-sheet': BottomSheet,
+    'full-screen-dialog-window': FullScreenDialogWindow,
+    'card-template': cardTemplate
   }
 })
+export default currentPost

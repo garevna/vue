@@ -1,62 +1,44 @@
-<style>
-    .spec, .words {
-        display: inline-block;
-        margin: 0 7px;
-        font-size: 20px;
-    }
-    .spec {
-        color: orange;
-    }
-    .words {
-        color: #0ef;
-    }
-</style>
-
-<h3>Объект <span class="spec">Route</span></h3>
-<hr/>
-Текущий маршрут ( активный путь )<br/>
-Обновляется при каждом навигационном переходе<br/>
-<hr/>
-Доступ к объекту <span class="spec">$route</span><br/>
-Внутри компонента он доступен как <span class="spec">this.$route</span><br/>
-
-Изменения маршрута можно отслеживать:<br/>
+﻿<h3>Объект <spec_words>Route</spec_words></h3>
+<p>Текущий маршрут ( активный путь )</p>
+<p>Обновляется при каждом навигационном переходе</p>
+<p>Доступ к объекту <spec_words>$route</spec_words></p>
+<p>Внутри компонента он доступен как <spec_words>this.$route</spec_words></p>
+<p>Изменения маршрута можно отслеживать:</p>
 <pre class="code-snippet">
     watch: {
         '$route': function () {
           ...
         }
     }
-</pre><br/>
+</pre>
 
-Свойства объекта <span class="spec">Route</span><br/>
+<h3>Свойства объекта <spec_words>Route</spec_words></h3>
 
-<span class="spec">$route.path</span>       тип: <span class="spec">string</span><br>
-<hr/>
-<span class="spec">$route.params</span>     тип: <span class="spec">Object</span><br/>
+<p><spec_words>$route.path</spec_words>       тип: <spec_words>string</spec_words></p>
+<p><spec_words>$route.params</spec_words>     тип: <spec_words>Object</spec_words></p>
 
-Содержит параметры динамических сегментов<br/>
-<pre class="code-snippet">         { id: 'Boom' }</pre><br/>
-При отсутствии параметров пути будет пустым<br/>
-<hr/>
-<span class="spec">$route.query</span>      тип: <span class="spec">Object</span><br/>
-Содержит данные строки запроса (query string)<br/>
-Например:<br/>
+<p>Содержит параметры динамических сегментов</p>
+<pre class="code-snippet">
+         { id: 'Boom' }
+</pre>
+<p>При отсутствии параметров пути будет пустым</p>
+<p><spec_words>$route.query</spec_words>      тип: <spec_words>Object</spec_words></p>
+<p>Содержит данные строки запроса (query string)</p>
+<p>Например:</p>
 <pre class="code-snippet">
      { user: "Tornado" }
      для пути /?user="Tornado"
      $route.query.user == "Tornado"
-</pre><br/>
-При отсутствии строки запроса будет пустым
-<hr/>
-<span class="spec">$route.hash</span>       тип: <span class="spec">string</span><br/>
-<hr/>
-Хэш-часть текущего пути ( после символа # )<br/>
-Пустая строка, если отсутствует<br/>
-<span class="spec">$route.fullPath </span>  тип: <span class="spec">string</span><br/>
-Полный URL, включая строку запроса и хэш<br/>
-<span class="spec">$route.matched </span>   тип: <span class="spec">Array</span><br/>
-Массив, содержащий объекты маршрутов всех вложенных сегментов текущего пути<br/>
+</pre>
+<p>При отсутствии строки запроса будет пустым</p>
+
+<p><spec_words>$route.hash</spec_words>       тип: <spec_words>string</spec_words></p>
+<p>Хэш-часть текущего пути ( после символа # )</p>
+<p>Пустая строка, если отсутствует</p>
+<p><spec_words>$route.fullPath </spec_words>  тип: <spec_words>string</spec_words></p>
+<p>Полный URL, включая строку запроса и хэш</p>
+<p><spec_words>$route.matched </spec_words>   тип: <spec_words>Array</spec_words></p>
+<p>Массив, содержащий объекты маршрутов всех вложенных сегментов текущего пути</p>
 <pre class="code-snippet">
     const router = new VueRouter({
       routes: [
@@ -67,7 +49,7 @@
         }
       ]
     })
-</pre><br/> 
-Для URL, равного <span class="words">/user/profile</span>, <span class="spec">$route.matched</span> 
-будет массивом, содержащим копии обоих объектов, в порядке сортировки от родителя к потомку.<br/>
-<span class="spec">$route.name</span>   Имя текущего пути (не обязательно, но удобно)
+</pre><br/>
+<p>Для URL, равного <var_names>/user/profile</var_names>, <spec_words>$route.matched</spec_words>
+будет массивом, содержащим копии обоих объектов, в порядке сортировки от родителя к потомку.</p>
+<p><spec_words>$route.name</spec_words>   Имя текущего пути (не обязательно, но удобно)</p>
