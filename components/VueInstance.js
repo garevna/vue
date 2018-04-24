@@ -1,5 +1,8 @@
 'use strict'
 
+//import firebase from 'firebase'
+//import firebaseui from 'firebaseui'
+
 import Vue from 'vue'
 
 import VueResource from 'vue-resource'
@@ -10,12 +13,12 @@ Vue.use ( Vuetify )
 import vuetifyCSS from '../node_modules/vuetify/dist/vuetify.min.css'
 
 const firebaseConfig = {
-	apiKey: "AIzaSyAE1LDfl-AWDIaauE6CUGWPDvJU4sdDnLE",
-	authDomain: "vue-course-b1571.firebaseapp.com",
-	databaseURL: "https://vue-course-b1571.firebaseio.com",
-	projectId: "vue-course-b1571",
-	storageBucket: "vue-course-b1571.appspot.com",
-	messagingSenderId: "329391650263"
+	apiKey: "AIzaSyBBgYIYq6-jzmQpV4tNymltt_puoO1_WrE",
+	authDomain: "vue-js-9f7ed.firebaseapp.com",
+	databaseURL: "https://vue-js-9f7ed.firebaseio.com",
+	projectId: "vue-js-9f7ed",
+	storageBucket: "",
+	messagingSenderId: "630587498699"
 }
 const firebaseApp = firebase.initializeApp ( firebaseConfig )
 const firebaseDB = firebaseApp.database()
