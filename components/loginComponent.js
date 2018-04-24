@@ -3,7 +3,7 @@
 const LoginComponent = ( 'login-component', {
 	data: function () {
 		return {
-			__route: '/vue-course.github.io/#/',
+			__route: '/vue/#/',
 			uiConfig: {
 				callbacks: {
 					signInSuccess: ( currentUser, credential, redirectUrl ) => {
@@ -50,10 +50,9 @@ const LoginComponent = ( 'login-component', {
       		},
 	},
 	mounted: function () {
-		this.__route = '/vue-course.github.io/#' + this.$route.path
+		this.__route = '/vue/#' + this.$route.path
 		if ( this.user ) {
-			console.info ( 'User allready signed in' )
-			console.log ( this.user )
+			console.info ( 'User allready signed in: ', this.user )
 			this.sendCloseEvent ()
 		}
 		else {
