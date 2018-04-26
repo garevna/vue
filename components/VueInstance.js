@@ -13,12 +13,12 @@ Vue.use ( Vuetify )
 import vuetifyCSS from '../node_modules/vuetify/dist/vuetify.min.css'
 
 const firebaseConfig = {
-	apiKey: "AIzaSyBBgYIYq6-jzmQpV4tNymltt_puoO1_WrE",
-	authDomain: "vue-js-9f7ed.firebaseapp.com",
-	databaseURL: "https://vue-js-9f7ed.firebaseio.com",
-	projectId: "vue-js-9f7ed",
-	storageBucket: "",
-	messagingSenderId: "630587498699"
+		apiKey: "AIzaSyBBgYIYq6-jzmQpV4tNymltt_puoO1_WrE",
+		authDomain: "vue-js-9f7ed.firebaseapp.com",
+		databaseURL: "https://vue-js-9f7ed.firebaseio.com",
+		projectId: "vue-js-9f7ed",
+		storageBucket: "",
+		messagingSenderId: "630587498699"
 }
 const firebaseApp = firebase.initializeApp ( firebaseConfig )
 const firebaseDB = firebaseApp.database()
@@ -101,10 +101,9 @@ new Vue ( {
 
 			this.usersDBref = firebaseDB.ref ( 'users' )
 			this.messagesDBref = firebaseDB.ref ( 'message' )
-			console.log ( this.usersDBref )
-			console.log ( this.messagesDBref )
 			const __vue = this
 			firebase.auth().onAuthStateChanged ( function ( user ) {
+					console.log ( 'AuthStateChanged' )
 					if ( !!user ) {
 						user.getIdToken().then (
 							accessToken => {
